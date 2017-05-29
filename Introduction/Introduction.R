@@ -11,7 +11,9 @@
 #
 # Cntr-Enter on Windows and Linux
 # Cmd-Enter on Macs
-
+#
+# You can use the up arrow to cycle through previous commands and edit
+# these as opposed to having to type the whole command.
 
 ##########################
 # Using R as a calculator
@@ -88,7 +90,10 @@ x
 # You can use this variable with functions
 log(x)
 
-# You can reassigne
+# Variable names can contain letters, numbers, underscores and periods. 
+# They cannot start with a number nor contain spaces at all.
+
+# You can reassign
 x<-100
 
 # Operate on 
@@ -99,3 +104,114 @@ x = 100 # Not so common in the R community
 
 # Can also use:
 200 -> x  # Not so common but convenient sometimes
+
+################
+# Vectorization
+################
+
+# R operates very well on vectors
+1:5
+
+# What will the following give me?
+2^(1:5)
+
+# Using variables
+y<-1:5    # Look at the environment tag
+2^y
+
+###########################
+# Managing your environment
+###########################
+
+# Files stored in the global environment
+ls()
+
+# Note
+.x <- 5   # Can you see this in the environment pane?
+
+# Variables that begin with a . are hidden
+ls(all.names = TRUE)  
+
+# Type ls without the parentheses
+ls      # you get the function listing
+
+# You can remove variables (they could be using a lot of resources)
+rm(x)    # Note the x has gone from the environment pane
+
+# Can remove all variables
+rm(list = ls())
+
+# Check:
+ls()
+# but:
+ls(all.names = TRUE)  
+
+# Remove the variable .x explicitly
+rm(.x)
+
+# Check
+ls(all.names = TRUE)  
+
+###########
+# Packages
+##########
+
+# Packages extend the functionality of R.
+# There are lots of packages written by developers.
+# Have a look at: https://cran.r-project.org/
+
+# Find out what packages are installed:
+installed.packages()
+
+# If you want to install a new package:
+# install.packages("packagename"), where packagename is the package name, in quotes.
+# or in Rstudio
+# Tools -> "Install Packages..."
+
+# You can update packages:
+# update.packages()
+# or in Rstudio
+# Tools -> "Check for Package Updates ..."
+
+# Remove packages:
+# remove.packages("packagename")
+
+# To use a package you use the library command (without the quotes)
+# library(packagename)
+
+##############
+# Challenge 1
+#############
+# Which of the following are valid R-names
+min_height 
+max.height
+_age 
+.mass
+MaxLength
+min-length
+2widths
+celsius2kelvin
+
+##############
+# Challenge 2
+#############
+# What will be the value of each variable after each statement 
+# in the following program?
+mass <- 47.5
+age <- 122
+mass <- mass * 2.3
+age <- age - 20
+
+##############
+# Challenge 3
+##############
+# Calculate the Body Mass Index (BMI for a person)
+height <-     # height in metres
+weight <-     # weight in kg
+bmi    <-     # bmi is the mass divided by the square of the height.
+
+#############
+# Challenge 4
+#############
+# Make sure you have the following packages installed:
+# ggplot2, dplyr, gapminder
