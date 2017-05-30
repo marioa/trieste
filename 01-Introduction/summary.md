@@ -1,3 +1,22 @@
+---
+
+theme: sky
+
+---
+
+# Managing your projects with R studio
+
+Note: The default keyboard shortcuts are:
+
+* Up, Down, Left, Right: Navigation
+* f: Full-screen
+* s: Show slide notes
+* o: Toggle overview
+* . (Period or b: Turn screen black
+* Esc: Escape from full-screen, or toggle overview
+
+---
+
 ## Intoduction - summary
 
 * Use RStudio to write and run R programs.
