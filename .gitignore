@@ -1,6 +1,18 @@
+# This files tells git to ignore certain file types and
+# not to put them in the repository.
+
+# R studio files
 .Rproj.user
+
+# History files
 .Rhistory
+
+# R session data files
 .RData
+
+# Not sure what this file is for.
 .Ruserdata
-trieste.Rproj
-*.swp
+
+# Ignore R project files.
+*.Rproj
+
