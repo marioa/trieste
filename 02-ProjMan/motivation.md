@@ -1,3 +1,9 @@
+---
+
+theme: sky
+
+---
+
 # Managing your projects with R studio
 
 ---
