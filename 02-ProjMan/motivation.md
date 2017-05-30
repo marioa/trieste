@@ -6,6 +6,15 @@ theme: sky
 
 # Managing your projects with R studio
 
+Note: The default keyboard shortcuts are:
+
+* Up, Down, Left, Right: Navigation
+* f: Full-screen
+* s: Show slide notes
+* o: Toggle overview
+* . (Period or b: Turn screen black
+* Esc: Escape from full-screen, or toggle overview
+
 ---
 
 ## Typical scenario
@@ -32,7 +41,7 @@ theme: sky
    * a lab-mate, 
    * a collaborator, 
    * a supervisor;
-* Facilitates uploading code with a paper submission;
+* Facilitates association of code with publications;
 * Makes it easier to resume a project after a break.
 
 ----
@@ -48,12 +57,12 @@ theme: sky
 
 ## Good enough practice
 
-* Put each project in its own directory
+* Each project goes in its own directory.
   * Name the directory after the project.
-* Put documentation in a `doc` directory.
-* Put raw data and metadata in a `data` directory.
+* Documentation goes in a `doc` directory.
+* Raw data/metadata goes in a `data` directory.
 * Derived data goes in a `results` directory.
-* Sources for scripts/programs go in a `src` directory. 
-* External programs/compiled binaries go in a `bin` directory.
-* Name all files to reflect their content or function.
+* Script/program sources go in a `src` directory. 
+* Compiled code goes in a `bin` directory.
+* Files are named to reflect their content/function.
 
