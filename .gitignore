@@ -13,6 +13,3 @@
 # Not sure what this file is for.
 .Ruserdata
 
-# Ignore R project files.
-*.Rproj
-
