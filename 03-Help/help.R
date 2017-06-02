@@ -33,3 +33,12 @@ vignette("ggplot2-specs")
 
 # Alternatively you can do:
 help(ggplot2)
+
+# When you want to perform a search (partially remember a command)
+??set
+
+# When you are not sure where to begin or want to see 
+# what is available:
+#
+# https://cran.r-project.org/web/views/
+#
