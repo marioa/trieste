@@ -10,7 +10,7 @@
 # R session data files
 .RData
 
-# Not sure what this file is for.
+# Directory for storing user data.
 .Ruserdata
 
 # Swap files
