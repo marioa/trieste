@@ -13,3 +13,5 @@
 # Not sure what this file is for.
 .Ruserdata
 
+# Swap files
+*.swp
