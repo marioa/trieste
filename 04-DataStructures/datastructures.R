@@ -105,3 +105,6 @@ combine_vector
 
 # What do you think the following will produce?
 quiz_vector <- c(2,6,'3')
+
+# This is an example of type coercion
+# Good to understand what is going on so you are not surprised
