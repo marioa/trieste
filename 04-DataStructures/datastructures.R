@@ -130,8 +130,27 @@ character_coerced_to_numeric
 # Check
 typeof(character_coerced_to_numeric)
 
-# What would you do if you wanted integers?
+# Challenge: coerce these to integers.
 
 # Moving on...
 numeric_coerced_to_logical <- as.logical(character_coerced_to_numeric)
 numeric_coerced_to_logical
+
+# Let's go back to our cats data frame
+cats$likes_string
+
+# Want to convert this to logicals
+cats$likes_string <- as.logical(cats$likes_string)
+cats$likes_string
+
+# The combine function allows you to append to a vector:
+ab_vector <- c('a', 'b')
+ab_vector
+
+# appending
+combine_example <- c(ab_vector, 'SWC')
+combine_example
+
+# prepending
+combine_example <- c("hello",combine_example)
+combine_example

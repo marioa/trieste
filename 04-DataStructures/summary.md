@@ -42,14 +42,39 @@ Note: The default keyboard shortcuts are:
 * **data.frame** - columns must be of the same type
 * **factor** - sotres categorical data
 * **list** - generic data
+* ...
 
 ---
 
 ## Vectors
 
-* There are no scalars
+* There are no scalars in R
    * A scalar is a vector of length 1
-* Be careful with type coercion
+* All elements MUST be of the same type
+   * Be careful with type coercion
 
-x <- c(1L,TRUE,3+i,'4',5.0)
+<img src="imgs/vector.png" alt="R vector" style="background:none; border:none; box-shadow:none;">
 
+---
+
+## Matrix
+
+* Table of numbers all of the same type
+
+<img src="imgs/matrix.png" alt="R matrix" style="background:none; border:none; box-shadow:none;">
+
+---
+
+## Data frame
+
+* All the columns must be of the same type
+
+<img src="imgs/df.png" alt="R data frame" style="background:none; border:none; box-shadow:none;">
+
+---
+
+## Lists
+
+* Most generic data structure
+
+<img src="imgs/list.png" alt="R list" style="background:none; border:none; box-shadow:none;">
