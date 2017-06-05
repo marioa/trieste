@@ -29,6 +29,16 @@ Note: The default keyboard shortcuts are:
 
 ---
 
+## Querying the data type
+
+* Can query the data type using:
+  * `typeof()`
+  * `class()`
+  * `mode()`
+* Slightly different perspectives of the same thing
+
+---
+
 ## Type coercion
 
 <img src="imgs/coercion.png" alt="R type coercion" style="background:none; border:none; box-shadow:none;">
@@ -40,7 +50,7 @@ Note: The default keyboard shortcuts are:
 * **vector** - 1d data must all be of the same type
 * **matrix** - 2d data must all be of the same type
 * **data.frame** - columns must be of the same type
-* **factor** - sotres categorical data
+* **factor** - stores categorical data
 * **list** - generic data
 * ...
 
@@ -50,7 +60,7 @@ Note: The default keyboard shortcuts are:
 
 * There are no scalars in R
    * A scalar is a vector of length 1
-* All elements MUST be of the same type
+* All elements in a vector are of the same type
    * Be careful with type coercion
 
 <img src="imgs/vector.png" alt="R vector" style="background:none; border:none; box-shadow:none;">
@@ -78,3 +88,16 @@ Note: The default keyboard shortcuts are:
 * Most generic data structure
 
 <img src="imgs/list.png" alt="R list" style="background:none; border:none; box-shadow:none;">
+
+* Types are preserved across the row
+
+---
+
+## Factors
+
+* Used for categorial data.
+
+<img src="imgs/factor.png" alt="An R factor" style="background:none; border:none; box-shadow:none;">
+
+* We examine factors in more detail later on
+
