@@ -1,6 +1,9 @@
 ##############################
 # Use of data structures in R
 ##############################
+
+# Reading in Data ---------------------------------------------------------
+
 # Have a file on cat data in ../data/feline-data.csv.
 # We want to read this data into R.
 # Make sure you set the current working directory to where we this 
@@ -25,6 +28,9 @@ paste("My cat is", cats$coat)
 
 # What do you think the following will give?
 cats$weight + cats$coat
+
+
+# R data types ------------------------------------------------------------
 
 # R variables have an implicit type. There are 5 basic types:
 #
@@ -70,7 +76,7 @@ cats$weight+2
 # Default behaviour though is to create a factor (hence it reports it as integers).
 # More on factors later.
 
-# You can find out what type of data structure
+# You can find out what type of data structure we have
 class(cats)
 
 # And - more on factors later...
@@ -130,7 +136,12 @@ character_coerced_to_numeric
 # Check
 typeof(character_coerced_to_numeric)
 
-# Challenge: coerce these to integers.
+# Challenge 1 -------------------------------------------------------------
+# Challenge: coerce character_coerced_to_numeric to integers.
+
+
+
+# Type coercion -----------------------------------------------------------
 
 # Moving on...
 numeric_coerced_to_logical <- as.logical(character_coerced_to_numeric)
@@ -191,3 +202,37 @@ my_example
 # Just see the names
 names(my_example)
 
+
+
+# Challenge 2 -------------------------------------------------------------
+# Challenge: 
+#
+# 1. Make a vector with the numbers 1 to 26.
+# 2. Multiply these by 2.
+# 3. Name them (there is a built in vector called letters for small 
+#    case letters LETTERS for capitals).
+
+# Challenge: 
+# What do you think the following will give you?
+x<- seq(1,4)
+x+1
+# So what do you think the following will give you?
+y<-seq(1,2)
+x+y
+# What about:
+x*y
+
+# Challenge: 
+# A matrix is a 2d array of data where all the data types are
+# the same:
+m <- matrix(data=seq(1:16),ncol=4)
+m
+m<- matrix(data=seq(1,16),ncol=8)
+m
+# What do you think give you
+2*m
+m+1
+# What symbol do you use for "matrix multiplication"?
+
+
+# Data frames -------------------------------------------------------------
