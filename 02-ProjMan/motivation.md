@@ -1,6 +1,8 @@
 ---
 
 theme: sky
+revealOptions:
+    slideNumber: true
 
 ---
 
