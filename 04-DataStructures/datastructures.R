@@ -151,6 +151,43 @@ ab_vector
 combine_example <- c(ab_vector, 'SWC')
 combine_example
 
-# prepending
+# prependi
 combine_example <- c("hello",combine_example)
 combine_example
+
+# Creating a sequence of numbers
+mySeries <- 1:10
+mySeries
+
+# Can also use
+seq(10)
+
+# Can associate a start and an increment step
+seq(1,10, by=0.1)
+
+# Selecting what data to view
+sequence_example <- seq(1000)
+sequence_example              # Too much data
+
+# Looking at the head of the list (default for n=6)
+head(sequence_example, n=2)
+
+# Looking at the tail of the list
+tail(sequence_example, n=4)
+
+# Find out how long the sequence is
+length(sequence_example)
+
+# Query the type of the data
+class(sequence_example)       # Different views of the same thing
+typeof(sequence_example)     
+mode(sequence_example)        # integer and double are numeric
+
+# You can name your vector elements
+my_example <- 5:8
+names(my_example) <- c("a", "b", "c", "d")
+my_example
+
+# Just see the names
+names(my_example)
+
