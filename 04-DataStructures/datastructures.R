@@ -108,3 +108,30 @@ quiz_vector <- c(2,6,'3')
 
 # This is an example of type coercion
 # Good to understand what is going on so you are not surprised
+coercion_vector <- c('a', TRUE)
+coercion_vector
+
+another_coercion_vector <- c(0, TRUE)
+another_coercion_vector
+
+# Coercion rules go:
+#
+#  logical -> integer -> numeric -> complex -> character
+#
+
+# You can force coercion using as.
+
+character_vector_example <- c('0','2','4')
+character_vector_example
+
+character_coerced_to_numeric <- as.numeric(character_vector_example)
+character_coerced_to_numeric
+
+# Check
+typeof(character_coerced_to_numeric)
+
+# What would you do if you wanted integers?
+
+# Moving on...
+numeric_coerced_to_logical <- as.logical(character_coerced_to_numeric)
+numeric_coerced_to_logical
