@@ -235,4 +235,66 @@ m+1
 # What symbol do you use for "matrix multiplication"?
 
 
-# Data frames -------------------------------------------------------------
+# Factors -------------------------------------------------------------
+
+# Back to cats - str lets you look at the structure of an R object
+str(cats$weight)
+str(cats$likes_string)
+# But
+str(cats$coat) 
+
+# Factors are indexed entries used for categorical data
+# which is why you get integer when you are looking at 
+# the type - that is the index.
+typeof(cats$coat)
+
+# Let's create a factor - start with a character array.
+coats <- c('tabby', 'tortoiseshell', 'tortoiseshell', 'black', 'tabby')
+coats
+
+# Look at the structure
+str(coats)
+
+# Make a factor thus:-
+CATegories <- factor(coats)
+class(CATegories)
+
+# Look at the structure
+str(CATegories)
+
+# You get the levels
+levels(CATegories)
+
+# Indexing at play
+CATegories
+as.integer(CATegories)
+
+# Levels occur in alphabetical order, sometimes 
+# you want to control the ordering:
+mydata <- c("case", "control", "control", "case")
+
+default_factor <- factor(mydata)
+default_factor
+
+factor_ordering_example <- factor(mydata, levels = c("control", "case"))
+str(factor_ordering_example)
+
+levels(default_factor) <- c("control","case")
+default_factor
+
+
+# Challenge 3 -------------------------------------------------------------
+# The default for read.csv is to read strings as factors. Look up the 
+# documentation to find ways of not reading strings as factors.
+
+# Create a new vector that recovers the values from factor_of_myvals
+# Remember if you just use as.integer you get the index of the factor
+# and not the values. Hint: think of as.character but we do not want 
+# characters.
+myvals <- c(1,2,3,3,2,1,10,2,5)
+factor_of_myvals <- factor(myvals)
+
+
+# Lists -------------------------------------------------------------------
+
+
