@@ -35,7 +35,9 @@ Note: The default keyboard shortcuts are:
   * `typeof()`
   * `class()`
   * `mode()`
-* Slightly different perspectives of the same thing
+* Also
+  * `str()`
+* Different perspectives of the same thing
 
 ---
 
@@ -77,7 +79,8 @@ Note: The default keyboard shortcuts are:
 
 ## Data frame
 
-* All the columns must be of the same type
+* All columns must be of the same type
+* All columns must be of the same length
 
 <img src="imgs/df.png" alt="R data frame" style="background:none; border:none; box-shadow:none;">
 
@@ -99,5 +102,4 @@ Note: The default keyboard shortcuts are:
 
 <img src="imgs/factor.png" alt="An R factor" style="background:none; border:none; box-shadow:none;">
 
-* We examine factors in more detail later on
 
