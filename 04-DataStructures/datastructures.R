@@ -222,18 +222,6 @@ x+y
 # What about:
 x*y
 
-# Challenge: 
-# A matrix is a 2d array of data where all the data types are
-# the same:
-m <- matrix(data=seq(1:16),ncol=4)
-m
-m<- matrix(data=seq(1,16),ncol=8)
-m
-# What do you think give you
-2*m
-m+1
-# What symbol do you use for "matrix multiplication"?
-
 
 # Factors -------------------------------------------------------------
 
