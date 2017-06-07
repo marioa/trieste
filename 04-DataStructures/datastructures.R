@@ -297,4 +297,136 @@ factor_of_myvals <- factor(myvals)
 
 # Lists -------------------------------------------------------------------
 
+# Lists can have anything and preserve their data type. Data frames are a
+# special type of list.
+list_example <- list(1, "a", TRUE, 1+4i)
+list_example
 
+another_list <- list(title = "Numbers", numbers = 1:10, data = TRUE )
+another_list
+
+# So
+typeof(cats)
+
+# But
+class(cats)
+class(list_example)
+
+# A data frame is a set of vectors/factors that are all
+# of the same lenght. A data frame is a special case of
+# a list.
+
+# Accessing columns.
+cats$coat
+cats[,1]        # First column
+
+typeof(cats$coat)
+class(cats$coat)
+str(cats$coat)
+
+# Note though:
+cats["coat"]
+typeof(cats["coat"])
+class(cats["coat"])
+
+# look at rows:
+cats[1,]           # Have different types
+typeof(cats[1,])
+class(cats[1,])    # Note a one row data frame
+
+str(cats[1,])      # Look at the internals
+
+
+# Challenge 4 -------------------------------------------------------------
+# What do the following give you andn what types do they return? Use 
+# typeof(), class() and struct()
+cats[1]
+cats[[1]]
+cats$coat
+cats["coat"]
+cats[1, 1]
+cats[, 1]
+cats[1, ]
+
+# Matrices ----------------------------------------------------------------
+#
+# Think of a matrix as a row of vectors all of the same length and of the 
+# same type.
+
+matrix_example <- matrix(0, ncol=6, nrow=3)
+matrix_example
+
+matrix_example2 <- matrix(data=seq(1,16), nrow=4)
+matrix_example2
+
+matrix_example3 <- matrix(data=seq(1,16), nrow=8)
+matrix_example3
+
+# What can we find out about the data types/structure
+class(matrix_example)
+
+typeof(matrix_example)
+
+str(matrix_example)
+
+# Can get the dimensions
+dim(matrix_example)
+
+# or individual dimensions
+nrow(matrix_example)
+ncol(matrix_example)
+
+
+
+# Challenge 5 -------------------------------------------------------------
+
+# 5.1
+# What do you think will be the result of length(matrix_example)? 
+length(matrix_example)
+
+# 5.2
+# Make another matrix, this time containing the numbers 1:50, 
+# with 5 columns and 10 rows. Did the matrix function fill your 
+# matrix by column, or by row, as its default behaviour?
+# Can you get it to fill the matrix the otherway round?
+
+# 5.3
+# Create a list of length two containing a character vector for each of 
+# the sections in this part of the workshop:
+#
+# Data types:
+#                  'double', 'complex', 'integer', 'character', 'logical'
+# Data structures:
+#                  'data.frame', 'vector', 'factor', 'list', 'matrix'
+#
+# Populate each character vector with the names of the data types and data 
+# structures we’ve seen so far.
+# 
+
+# 5.4
+# Consider the R output of the matrix below:
+#   
+#   [,1] [,2]
+# [1,]    4    1
+# [2,]    9    5
+# [3,]   10    7
+#
+# What was the correct command used to write this matrix? 
+# Examine each command and try to figure out the correct one before running them. 
+# Think about what matrices the other commands will produce.
+matrix(c(4, 1, 9, 5, 10, 7), nrow = 3)
+matrix(c(4, 9, 10, 1, 5, 7), ncol = 2, byrow = TRUE)
+matrix(c(4, 9, 10, 1, 5, 7), nrow = 2)
+matrix(c(4, 1, 9, 5, 10, 7), ncol = 2, byrow = TRUE)
+
+# 5.5
+# Consider
+m1 <- matrix(seq(1,16),ncol=4,nrow=4)
+m2 <- matrix(seq(16,1,-1),ncol=4,nrow=4)
+#
+# If you multiply these you get an elementwise multiplication:
+#
+m1*m2
+# How would you get a proper get a proper matrix-matrix product?
+# This is a question about using help (you don't have to understand
+# matrix multiplication), remember "??" ?
