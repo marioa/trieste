@@ -15,10 +15,10 @@
 # You can use the up arrow to cycle through previous commands and edit
 # these as opposed to having to type the whole command.
 
-##########################
-# Using R as a calculator
-##########################
 
+# Using R as a calculator -------------------------------------------------
+
+# Generally do this in the console
 1+100
 
 # What follows is an incomplete command - to complete the command either complete it
@@ -57,9 +57,7 @@ exp(0.5)  # e^(1/2)
 # Use of tab completion to get a function
 # Use of `?` to get help
 
-###################
-# Comparing things
-###################
+# Comparing things --------------------------------------------------------
 
 1 == 1  # equality (note two equals signs, read as "is equal to")
 
@@ -77,9 +75,8 @@ exp(0.5)  # e^(1/2)
 1 == 1.00001 # Take care with non-integers
 all.equal(1,1.000001,tolerance=0.001) # Could use
 
-###########################
-# Variables and assignment
-##########################
+
+# Variables and assignment ------------------------------------------------
 
 # Assignment (note in R studio you can get the <- by typing Alt-)
 x <- 1/40
@@ -105,9 +102,8 @@ x = 100 # Not so common in the R community
 # Can also use:
 200 -> x  # Not so common but convenient sometimes
 
-################
-# Vectorization
-################
+
+# Vectorization -----------------------------------------------------------
 
 # R operates very well on vectors
 1:5
@@ -119,9 +115,8 @@ x = 100 # Not so common in the R community
 y<-1:5    # Look at the environment tag
 2^y
 
-###########################
-# Managing your environment
-###########################
+
+# Managing your environment -----------------------------------------------
 
 # Files stored in the global environment
 ls()
@@ -152,9 +147,9 @@ rm(.x)
 # Check
 ls(all.names = TRUE)  
 
-###########
-# Packages
-##########
+
+# Packages ----------------------------------------------------------------
+
 
 # Packages extend the functionality of R.
 # There are lots of packages written by developers.
@@ -179,9 +174,10 @@ installed.packages()
 # To use a package you use the library command (without the quotes)
 # library(packagename)
 
-##############
-# Challenge 1
-#############
+
+# Challenge 1 -------------------------------------------------------------
+
+# 1.1
 # Which of the following are valid R-names
 min_height 
 max.height
@@ -192,9 +188,7 @@ min-length
 2widths
 celsius2kelvin
 
-##############
-# Challenge 2
-#############
+# 1.2
 # What will be the value of each variable after each statement 
 # in the following program?
 mass <- 47.5
@@ -202,16 +196,13 @@ age <- 122
 mass <- mass * 2.3
 age <- age - 20
 
-##############
-# Challenge 3
-##############
+# 1.3
 # Calculate the Body Mass Index (BMI for a person)
 height <-     # height in metres
 weight <-     # weight in kg
 bmi    <-     # bmi is the mass divided by the square of the height.
 
-#############
-# Challenge 4
-#############
+# 1.4
 # Make sure you have the following packages installed:
 # ggplot2, dplyr, gapminder
+
