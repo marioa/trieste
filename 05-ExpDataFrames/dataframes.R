@@ -120,3 +120,8 @@ df <- data.frame(id = c('a', 'b', 'c'),
 # Create a cats2 data frame that re-arranges the order of the 
 # columns of cats to have weight, coat, like_strings, age.
 
+# 1.4
+# names(cats) can be used to list the column names of the cats
+# data frame. Rename the columns of cats2 to use the capital
+# LETTERS starting from N and use every second letter, i.e. 
+# N (letter 14),P,R and T.
