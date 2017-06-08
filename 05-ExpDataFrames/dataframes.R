@@ -39,6 +39,14 @@ str(cats)    # Oops!
 cats$coat <- as.character(cats$coat)
 str(cats)
 
+# We could fix this by accessing inidivdual elements 
+# (we shall use cats later on so make a copy)
+cats2 <- cats
+cats2
+cats[4,1]
+cats2[4,1] <- "tortoishell"
+cats2
+rm(cats2)
 
 # Removing rows -----------------------------------------------------------
 
