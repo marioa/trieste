@@ -46,6 +46,23 @@ cats2
 cats[4,1]
 cats2[4,1] <- "tortoishell"
 cats2
+
+# You can also add a new column using
+cats2["Colour"] <- c("green","red","blue","white","pink")
+
+# Removing a column
+cats2
+names(cats2)
+cats2[c("coat","weight","likes_string","age")]
+cats2 <- cats2[c("coat","weight","likes_string","age")]
+cats
+
+# You could also use the column indices
+cats2[,1]
+cats2[,c(1,2)]
+cats2[,c(2,1)]
+
+# We don't need this data frame any more
 rm(cats2)
 
 # Removing rows -----------------------------------------------------------
