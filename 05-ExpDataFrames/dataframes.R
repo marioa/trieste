@@ -119,9 +119,91 @@ df <- data.frame(id = c('a', 'b', 'c'),
 # 1.3
 # Create a cats2 data frame that re-arranges the order of the 
 # columns of cats to have weight, coat, like_strings, age.
-
-# 1.4
-# names(cats) can be used to list the column names of the cats
 # data frame. Rename the columns of cats2 to use the capital
 # LETTERS starting from N and use every second letter, i.e. 
 # N (letter 14),P,R and T.
+
+# Realistic example -------------------------------------------------------
+
+# Make sure that you have the current directory set as your working 
+# directory.
+# You can find out what your current working directory is set by 
+# doing:
+getwd()
+
+# We will load up some data that has been pre-downloaded:
+gapminder <- read.csv("../data/gapminder-FiveYearData.csv")
+
+# You could have downloaded this directly to your system using:
+# 
+# download.file("https://raw.githubusercontent.com/swcarpentry/r-novice-gapminder/gh-pages/_episodes_rmd/data/gapminder-FiveYearData.csv", 
+#               destfile = "../data/gapminder-FiveYearData.csv")
+# gapminder <- read.csv("../data/gapminder-FiveYearData.csv")
+#
+# For tab-separated value files (.tsv). 
+# To specify a tab as a separator, use "\\t" or read.delim().
+#
+# You could read the file directly to your own R instance:
+#
+# gapminder <- read.csv("https://raw.githubusercontent.com/swcarpentry/r-novice-gapminder/gh-pages/_episodes_rmd/data/gapminder-FiveYearData.csv")
+#
+# You can use the readxl to read excel spreadsheets.
+#
+
+# Let's look at the gapminder data
+View(gapminder)
+
+# Or you could use
+head(gapminder)
+
+# Look at the structure
+str(gapminder)
+
+# Also look at the data types
+typeof(gapminder$year)
+
+typeof(gapminder$country)
+class(gapminder$country)
+str(gapminder$country)
+
+# If we do:
+length(gapminder) # Why not 1704?
+
+# Clue
+typeof(gapminder)
+
+# To find the actual length
+length(gapminder$country)
+
+# Or more simply
+nrow(gapminder)
+
+# and
+ncol(gapminder)
+
+# or both at the same time
+dim(gapminder)
+
+# Can get the names of the columns
+colname(gapminder)
+
+# or (same for data frames but not matrices and other data types)
+names(gapminder)
+
+# Challenge 2 -------------------------------------------------------------
+
+# 2.1
+# 
+# Go to file -> new file -> R script, and write an R script to load in the 
+# gapminder dataset. Put it in the scripts/ directory and add it to version 
+# control.
+#
+# Run the script using the source function, using the file path as its argument 
+# (or by pressing the “source” button in RStudio).
+
+# 2.2
+#
+# Read the output of str(gapminder) again; this time, use what you’ve learned about 
+# factors, lists and vectors, as well as the output of functions like colnames and 
+# dim to explain what everything that str prints out for gapminder means. If there 
+# are any parts you can’t interpret, discuss with your neighbors!
