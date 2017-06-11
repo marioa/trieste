@@ -71,4 +71,22 @@ print(x)
 
 # Subsetting by name ------------------------------------------------------
 
+# Can extract elements by using their name, instead of index:
+x[c("a", "c")]
+
+# Indexes can change but names stay the same.
+# Removing a column is a bit more convoluted
+x[-which(names(x) == "a")]
+
+# Breaking this down
+names(x) == "a"
+
+# which then converts this to an index:
+which(names(x) == "a")
+
+# For multiple names we use the %in% operator
+"a" %in% c("a","b","c","d")
+"z" %in% c("a","b","c","d")
+
+x[-which(names(x) %in% c("a", "c"))]
 
