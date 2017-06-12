@@ -320,7 +320,6 @@ m2[5]
 m2 <- matrix(data=1:9,ncol=3,byrow = TRUE)
 m2
 
-
 # Challenge 4 -------------------------------------------------------------
 
 # 4.1 Given the following code:
@@ -380,8 +379,6 @@ xlist[["data"]]
 # Can short hand this
 xlist$data
 
-
-
 # Challenge 5 -------------------------------------------------------------
 
 # 5.1 Given the following list:
@@ -401,4 +398,46 @@ mod <- aov(pop ~ lifeExp, data=gapminder)
 
 # Data frames -------------------------------------------------------------
 
+# Data frames are lists underneath the hood, so similar rules apply. 
+# They are also two dimensional objects.
+str(gapminder)
 
+# We can get a column
+head(gapminder[3])
+class(head(gapminder[3]))
+
+# Similarly
+head(gapminder[["lifeExp"]])
+
+# or we can use the shortcut as before
+head(gapminder$year)
+
+# With two arguments, [ behaves the same way as for matrices:
+gapminder[1:3,]
+
+gapminder[3,]  # Rows are data frames, columns are vectors
+
+# Challenge 6 -------------------------------------------------------------
+
+# 6.1 Fix each of the following common data frame subsetting errors:
+
+# Extract observations collected for the year 1957
+gapminder[gapminder$year = 1957,]
+
+# Extract all columns except 1 through to 4
+gapminder[,-1:4]
+
+# Extract the rows where the life expectancy is longer the 80 years
+gapminder[gapminder$lifeExp > 80]
+
+# Extract the first row, and the fourth and fifth columns (lifeExp and gdpPercap).
+gapminder[1, 4, 5]
+
+# Advanced: extract rows that contain information for the years 2002 and 2007
+gapminder[gapminder$year == 2002 | 2007,]
+
+# 6.2 Why does gapminder[1:20] return an error? 
+#    How does it differ from gapminder[1:20, ]?
+
+# Create a new data.frame called gapminder_small that only contains 
+# rows 1 through 9 and 19 through 23. You can do this in one or two steps.
