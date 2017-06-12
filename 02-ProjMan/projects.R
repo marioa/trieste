@@ -107,5 +107,3 @@ load.project()
 
 # If you have managed to do all these steps you should now be in a position to 
 # use Rstudio with GitHub (or any other remote git repository).
-
-Add the newly created folders to version control using the git interface.
