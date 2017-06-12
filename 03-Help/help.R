@@ -1,3 +1,6 @@
+
+# Getting help ------------------------------------------------------------
+
 # To get help on any function, use setwd as an example here:
 
 help(setwd)
