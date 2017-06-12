@@ -69,19 +69,21 @@ sessionInfo()
 #     Operating System
 #     Particular version of a package that you are using
 
-#############################################
-# Challenge 1: what does the "c" function do?
-#############################################
+
+# Challenge 1 -------------------------------------------------------------
+
+
+# 1.1 what does the "c" function do?
+#
 # What do the following give you?
 c(1, 2, 3)
 c('d', 'e', 'f')
 c(1, 2, 'f')
 
-# These are called vectors, more about this later.
+# These are called vectors, more about these later.
 
-###############################################
-# Challenge 2: what does the paste function do?
-###############################################
+# 1.2 what does the paste function do?
+#
 x <- c("fred","john")              # Create a vector 
 paste(x,"one","two","three")
 
@@ -89,9 +91,8 @@ paste(x,"one","two","three")
 
 # What is the difference between paste and paste0?
 
-################################################################
-# Challenge 3: how would you read a comma separated values (csv)
-#              file that are tab (\t) delimited?
-################################################################
+# 1.3: how would you read a comma separated values (csv)
+#      file that are tab (\t) delimited?
+#
 # Hint: use ??csv to see what is availble
 
