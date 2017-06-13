@@ -85,4 +85,74 @@ ggplot(data = gapminder, aes(x=year, y=lifeExp, by=country)) +
 
 # Challenge 2 -------------------------------------------------------------
 
+# 2.1 Switch the order of the point and line layers from the previous example. 
+#     What happened? i.e. points before lines
+
+# 2.2 Look at the ggplot documentation to see how to:
+#     1. Add a plot title (ggtitle)
+#     2. Add an x and y axis lable (xlab,ylab)
+
+# Transformations and statistics ------------------------------------------
+# 
+# Can overlay statistics on to our models.
+
+# Going back to the first plot.
+ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp, color=continent)) +
+  geom_point()
+
+# Difficult to see the relationship between points: 
+# 
+# - Have GDP per capita outliers (compresses the view of the data)
+# - Plots being plotted over each other.
+#
+# To try and improve things:
+#
+# - Change the scale of the axis using the scale functions
+# - Make the points semi transparent using alpha
+#
+ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp)) +
+      geom_point(alpha = 0.5) + 
+      scale_x_log10()
+
+# x-axis are now increasing in powers of 10.
+# Note also that alpha has been applied outside an aes setting so
+# it applies to all points.
+# Can apply it as an aesthetic mapping: geom_point(aes(alpha = continent))
+ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp)) +
+      geom_point(aes(alpha = continent)) + 
+      scale_x_log10()
+
+# Fit a simple relationship (linear model - "lm") to the data by adding 
+# another layer, geom_smooth:
+ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp)) +
+       geom_point() + 
+       scale_x_log10() + 
+       geom_smooth(method="lm")
+
+# If we wanted to make the line thicker
+ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp)) +
+      geom_point() + 
+      scale_x_log10() + 
+      geom_smooth(method="lm", size=1.5)
+
+# Here we set the size aesthetic by passing it as an argument to geom_smooth. 
+# Previously in the lesson we’ve used the aes function to define a mapping 
+# between data variables and their visual representation.
+
+# Challenge 3 -------------------------------------------------------------
+
+# 3.1 Modify the color and size of the points on the point layer in the 
+#   previous example. Change the colour of the line.
+#   Hint: do not use the aes function.
+ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp)) +
+      geom_point() + 
+      scale_x_log10() + 
+     geom_smooth(method="lm", size=1.5)
+
+# 3.1 Modify your solution to the previous exercise so that the points are now 
+#     a different shape and are colored by continent with new trendlines. 
+#     Hint: The color argument can be used inside the aesthetic.
+
+# Multi-panel figures -----------------------------------------------------
+
 
