@@ -132,8 +132,14 @@ output_vector2
 #     prints out whether the mean life expectancy is smaller or larger than 50 
 #     years.
 #
-#  File->New File ->Rscript
-#  This will create a new script file for you.
+#  * File->New File ->Rscript
+#  * This will create a new script file for you.
+#  * Make sure that you have set your current working directory to the same
+#    space where this file is.
+#  * Do a File->Save As
+#  * Copy paste the instructions below to remind you what you are doing.
+#  * Remember to document your code.
+#  
 #
 #  Read in the data (read.csv)
 #  Find the unique continents (hint look up unique())
