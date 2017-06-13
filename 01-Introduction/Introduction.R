@@ -1,4 +1,5 @@
-# Introduction to R
+
+# Introduction to R -------------------------------------------------------
 #
 # This is a comment, anything that follows a hash to the end of the line will be ignored.
 #
@@ -6,14 +7,39 @@
 #
 # Cntr-1 - the source window
 # Cntr-2 - the console
+# Cntr-3 - the help window
+# Cntr-4 - the history window
+# Cntr-5 - the files window
+# Cntr-6 - the plots window
+# Cntr-7 - the packages window
+# Cntr-8 - the environment window
+# Cntr-9 - the Git/SVN window
+# Cntr-0 - show build
 #
-# To execute commands type:
+# To execute commands type in the Source window (this window):
 #
 # Cntr-Enter on Windows and Linux
 # Cmd-Enter on Macs
 #
-# You can use the up arrow to cycle through previous commands and edit
-# these as opposed to having to type the whole command.
+print("Hello World!")
+#
+# You can use the up arrow to cycle through previous commands (history) and edit
+# these as opposed to having to type the whole command again.
+#
+# Using Code sections (Code->Insert Section....)
+# or you can do it by hand: hash text followed by at least 3 dashes.
+#
+# Allows you to navigate through code nicely (top right of the source window
+# gives you a table of contents).
+# 
+# Can fold source:
+#                     Windows       Mac
+# Fold All            Alt-O         Cmd-Option-O
+# Unfold All          Shift-Alt-O   Shift-Cmd-Option-O
+#
+# Nice cheat sheet on Rstudio:
+#
+#   https://www.rstudio.com/wp-content/uploads/2016/01/rstudio-IDE-cheatsheet.pdf
 
 
 # Using R as a calculator -------------------------------------------------
