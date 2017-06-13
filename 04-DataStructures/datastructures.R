@@ -137,7 +137,8 @@ character_coerced_to_numeric
 typeof(character_coerced_to_numeric)
 
 # Challenge 1 -------------------------------------------------------------
-# Challenge: coerce character_coerced_to_numeric to integers.
+
+# 1.1 coerce character_coerced_to_numeric to integers.
 
 
 
@@ -205,15 +206,15 @@ names(my_example)
 
 
 # Challenge 2 -------------------------------------------------------------
-# Challenge: 
+
+# 2.1 Do the following:
 #
 # 1. Make a vector with the numbers 1 to 26.
 # 2. Multiply these by 2.
 # 3. Name them (there is a built in vector called letters for small 
 #    case letters LETTERS for capitals).
 
-# Challenge: 
-# What do you think the following will give you?
+# 2.2 What do you think the following will give you?
 x<- seq(1,4)
 x+1
 # So what do you think the following will give you?
@@ -272,8 +273,9 @@ default_factor
 
 
 # Challenge 3 -------------------------------------------------------------
-# The default for read.csv is to read strings as factors. Look up the 
-# documentation to find ways of not reading strings as factors.
+
+# 3.1 The default for read.csv is to read strings as factors. Look up the 
+#     documentation to find ways of not reading strings as factors.
 
 # Create a new vector that recovers the values from factor_of_myvals
 # Remember if you just use as.integer you get the index of the factor
@@ -282,6 +284,17 @@ default_factor
 myvals <- c(1,2,3,3,2,1,10,2,5)
 factor_of_myvals <- factor(myvals)
 
+# 3.2 factors are good for doing quick plots:
+animals <- factor(c("dog","cat","dog","cow","dog","dog","dog","rabbit"))
+plot(animals)
+# Look up the documentation for plot and to this diagram do the following:
+#
+# 1. Add a plot title "Farm yard animals"
+# 2. Add an x-axis title "Animals"
+# 3. Add a y-axis title "Numbers"
+# 4. Change the colour of the bars to "red"
+# 5. Reverse the ordering of the labels (this are coming from the levels)
+#    so you get "rabbit","dog","cow", "cat".
 
 # Lists -------------------------------------------------------------------
 
@@ -326,8 +339,9 @@ str(cats[1,])      # Look at the internals
 
 
 # Challenge 4 -------------------------------------------------------------
-# What do the following give you andn what types do they return? Use 
-# typeof(), class() and struct()
+
+# 4.1 What do the following give you andn what types do they return? Use 
+#     typeof(), class() and struct()
 cats[1]
 cats[[1]]
 cats$coat
@@ -368,19 +382,16 @@ ncol(matrix_example)
 
 # Challenge 5 -------------------------------------------------------------
 
-# 5.1
-# What do you think will be the result of length(matrix_example)? 
+# 5.1 What do you think will be the result of length(matrix_example)? 
 length(matrix_example)
 
-# 5.2
-# Make another matrix, this time containing the numbers 1:50, 
-# with 5 columns and 10 rows. Did the matrix function fill your 
-# matrix by column, or by row, as its default behaviour?
-# Can you get it to fill the matrix the otherway round?
+# 5.2 Make another matrix, this time containing the numbers 1:50, 
+#     with 5 columns and 10 rows. Did the matrix function fill your 
+#     matrix by column, or by row, as its default behaviour?
+#     Can you get it to fill the matrix the otherway round?
 
-# 5.3
-# Create a list of length two containing a character vector for each of 
-# the sections in this part of the workshop:
+# 5.3 Create a list of length two containing a character vector for each of 
+#     the sections in this part of the workshop:
 #
 # Data types:
 #                  'double', 'complex', 'integer', 'character', 'logical'
@@ -391,8 +402,7 @@ length(matrix_example)
 # structures we’ve seen so far.
 # 
 
-# 5.4
-# Consider the R output of the matrix below:
+# 5.4 Consider the R output of the matrix below:
 #   
 #   [,1] [,2]
 # [1,]    4    1
@@ -407,8 +417,7 @@ matrix(c(4, 9, 10, 1, 5, 7), ncol = 2, byrow = TRUE)
 matrix(c(4, 9, 10, 1, 5, 7), nrow = 2)
 matrix(c(4, 1, 9, 5, 10, 7), ncol = 2, byrow = TRUE)
 
-# 5.5
-# Consider
+# 5.5 Consider:
 m1 <- matrix(seq(1,16),ncol=4,nrow=4)
 m2 <- matrix(seq(16,1,-1),ncol=4,nrow=4)
 #
