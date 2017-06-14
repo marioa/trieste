@@ -155,4 +155,69 @@ ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp)) +
 
 # Multi-panel figures -----------------------------------------------------
 
+# Instead of specifying differences in one plot (through colour or marker type)
+# we can split the differences into different plots. Use facet panels to do this.
+
+# Going to use the substr() function that allows you to snip bits of a string:
+z <- "0123456789"
+substr(z,start=1,stop=1)
+substr(z,start=1,stop=2)
+substr(z,start=nchar(z)-1,stop=nchar(z))
+
+# We are going to use this to create an auxilary vector to filter the data (otherwise
+# there will be too many plot windows).
+(starts.with <- substr(gapminder$country, start = 1, stop = 1))
+
+# The operator %in% allows us to make multiple comparisons rather than write out 
+# long subsetting conditions (in this case, starts.with %in% c("A", "Z") is equivalent 
+# to starts.with == "A" | starts.with == "Z")
+head(starts.with %in% c("A", "Z"),100)
+
+# Create another data frame
+az.countries <- gapminder[starts.with %in% c("A", "Z"), ]
+
+# Now do the plotting:
+ggplot(data = az.countries, aes(x = year, y = lifeExp, color=continent)) +
+      geom_line() + 
+      facet_wrap( ~ country)
+
+# Incidentally we did not to create the data frame - we could have done
+# the filtering directly (but harder to read)
+ggplot(data = gapminder[starts.with %in% c("A", "Z"),], aes(x = year, y = lifeExp, color=continent)) +
+       geom_line() + 
+       facet_wrap( ~ country)
+
+# The facet_wrap layer took a “formula” as its argument, denoted by the tilde (~). 
+# This tells R to draw a panel for each unique value in the country column of the 
+# gapminder dataset.
+
+
+# Modifying text ----------------------------------------------------------
+
+# Clean up the figure for publication:
+ggplot(data = az.countries, aes(x = year, y = lifeExp, color=continent)) +
+       geom_line() + 
+       facet_wrap( ~ country)
+
+# We need to change some of the text elements:
+#
+#  * the x-axis is too cluttered and needs to be labelled
+#  * the y axis should read “Life expectancy”, rather than the 
+#    column name in the data frame.
+#
+# Use the theme layer to:
+#    controls the axis text, 
+#    overall text size, 
+#
+# there are special layers for changing the axis labels. 
+# To change the legend title, we need to use the scales layer.
+
+ggplot(data = az.countries, aes(x = year, y = lifeExp, color=continent)) +
+      geom_line() + 
+      facet_wrap( ~ country) +
+      xlab("Year") +                                # x-axis label
+      ylab("Life expectancy") +                     # y-axis label
+      ggtitle("Figure 1") +                         # title
+      scale_colour_discrete(name="Continent") +     # legend title
+      theme(axis.text.x=element_blank(), axis.ticks.x=element_blank())
 
