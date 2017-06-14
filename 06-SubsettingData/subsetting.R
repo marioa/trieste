@@ -441,3 +441,25 @@ gapminder[gapminder$year == 2002 | 2007,]
 
 # Create a new data.frame called gapminder_small that only contains 
 # rows 1 through 9 and 19 through 23. You can do this in one or two steps.
+
+# 6.3 Lookup in the help for the subsetting function. We can use this to
+#     subset a vector or a data frame, so to get the data only Botswana 
+#     and for the year 1972 you might use:
+gapminder[gapminder$year == 1972 & gapminder$country == "Botswana","lifeExp"]
+# Using subset this would become:
+subset(gapminder,gapminder$year == 1972 & gapminder$country == "Botswana")
+# The following are equivalent
+gapminder[gapminder$lifeExp < 30,c("country","year","lifeExp")]
+subset(gapminder,lifeExp < 30,select=c("country","year","lifeExp"))
+# Use both methods to:
+#
+# 1. Return rows of only the countries that are in Africa.
+# 2. Return only the country column.
+# 3. Use the unique() to make a unique list.
+# 4. How many unique African countries are listed in this data set? (52)
+# 5. Do the same for Europe (30)
+# 6. Americas (25)
+# 7. Asia (33)
+# 8. Oceania (2)
+# 
+# Do you have a preference?
