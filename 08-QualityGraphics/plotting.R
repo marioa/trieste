@@ -221,3 +221,22 @@ ggplot(data = az.countries, aes(x = year, y = lifeExp, color=continent)) +
       scale_colour_discrete(name="Continent") +     # legend title
       theme(axis.text.x=element_blank(), axis.ticks.x=element_blank())
 
+
+# Rstudio ggplot2 cheat sheet:
+#
+#   http://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf
+#
+
+
+# Challenge 4 -------------------------------------------------------------
+
+# 4.1 Create a density plot of GDP per capita, filled by continent.
+#     Once you have a plot add an alpha value. What difference do you
+#     observe if you add an alpha value inside or outside the aes
+#     parameters?
+
+  
+# 4.2 Advanced: Transform the x axis to better visualise the data spread.
+
+
+# 4.3 Advanced: Add a facet layer to panel the density plots by year.
