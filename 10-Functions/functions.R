@@ -34,7 +34,9 @@ the_sum
 
 # You could assign defaults
 my_sum2 <- function(a=0, b=0) {
-  return (a+b)
+  return (a+b)  # return not required but clearer
+                # R automatically returns whichever variable is on the last 
+                # line of the body of the function.
 }
 
 my_sum2()
@@ -46,3 +48,25 @@ fahr_to_kelvin <- function(temp) {
   kelvin <- ((temp - 32) * (5 / 9)) + 273.15
   return(kelvin)
 }
+
+# freezing point of water
+fahr_to_kelvin(32)
+
+# boiling point of water
+fahr_to_kelvin(212)
+
+
+# Challenge 1 -------------------------------------------------------------
+
+
+
+
+# 1.1 Write a function called kelvin_to_celsius that takes a 
+#     temperature in Kelvin and returns that temperature in Celsius.
+#
+# Hint: To convert from Kelvin to Celsius you subtract 273.15
+
+
+# Combining functions -----------------------------------------------------
+
+
