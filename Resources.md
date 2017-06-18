@@ -10,4 +10,6 @@ Useful resources:
 
 * [The Data Visualisation Catalogue](http://datavizcatalogue.com/search/patterns.html) not R but it gives you various types of charts. Knowing the type of graph you want can be useful to see if it can be done in R.
 
+* [Advanced R](http://adv-r.had.co.nz/) more advanced concepts in R programming.
 
+* [R Language Definition](https://cran.r-project.org/doc/manuals/r-release/R-lang.html) the language reference.
