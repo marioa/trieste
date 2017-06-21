@@ -71,6 +71,11 @@ apply(m,2,sum)
 # base::rapply            Recursively Apply a Function to a List
 # base::tapply            Apply a Function Over a Ragged Array
 
+# For our purposes we could use:
+by(withGDP[,"pop"],withGDP[,"continent"],mean)
+# or
+tapply(withGDP$gdp,withGDP$continent,mean)
+
 # The plyr package --------------------------------------------------------
 
 
