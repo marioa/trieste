@@ -124,8 +124,15 @@ tapply(withGDP$gdp,withGDP$continent,mean)
 library(plyr)
 
 # Calculating the mean GDP per continent
-ddply(
-  .data = calcGDP(gapminder),
-  .variables = "continent",
-  .fun = function(x) mean(x$gdp)
+ddply(                              # Give it a data frame, returns a data frame
+  .data = calcGDP(gapminder),       # Data we will operate on (add the gdp to the data frame)
+  .variables = "continent",         # What we are splitting across
+  .fun = function(x) mean(x$gdp)    # The function we are applying
+)
+
+# If you want to label the final column
+ddply(                              
+  .data = calcGDP(gapminder), 
+  .variables = "continent", 
+  .fun = function(x) c(mean=mean(x$gdp))
 )
