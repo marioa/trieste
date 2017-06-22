@@ -78,4 +78,54 @@ tapply(withGDP$gdp,withGDP$continent,mean)
 
 # The plyr package --------------------------------------------------------
 
+# The plyr offers a more user friendly way of performing such operations.
+# Plyr has functions for operating on lists, data.frames and arrays 
+# (matrices, or n-dimensional vectors). Each function performs:
+# 
+#    * A splitting operation
+#    * Apply a function on each split in turn.
+#    * Recombine output data as a single data object.
+#
+# The functions are named based on the data structure they expect as input, 
+# and the data structure you want returned as output: 
+# 
+#    * [a]rray, 
+#    * [l]ist, or 
+#    * [d]ata.frame. 
+#
+# The first letter corresponds to the input data structure, the second letter 
+# to the output data structure, and then the rest of the function is named “ply”.
+#
+# There are an additional three functions which will only perform the split 
+# and apply steps, and not any combine step. They’re named by their input data 
+# type and represent null output by a "_".
+#
+#                       array     data frame   list    nothing
+#                     +----------------------------------------
+# array               |  aaply     adply        alply   a_ply
+# data frame          |  daply     ddply        dlply   d_ply
+# list                |  laply     ldply        llply   l_ply
+# n replicates        |  raply     rdply        rlply   r_ply
+# function argumennts |  moply     mdply        mlpy    m_ply
+#
+# Functions have the arguments:
+#
+#             xxply(.data, .variables, .fun)
+#
+# where:
+#
+# * The first letter of the function name gives the input type
+# * The second gives the output type.
+# * .data - gives the data object to be processed
+# * .variables - identifies the splitting variables
+# * .fun - gives the function to be called on each piece
+#
 
+library(plyr)
+
+# Calculating the mean GDP per continent
+ddply(
+  .data = calcGDP(gapminder),
+  .variables = "continent",
+  .fun = function(x) mean(x$gdp)
+)
