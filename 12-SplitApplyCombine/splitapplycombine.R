@@ -52,7 +52,12 @@ for(continent in unique(withGDP$continent)){
 #
 # This is what we shall do.
 
-# Aside: apply
+# Aside: apply( x, MARGIN, Function)
+#               ^   ^       ^
+#               |   |       +- Function to be applied across the margins
+#               |   +--------- MARGIN - 1 for rows, 2 for columns
+#               +------------- vector, array, matrix data
+#
 (m <- matrix(data=1:16,ncol=4))
 
 # Sum rows
@@ -106,7 +111,7 @@ tapply(withGDP$gdp,withGDP$continent,mean)
 # data frame          |  daply     ddply        dlply   d_ply
 # list                |  laply     ldply        llply   l_ply
 # n replicates        |  raply     rdply        rlply   r_ply
-# function argumennts |  moply     mdply        mlpy    m_ply
+# function arguments  |  maply     mdply        mlpy    m_ply
 #
 # Functions have the arguments:
 #
@@ -136,3 +141,51 @@ ddply(
   .variables = "continent", 
   .fun = function(x) c(mean=mean(x$gdp))
 )
+
+# We could return items as a list by changing the second letter:
+# "d"->"l".
+dlply(
+  .data = calcGDP(gapminder),
+  .variables = "continent",
+  .fun = function(x) mean(x$gdp)
+)
+
+# Could group by mulitple columns:
+ddply(
+  .data = calcGDP(gapminder),
+  .variables = c("continent", "year"),
+  .fun = function(x) mean(x$gdp)
+)
+
+# return it as a list
+daply(
+  .data = calcGDP(gapminder),
+  .variables = c("continent", "year"),
+  .fun = function(x) mean(x$gdp)
+)
+
+d_ply(
+  .data=gapminder,
+  .variables = "continent",
+  .fun = function(x) {
+    meanGDPperCap <- mean(x$gdpPercap)
+    print(paste(
+      "The mean GDP per capita for", unique(x$continent),
+      "is", format(meanGDPperCap, big.mark=",")
+    ))
+  }
+)
+
+
+# Challenge 1 -------------------------------------------------------------
+
+# 1.1 Calculate the average life expectancy per continent. 
+#     Which has the longest? Which had the shortest?
+
+# 1.2 Calculate the average life expectancy per continent and year. 
+#     Which had the longest and shortest in 2007? Which had the greatest 
+#     change in between 1952 and 2007?
+
+# 1.3 Calculate the difference in mean life expectancy between the years 
+#     1952 and 2007 from the output of challenge 2 using one of the plyr 
+#     functions.
