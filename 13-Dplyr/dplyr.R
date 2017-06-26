@@ -187,3 +187,24 @@ gapminder %>%
   ggplot(aes(x = year, y = lifeExp, color = continent)) + 
   geom_line() + 
   facet_wrap( ~ country)
+
+
+# Can further simplify- combining steps
+gapminder %>%
+  # Filter countries that start with "A" or "Z"
+  filter(substr(country, start = 1, stop = 1) %in% c("A", "Z")) %>%
+  # Make the plot
+  ggplot(aes(x = year, y = lifeExp, color = continent)) + 
+  geom_line() + 
+  facet_wrap( ~ country)
+
+
+# Challenge 3 -------------------------------------------------------------
+
+#  3.1 Calculate the average life expectancy in 2002 of 2 randomly selected 
+#      countries for each continent. Then arrange the continent names in 
+#      reverse order.
+#      Hint: Use the dplyr functions arrange() and sample_n(), they have 
+#      similar syntax to other dplyr functions.
+
+
