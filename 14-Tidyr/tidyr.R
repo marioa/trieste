@@ -53,3 +53,9 @@ install.packages("tidy")
 gap_wide <- read.csv("../data/gapminder_wide.csv", stringsAsFactors = FALSE)
 str(gap_wide)
 names(gap_wide)
+
+# First task is to gather
+gap_long <- gap_wide %>%
+  gather(obstype_year, obs_values, starts_with('pop'),
+         starts_with('lifeExp'), starts_with('gdpPercap'))
+str(gap_long)
