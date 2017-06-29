@@ -54,8 +54,61 @@ gap_wide <- read.csv("../data/gapminder_wide.csv", stringsAsFactors = FALSE)
 str(gap_wide)
 names(gap_wide)
 
-# First task is to gather
-gap_long <- gap_wide %>%
-  gather(obstype_year, obs_values, starts_with('pop'),
-         starts_with('lifeExp'), starts_with('gdpPercap'))
+# First task is to gather - we can use with dplyr.
+# Checkout tidyverse: http://tidyverse.org/ for a collection
+# of packages that work well together.
+
+# Gather  observation variables into a single variable.
+(gap_long <- gap_wide %>%
+  gather(obstype_year,              # New column with the gathered observations
+         obs_values,                # New column with the values of each observation
+         starts_with('pop'),        # What we will put in the observation, 
+         starts_with('gdpPercap'),  
+         starts_with('lifeExp')     # start_with() will grabe th right dat.
+         )
+  )
 str(gap_long)
+names(gap_long)
+
+# Can exclude cols using a "-" to signify which variables to exclude from the
+# gather
+(gap_long2 <- gap_wide %>% gather(obstype_year,obs_values,-continent,-country))
+str(gap_long2)
+names(gap_long2)
+
+# obstype_year contains 2 pieces of information:
+#
+# * the observation type (pop,lifeExp, or gdpPercap)
+# * the year
+#
+# Can use the separate() function to split the character strings into multiple 
+# variables.
+
+# separate() turns a single character column into multiple columns
+(df <- data.frame(x = c("a.m", "a.b", "a.d", "b.c")))
+df %>% separate(x, into=c("A", "B"))
+
+
+# So...break obstype_year -> c("obs_type","year")
+(gap_long <- gap_long %>% separate(obstype_year,into=c('obs_type','year'),sep="_"))
+head(gap_long)
+typeof(gap_long$year)
+gap_long$year <- as.integer(gap_long$year)
+typeof(gap_long$year)
+
+
+# Challenge 2 -------------------------------------------------------------
+
+# 2.2 Using gap_long, calculate the mean life expectancy, population, and gdpPercap 
+#     for each continent. 
+#
+#     Hint: use the group_by() and summarize() functions we learned in the dplyr lesson.
+
+
+
+
+# From long to intermediate format with spread() --------------------------
+
+
+
+
