@@ -105,10 +105,80 @@ typeof(gap_long$year)
 #     Hint: use the group_by() and summarize() functions we learned in the dplyr lesson.
 
 
-
-
 # From long to intermediate format with spread() --------------------------
 
+# The opposite of gather() to spread our observation variables back out with spread().
+set.seed(10)
+(df <- data.frame(subject=1:10,
+                  gender=sample(c("M","F"),10,replace = TRUE),
+                  condition=sample(c("cond1","cond2","cond3","control"),10,replace=TRUE),
+                  measurement=round(runif(10)*10,1)))
+# The arguments to spread():
+# - data: Data object
+# - key: Name of column containing the new column names
+# - value: Name of column containing values
+spread(df,condition,measurement)
 
+# Solet's move from a wide to the original format
+gap_normal <- gap_long %>% spread(obs_type,obs_values)
+dim(gap_normal)
+names(gap_normal)
+
+# Let's re-read the gapminder data (we modified it earlier).
+gapminder <- read.csv("../data/gapminder-FiveYearData.csv", stringsAsFactors = FALSE)
+
+# Compared to:
+dim(gapminder)
+names(gapminder)
+
+# The order of the columns is different - fix this:
+gap_normal <- gap_normal[,names(gapminder)]
+
+# Test this has worked
+all.equal(gap_normal,gapminder)
+
+# Aside: be careful when comparing floating point values.
+# What do you think the following will give?
+0.3/3 == 0.1
+
+# If you do:
+0.3/3-0.1
+
+# Eyeball inspection
+head(gap_normal)
+head(gapminder)
+
+# The original was sorted by country, continent, then year.
+gap_normal <- gap_normal %>% arrange(country,continent,year)
+all.equal(gap_normal,gapminder)
+
+# Finally convert the year to integers
+gap_normal$year <- as.integer(gap_normal$year)
+all.equal(gap_normal,gapminder)                   # Yay!
+
+# Let's go back to wide. 
+# We saw separate() (split columns), unite does the opposite.
+(df <- data.frame(x = letters[1:5], y = LETTERS[1:5]))
+unite(df,"xy",c("x","y"))
+
+# For the wide format, we will keep country and continent as ID variables 
+# and spread the observations across the 3 metrics (pop,lifeExp,gdpPercap) and 
+# time (year).
+gap_temp <- gap_long %>% unite(var_ID,continent,country,sep="_") # join country and continent columns
+str(gap_temp)
+
+# Remember:
+unique(gap_temp$obs_type)
+
+gap_temp <- gap_long                      %>%
+  unite(ID_var,continent,country,sep="_") %>% # join country and continent columns
+  unite(var_names,obs_type,year,sep="_")      # join obs_type and year
+str(gap_temp)
+
+gap_wide_new <- gap_long                  %>%
+  unite(ID_var,continent,country,sep="_") %>% # join country and continent columns
+  unite(var_names,obs_type,year,sep="_")  %>% # join obs_type and year
+  spread(var_names,obs_values)                # var_name values become columns
+str(gap_wide_new)
 
 
