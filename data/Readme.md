@@ -4,6 +4,7 @@
 * feline-data2.csv - another small test data sample to use with `read.csv`.
 * [gapminder-FiverYearData.csv](https://raw.githubusercontent.com/resbaz/r-novice-gapminder-files/master/data/gapminder-FiveYearData.csv) 
 * [gapminder_wide.csv](https://raw.githubusercontent.com/swcarpentry/r-novice-gapminder/gh-pages/_episodes_rmd/data/gapminder_wide.csv) - a wide format of the gapminder data.
+* [portal_mammals.sqlite](https://ndownloader.figshare.com/files/2292171) - mammals sqlite database.
 
 <br>
 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
