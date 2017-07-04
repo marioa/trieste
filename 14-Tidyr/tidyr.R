@@ -44,7 +44,7 @@ str(gapminder)
 library(tidyr)
 library(dplyr)
 # If you do not have the tidyr package you will have to install it:
-install.packages("tidy")
+install.packages("tidyr")
 
 
 # From wide to long format with gather() ----------------------------------
