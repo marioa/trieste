@@ -22,3 +22,6 @@
 # Emacs temporary files
 \#*
 .#*
+
+# html files
+*.html
