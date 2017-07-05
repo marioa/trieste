@@ -98,8 +98,11 @@ exp(0.5)  # e^(1/2)
 1 >= -9 # greater than or equal to
 
 # Note
-1 == 1.00001 # Take care with non-integers
-all.equal(1,1.000001,tolerance=0.001) # Could use
+1.0 == 1.00001   # Take care with non-integers
+1.0 == 3.0/3
+0.1 == 0.3/3
+0.3/3-0.1
+all.equal(0.1,0.3/3,tolerance=0.001) # Could use this instead
 
 
 # Variables and assignment ------------------------------------------------

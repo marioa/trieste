@@ -137,13 +137,6 @@ gap_normal <- gap_normal[,names(gapminder)]
 # Test this has worked
 all.equal(gap_normal,gapminder)
 
-# Aside: be careful when comparing floating point values.
-# What do you think the following will give?
-0.3/3 == 0.1
-
-# If you do:
-0.3/3-0.1
-
 # Eyeball inspection
 head(gap_normal)
 head(gapminder)
