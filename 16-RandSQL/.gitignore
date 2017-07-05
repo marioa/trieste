@@ -1,0 +1,2 @@
+# Do not want the db created during the tutorial in the repository.
+portal-database.sqlite
