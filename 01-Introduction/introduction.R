@@ -206,8 +206,7 @@ installed.packages()
 
 # Challenge 1 -------------------------------------------------------------
 
-# 1.1
-# Which of the following are valid R-names
+# 1.1 Which of the following are valid R-names?
 min_height 
 max.height
 _age 
@@ -217,21 +216,21 @@ min-length
 2widths
 celsius2kelvin
 
-# 1.2
-# What will be the value of each variable after each statement 
+# 1.2 What will be the value of each variable after each statement 
 # in the following program?
 mass <- 47.5
 age <- 122
 mass <- mass * 2.3
 age <- age - 20
 
-# 1.3
-# Calculate the Body Mass Index (BMI for a person)
+# 1.3 Calculate the Body Mass Index (BMI for a person)
 height <-     # height in metres
 weight <-     # weight in kg
-bmi    <-     # bmi is the mass divided by the square of the height.
+bmi    <-     # bmi is the weight divided by the square of the height.
 
-# 1.4
-# Make sure you have the following packages installed:
-# ggplot2, dplyr, gapminder
+# 1.4 Install or make sure the following packages are installed:
+#
+#     ggplot2, dplyr, ProjectTemplate,dplyr, tidyr, dbplyr, RSQLite
+#
+# You will need these for future lessons
 
