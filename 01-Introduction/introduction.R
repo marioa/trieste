@@ -233,4 +233,13 @@ bmi    <-     # bmi is the weight divided by the square of the height.
 #     ggplot2, dplyr, ProjectTemplate,dplyr, tidyr, dbplyr, RSQLite
 #
 # You will need these for future lessons
+install.packages(c("ggplot2", "ProjectTemplate","dplyr", "tidyr", "dbplyr", "RSQLite"))
 
+# You can test that this has worked by running each of the following lines:
+library(PhoneyLibrary) # This will give you the error will see if it has not worked.
+library(ggplot2)
+library(ProjectTemplate)
+library(dplyr)
+library(tidyr)
+library(dbplyr)
+library(RSQLite)
