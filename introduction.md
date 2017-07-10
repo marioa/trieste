@@ -170,24 +170,36 @@ From: http://www.matthewckeller.com/Lecture1.ppt
 
 ---
 
-## What we will cover
+### What we will cover - Day 1
 
-* Introduction to R/R Studio
-* Managing projects
-* Getting help
-* The different data structures
-* Data frames
-* Subsetting data
-* Control flow
-* Generating graphics
-* Vectorisation
-* Functions 
-* Writing data
-* Split-apply-combine pattern
-* dplyr
-* tidyr
-* kinitr
-* R and SQL
+* 14:00 - 14:55 1. Introduction to R and RStudio
+* 14:55 - 15:25 2. Project Management w RStudio
+* 15:25 - 15:45 3. Seeking Help
+* 15:45 - 16:30 4. Data Structures
+* 16:30 - 17:00 5. Exploring data frames
+* 17:00 - 17:50 6. Subsetting data
+
+
+---
+
+### What we will cover - Day 2.1
+
+* 08:30 - 09:35 7. Control flow
+* 09:35 - 10:55 8. Creating Quality Graphics
+* 10:55 - 11:30 9. Vectorisation
+* 11:30 - 12:30 10. Functions Explained
+* 12:30 - 12:50 11. Writing Data
+* 13:00 - 14:00 **Lunch**
+
+---
+
+### What we will cover - Day 2.2
+
+* 14:00 - 15:00 12. Split-Apply-Combine
+* 15:00 - 15:55 13. DF Manipulation with dplyr
+* 15:55 - 16:40 14. DF Manipulation with tidyr
+* 16:40 - 17:55 15. Producing Reports With knitr
+* 17:55 -       16. R and databases
 
 ---
 
