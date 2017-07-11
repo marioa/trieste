@@ -86,6 +86,7 @@ Notes: 1936km, walking would take 341 hours including a ferry ride.
   * Code snippets
   * Tips/Comments
 * You can share your notes with others
+  * http://pad.software-carpentry.org/dataTrieste17
 
 
 ---
