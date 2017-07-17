@@ -37,11 +37,11 @@ dev.off()
 #     facet plot (hint: use facet_grid) of the same data with one panel per 
 #     continent.
 
-# 1.2 Produce output to jpeg, use jpeg().
+# 1.2 Produce output to jpeg, use jpeg(). Note you will not do multipaged jpegs.
 
-# 1.3 Produce output to png, use png()
+# 1.3 Produce output to png, use png(). Note you will not do multipaged jpegs.
 
-# 1.4 Add the flag to your pdf() command "oneline=FALSE" *only* if you are using the pdf() 
+# 1.4 Add the flag to your pdf() command "onefile=FALSE" *only* if you are using the pdf() 
 #     output command and change the output filename to "Life_Exp_vs_time%03d.ext" 
 #     where ext is either pdf, png or jpeg depending on the output that you are using. 
 #     What do you obsrve now?
