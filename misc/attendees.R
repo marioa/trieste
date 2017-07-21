@@ -48,7 +48,8 @@ countries <- gsub("the Republic of Sudan","Sudan",countries)
 countries <- gsub("College of Philippines","Philippines",countries)
 
 # Tabulate frequency of attendees from different countries
-countrytab <- table(countries)
+#countrytab <- table(countries)
+countrytab <- table(c(countries[-5],"Costa Rica"))
 
 # Create a data frame from the tabulated data
 cc <- data.frame(countries=names(countrytab),
