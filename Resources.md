@@ -4,7 +4,7 @@ Useful resources:
 
 * [R for Data Science](http://r4ds.had.co.nz/) walks you through using various bits and pieces of R. Expects some 
   programming ability.
-* [Rstudio Cheat sheets](https://www.rstudio.com/resources/cheatsheets/) (pdf) various cheat sheets for Rstudio and R matters.
+* [Rstudio Cheat sheets](https://www.rstudio.com/resources/cheatsheets/) (pdf) various cheat sheets for Rstudio and R matters. These are also available from Rstudio (Help -&gt;Cheatsheets).
 * [Quick R](http://www.statmethods.net/) examples of how to do things in R.
 * [R Cookbook](http://www.cookbook-r.com/) examples on how to do various things in R.
 
