@@ -23,9 +23,9 @@ Note: The default keyboard shortcuts are:
 
 * Mario Antonioletti
    * m.antonioletti@epcc.ed.ac.uk
-   * Work for EPCC, University of Edinburgh
-   * Also associated with the Software Sustainbaility Institute
-   * Here with an SSI hat 
+   * Work for EPCC (University of Edinburgh)
+      * Software Sustainability Institute (SSI)
+      * Here with an SSI hat on
 
 ----
 
@@ -39,7 +39,7 @@ Notes: 1936km, walking would take 341 hours including a ferry ride.
 
 ## EPCC
 
-* [http://www.epcc.ed.ac.uk](http://www.epcc.ed.ac.uk)
+* [https://www.epcc.ed.ac.uk](http://www.epcc.ed.ac.uk)
 
 ----
 
@@ -48,7 +48,7 @@ Notes: 1936km, walking would take 341 hours including a ferry ride.
 <img src="imgs/BetterSoftware.png" alt="Better Software, Better Research" 
      style="background:none; border:none; box-shadow:none;">
 
-* [http://www.software.ac.uk](http://www.softare.ac.uk)
+* [https://www.software.ac.uk](http://www.software.ac.uk)
 
 
 ----
