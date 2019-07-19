@@ -25,7 +25,7 @@ Note: The default keyboard shortcuts are:
    * m.antonioletti@epcc.ed.ac.uk
    * Work for EPCC (University of Edinburgh)
       * Software Sustainability Institute (SSI)
-      * Here with an SSI hat on
+      * I am here with an SSI hat on
 
 ----
 
@@ -53,17 +53,17 @@ Notes: 1936km, walking would take 341 hours including a ferry ride.
 
 ----
 
-## Software/Data Carpentry
+## The Carpentries
 
-* Been going since 1998.
-* Teaching basic lab skills for research computing.
-* Teach the basic *principles*.
-* We will not teach you to program in days.
-  * Provide you enough to get started.
-  * Hopefully motivate you to learn more.
-* Typically we type and you follow.
+* Have been going since 1998
+* Teach basic skills for research computing
+* Focus on the basic *principles*
+* Cannot teach you to program in 2 days but:
+  * Provide you with enough to get started
+  * Hopefully, motivate you to learn more
+* Typically instructor types and you follow
 
---
+---
 
 
 ## Postit notes
