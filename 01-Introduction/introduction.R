@@ -137,7 +137,7 @@ x = 100 # Not so common in the R community
 # Vectorization -----------------------------------------------------------
 
 # R operates very well on vectors
-1:5
+1:5u
 
 # What will the following give me?
 2^(1:5)
@@ -225,7 +225,7 @@ age <- 122
 mass <- mass * 2.3
 age <- age - 20
 
-# 1.3 Calculate the Body Mass Index (BMI for a person)
+# 1.3 Calculate your Body Mass Index (BMI for a person)
 height <-     # height in metres
 weight <-     # weight in kg
 bmi    <-     # bmi is the weight divided by the square of the height.
