@@ -28,22 +28,22 @@ Note: The default keyboard shortcuts are:
 ## Projects can rapidly become unwieldly
 
 * Hard to tell which data is:
-   * original data;
-   * modified data;
-* Mixing files with different extensions is messy;
-* Can take a lot of time to find things;
-* Difficult to relate figures to the generating code;
+   * original data.
+   * modified data.
+* Mixing files with different extensions is messy.
+* Can take a lot of time to find things.
+* Difficult to relate figures to the generating code.
 
 ---
 
 ## Good project layout
 
-* Will help you preserve the integrity of your data;
+* Will help you preserve the integrity of your data.
 * Make it easier to share your code with:
-   * a lab-mate, 
-   * a collaborator, 
-   * a supervisor;
-* Facilitates association of code with publications;
+   * a lab-mate. 
+   * a collaborator. 
+   * a supervisor.
+* Facilitates association of code with publications.
 * Makes it easier to resume a project after a break.
 
 ----
