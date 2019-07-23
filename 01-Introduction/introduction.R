@@ -21,7 +21,9 @@
 # Cntr-Enter on Windows and Linux
 # Cmd-Enter on Macs
 #
+
 print("Hello World!")
+
 #
 # You can use the up arrow to cycle through previous commands (history) and edit
 # these as opposed to having to type the whole command again.
