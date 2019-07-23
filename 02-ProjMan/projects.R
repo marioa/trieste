@@ -1,6 +1,17 @@
 
 # Creating a new project in Rstudio --------------------------------------------------
 
+# Create a project for the current project (will make it easier to return)
+#
+# 1. Click the “File” menu button, then “New Project”.
+# 2. Click “Existing Directory”.
+# 3. Navigate to the current directory.
+# 4. Click the “Create Project” button.
+#
+# Note the inclusion of a git tab now.
+# Can use this to navigate back File -> Recent Projects
+
+# Now create a new project:
 #
 # 1. Click the “File” menu button, then “New Project”.
 # 2. Click “New Directory”.
@@ -11,8 +22,7 @@
 #
 # Can now create the suggested layout.
 #
-# An alternative is to use:
-#
+
 
 
 # Using project templates -------------------------------------------------
