@@ -8,7 +8,18 @@ revealOptions:
 
 ## Introduction
 
-Note: The default keyboard shortcuts are:
+Note: 
+To view the slides you will need to install
+`reveal-md` (https://github.com/webpro/reveal-md)
+you can use npm (https://www.npmjs.com/)
+```
+npm install -g reveal-md
+```
+and then view the slides using:
+```
+reveal-md introduction.md
+```
+The default keyboard shortcuts are:
 
 * Up, Down, Left, Right: Navigation
 * f: Full-screen
@@ -39,7 +50,7 @@ Notes: 1936km, walking would take 341 hours including a ferry ride.
 
 ## EPCC
 
-* [https://www.epcc.ed.ac.uk](http://www.epcc.ed.ac.uk)
+* https://www.epcc.ed.ac.uk
 
 ----
 
@@ -48,7 +59,7 @@ Notes: 1936km, walking would take 341 hours including a ferry ride.
 <img src="imgs/BetterSoftware.png" alt="Better Software, Better Research" 
      style="background:none; border:none; box-shadow:none;">
 
-* [https://www.software.ac.uk](http://www.software.ac.uk)
+* https://www.software.ac.uk
 
 
 ----
@@ -72,7 +83,7 @@ Notes: 1936km, walking would take 341 hours including a ferry ride.
   * **<font color="green">Green postit</font>** note: all ok
   * **<font color="red">Red postit</font>** note: trouble here
     * Helper should come along to help
-* Consume these for feedback at the end of a topic
+* Consume these for feedback at the end
   * **<font color="green">Green</font>**: things you liked
   * **<font color="red">Red</font>**: things you did not like
 * We shall distribute new postit notes
@@ -86,8 +97,15 @@ Notes: 1936km, walking would take 341 hours including a ferry ride.
   * Code snippets
   * Tips/Comments
 * You can share your notes with others
-  * http://pad.software-carpentry.org/dataTrieste17
+  * http://pad.software-carpentry.org/dataTrieste19
+  
+Notes:
 
+* Get people (by consent) to:
+  * Add Name, 
+  * Country, 
+  * Position, 
+  * what you hope to learn.
 
 ---
 
@@ -135,10 +153,25 @@ Diagram from Wikipedia, see http://en.wikipedia.org/wiki/Cross_Industry_Standard
 
 ---
 
-### Big data landscape
+### Big data landscape (2016)
 
 
-<img src="imgs/Big-Data-Landscape-2016-v18-FINAL_nobg.png" alt="Big Data Landsape." 
+<img src="imgs/Big-Data-Landscape-2016-v18-FINAL_nobg.png" 
+     alt="Big Data Landscape 2016." 
+     style="background:none; border:none; box-shadow:none;">
+
+<div align="right">
+<small>
+http://mattturck.com/big-data-landscape/
+</small>
+</div>
+
+---
+
+### Big data landscape and AI (2019)
+
+<img src="imgs/Matt_Turck_FirstMark_Big_Data_Landscape_2018_Final-trans.png" 
+     alt="Big Data Landscape 2019." 
      style="background:none; border:none; box-shadow:none;">
 
 <div align="right">
@@ -200,30 +233,7 @@ From: http://www.matthewckeller.com/Lecture1.ppt
 * 15:00 - 15:55 13. DF Manipulation with dplyr
 * 15:55 - 16:40 14. DF Manipulation with tidyr
 * 16:40 - 17:55 15. Producing Reports With knitr
-* 17:55 -       16. R and databases
-
----
-
-## Guinea Pigs
-
-<img src="imgs/guineapigs.png" alt="Picture of Guinea Pigs." style="background:none; border:none; box-shadow:none;">
-
-Note: source https://pixabay.com/en/guinea-pig-black-and-white-animals-2121743/
-
----
-
-#### The ethics of data: algorithm design
-
-* There are increasing concerns that uncritical design of algorithms are
-perpetuating cultural stereotypes.
-* How can we raise awareness of programmes and algorithms that
-perpetuate cultural stereotypes or injustices?
-	* Google’s online advertising system, for instance, showed an ad
-      for high-income jobs to men much more often than it showed the
-      ad to women, as demonstrated by a study by Carnegie Mellon
-      University researchers.
-
-See: https://www.theguardian.com/technology/2015/jul/08/women-less-likely-ads-high-paid-jobs-google-study
+* 17:55 - 18:00 16. R and databases
 
 ---
 
