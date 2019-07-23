@@ -19,7 +19,7 @@ Note: The default keyboard shortcuts are:
 
 ---
 
-## Typical scenario
+## Typical project scenario
 
 ![Bad layout](imgs/bad_layout.png)
 
