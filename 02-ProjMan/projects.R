@@ -75,7 +75,6 @@ load.project()
 # Add a Readme.md file (File -> New File -> Text file) with the following 
 # text:
 
-
 # My test project (include this hash but not this comment)
 # This is my test Trieste repository (remove the hash in the file and this comment)
 
@@ -87,7 +86,7 @@ load.project()
 
 # 1.2 Create GitHub repository and push the contents
 #
-# Go to your GitHub account and create a new repository my_project2.
+# Go to your GitHub account and create a new repository for my_project2.
 # When you create your project you should get instructions on how to push
 # an existing project to GitHub. On the Git pannel click on the "More" menu
 # item and select "Shell...". This will open up a shell command in the 
