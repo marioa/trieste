@@ -15,3 +15,5 @@ Useful resources:
 * [R Language Definition](https://cran.r-project.org/doc/manuals/r-release/R-lang.html) the language reference.
 
 * [R Inferno](http://www.burns-stat.com/pages/Tutor/R_inferno.pdf) tips and advice on R.
+
+* [R packages](http://r-pkgs.had.co.nz/) understanding what goes into building an R package.
