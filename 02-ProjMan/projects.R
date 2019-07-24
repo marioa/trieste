@@ -1,7 +1,8 @@
 
 # Creating a new project in Rstudio --------------------------------------------------
 
-# Create a project for the current project (will make it easier to return)
+# Create an RStudio project for the current project (will make it easier to 
+# return)
 #
 # 1. Click the “File” menu button, then “New Project”.
 # 2. Click “Existing Directory”.
@@ -11,7 +12,7 @@
 # Note the inclusion of a git tab now.
 # Can use this to navigate back File -> Recent Projects
 
-# Now create a new project:
+# Now create a new RStudio project:
 #
 # 1. Click the “File” menu button, then “New Project”.
 # 2. Click “New Directory”.
@@ -22,7 +23,6 @@
 #
 # Can now create the suggested layout.
 #
-
 
 
 # Using project templates -------------------------------------------------
@@ -47,12 +47,17 @@ setwd("~/my_project2")
 load.project()
 
 # This command will:
+#
 # * Read in the global configuration file contained in `config`.
 # * Load any R packages you listed in he configuration file.
 # * Read in any datasets stored in `data` or `cache`.
 # * Preprocessing your data using the files in the `munge` directory.
 #
-# More information in the Readme.md file.
+# More information in the Readme.md file or go to 
+#
+#      http://projecttemplate.net/architecture.html
+#
+# For the intended purpose of the directories.ß
 
 # Alternative is to use Rstudio to create one of it's own projects:
 #
