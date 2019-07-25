@@ -16,6 +16,9 @@ cats    # Use this to view the contents on the console
 # or (gives a nicer layout)
 View(cats)
 
+# Can look at the names of the columns
+names(cats)
+
 # Can look at a column of data
 cats$weight
 
@@ -49,7 +52,7 @@ typeof(3.14)
 typeof(1)
 
 # If you want a number to be an integer then you need to 
-# append an L
+# append an L:
 
 typeof(1L)
 
@@ -60,8 +63,9 @@ typeof(TRUE)
 
 typeof("banana")
 
-# A new line to the the feline csv file
-file.show("../data/feline-data_v2.csv")
+# A line has been modified and a new line has been added to 
+# the the feline csv file
+file.show(file.path("../data/feline-data_v2.csv")) # NOT WORKING! Use shell.
 
 # Lets read this file
 cats <- read.csv(file="../data/feline-data_v2.csv")
@@ -70,7 +74,7 @@ typeof(cats$weight)
 # What happes if we do?
 cats$weight+2
 
-# R reads data into something called a data.frame.
+# R reads data into something called a data.frame (or tibble).
 # In a data.frame all columns must be of the same type.
 # New row means that you cannot have numerical results (character vector).
 # Default behaviour though is to create a factor (hence it reports it as integers).
@@ -163,7 +167,7 @@ ab_vector
 combine_example <- c(ab_vector, 'SWC')
 combine_example
 
-# prependi
+# prepending
 combine_example <- c("hello",combine_example)
 combine_example
 
@@ -181,10 +185,10 @@ seq(1,10, by=0.1)
 sequence_example <- seq(1000)
 sequence_example              # Too much data
 
-# Looking at the head of the list (default for n=6)
+# Looking at the head of the list (default is n=6)
 head(sequence_example, n=2)
 
-# Looking at the tail of the list
+# Looking at the tail of the list (default is n=6)
 tail(sequence_example, n=4)
 
 # Find out how long the sequence is
@@ -193,7 +197,7 @@ length(sequence_example)
 # Query the type of the data
 class(sequence_example)       # Different views of the same thing
 typeof(sequence_example)     
-mode(sequence_example)        # integer and double are numeric
+mode(sequence_example)        # integers and doubles are numeric
 
 # You can name your vector elements
 my_example <- 5:8
@@ -202,8 +206,6 @@ my_example
 
 # Just see the names
 names(my_example)
-
-
 
 # Challenge 2 -------------------------------------------------------------
 
@@ -299,7 +301,7 @@ plot(animals)
 # Lists -------------------------------------------------------------------
 
 # Lists can have anything and preserve their data type. Data frames are a
-# special type of list.
+# special type of lists.
 list_example <- list(1, "a", TRUE, 1+4i)
 list_example
 
