@@ -38,7 +38,7 @@ vignette("ggplot2-specs")
 help(ggplot2)
 
 # When you want to perform a search (partially remember a command)
-??set
+??set   # Broken in Studio 1.2.1335
 
 # When you are not sure what packages might be of use to you the if
 # you to want to see what is available:
@@ -88,11 +88,12 @@ x <- c("fred","john")              # Create a vector
 paste(x,"one","two","three")
 
 # What do the optional arguments "sep" and "collapse" do?
+# i.e. paste(x,"one","two","three", sep="-")
 
 # What is the difference between paste and paste0?
 
 # 1.3: how would you read a comma separated values (csv)
-#      file that are tab (\t) delimited?
+#      type file that is tab (\t) delimited instead?
 #
-# Hint: use ??csv to see what is availble
+# Hint: use ??csv to see what is available
 
