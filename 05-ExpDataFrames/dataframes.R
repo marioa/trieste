@@ -22,7 +22,7 @@ cats <- rbind(cats, newRow)         # Oops!
 # coat is a factor
 str(cats)
 
-# Has a set of allowed entries, otherwise it will insert an NA.
+# Has a set of allowed entries (levels), otherwise it will insert an NA.
 levels(cats$coat)
 
 # We need to add "toritoseshell" to the allowed entries
@@ -55,7 +55,7 @@ cats2
 names(cats2)
 cats2[c("coat","weight","likes_string","age")]
 cats2 <- cats2[c("coat","weight","likes_string","age")]
-cats
+cats2
 
 # You could also use the column indices
 cats2[,1]
@@ -83,7 +83,7 @@ na.omit(cats)
 cats <- na.omit(cats)
 cats
 
-# Rownames still not quite right
+# Rownames still not quite right (no row 4)
 rownames(cats) <- 1:nrow(cats)
 cats
 
@@ -135,7 +135,7 @@ df <- data.frame(id = c('a', 'b', 'c'),
 
 # 1.3
 # Create a cats2 data frame that re-arranges the order of the 
-# columns of cats to have weight, coat, like_strings, age.
+# columns of cats to have "weight", "coat", "likes_string", "age".
 # data frame. Rename the columns of cats2 to use the capital
 # LETTERS starting from N and use every second letter, i.e. 
 # N (letter 14),P,R and T.
@@ -202,7 +202,7 @@ ncol(gapminder)
 dim(gapminder)
 
 # Can get the names of the columns
-colname(gapminder)
+colnames(gapminder)
 
 # or (same for data frames but not matrices and other data types)
 names(gapminder)
