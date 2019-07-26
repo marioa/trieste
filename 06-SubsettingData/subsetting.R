@@ -47,7 +47,8 @@ x[c(-1, -5)]  # or x[-c(1,5)]
 # Note however
 x[-1:3]       # Why do you think this happens?
 
-# We need to reassign it back to the vector
+# We need to reassign it back to the vector if we to make a change
+# permanent
 x <- x[-4]
 x
 
@@ -60,8 +61,8 @@ x
 x <- c(5.4, 6.2, 7.1, 4.8, 7.5)
 names(x) <- c('a', 'b', 'c', 'd', 'e')
 print(x)
-# Come up with at least 3 different commands that will produce the following output:
-#   
+# Come up with at least 3 different commands that will produce the following 
+# output:  
 #   b   c   d 
 # 6.2 7.1 4.8 
 #
@@ -93,9 +94,6 @@ x[-which(names(x) %in% c("a", "c"))]
 
 # Challenge 2 -------------------------------------------------------------
 
-
-
-
 # 2.1 Given the following code:
 x <- c(5.4, 6.2, 7.1, 4.8, 7.5)
 names(x) <- c('a', 'b', 'c', 'd', 'e')
@@ -106,7 +104,7 @@ x[-which(names(x) == "g")]
 # Did this match your expectation? 
 # Why did we get this result? 
 # Tip: test out each part of the command on it’s own - this 
-# is a useful debugging strategy).
+# is a useful debugging strategy.
 
 # 2.1 Which of the following are true:
 # 
@@ -178,7 +176,8 @@ x[c(TRUE, FALSE)]
 # But
 x[c(TRUE, FALSE, TRUE, TRUE)]
 
-#    0     1     2      3     4     5     6      7    
+#    1     2     3      4     5     6     7      8    
+#    a     b     c      d     e     f     
 x[c(TRUE, TRUE, FALSE, TRUE, TRUE, TRUE, FALSE, TRUE)]
 
 # Can use conditions
@@ -197,7 +196,6 @@ x[x>6]
 # Recycling applies so:
 TRUE & c(TRUE, FALSE)
 TRUE | c(TRUE, FALSE)
-
 
 # Using it to subset our data:
 x
@@ -230,12 +228,10 @@ any(c(FALSE,FALSE,FALSE,TRUE,FALSE))
 any(x > 0)
 any(x < 8)
 
-
-
 # Challenge 3 -------------------------------------------------------------
 
-# 3.1 Write a subsetting command to return the values in x that are greater than 
-# 4 and less than 7 for the following code:
+# 3.1 Write a subsetting command to return the values in x that are greater 
+#     than 4 and less than 7 for the following code:
 x <- c(5.4, 6.2, 7.1, 4.8, 7.5)
 names(x) <- c('a', 'b', 'c', 'd', 'e')
 print(x)
@@ -267,8 +263,10 @@ bads <- c(NA,NaN,Inf)
 is.finite(bads)
 
 # just filter out missing data
-z <- na.omit(c(1,2,4,NA,5,6,7,NA,8))
-
+z <- c(1,2,4,NA,5,6,7,NA,8)
+z
+z <- na.omit(z)
+z
 
 # Factor subsetting -------------------------------------------------------
 
