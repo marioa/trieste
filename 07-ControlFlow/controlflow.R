@@ -86,6 +86,7 @@ output_vector
 
 output_matrix <- matrix(nrow=5, ncol=5)
 j_vector <- c('a', 'b', 'c', 'd', 'e')
+
 for(i in 1:5){
   for(j in 1:5){
     temp_j_value <- j_vector[j]
@@ -93,6 +94,7 @@ for(i in 1:5){
     output_matrix[i, j] <- temp_output
   }
 }
+
 output_vector2 <- as.vector(output_matrix)
 output_vector2
 
@@ -101,12 +103,16 @@ while(condition){
   # do things
 }
 
-# runif() generates random numbers from a uniform distribution between 0 and 1
+# runif() generates random numbers from a uniform distribution between 
+# 0 and 1
+
 z <- 1
+
 while(z > 0.1){
   z <- runif(1)
   print(z)
 }
+z
 
 # Challenge 2 -------------------------------------------------------------
 
