@@ -160,4 +160,3 @@ output_vector2
 #     This time print out whether the life expectancy is smaller than 50, 
 #     between 50 and 70, or greater than 70.
 
-# 2.4 
