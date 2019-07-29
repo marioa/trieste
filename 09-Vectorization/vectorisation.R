@@ -18,9 +18,8 @@ x+y
 #   x:  1  2  3  4
 #       +  +  +  +
 #   y:  6  7  8  9
-# ---------------
+#
 #       7  9 11 13
-
 
 # Challenge 1 -------------------------------------------------------------
 
@@ -31,8 +30,8 @@ x+y
 # 1.2 On a single graph, plot population, in millions, against year, 
 #     for all countries. Don’t worry about identifying which country is which.
 
-# 1.3 Repeat the exercise, graphing only for China, India, and Indonesia. Again, don’t worry about 
-#     which is which.
+# 1.3 Repeat the exercise, graphing only for "China", "India", "Indonesia". 
+#     Again, don’t worry about which is which.
 
 
 # More vectorised functions -----------------------------------------------
@@ -54,7 +53,6 @@ log(x)
 # Matrices too
 (m <- matrix(1:12, nrow=3, ncol=4))
 m * -1
-
 
 
 # Challenge 2 -------------------------------------------------------------
