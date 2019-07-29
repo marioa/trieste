@@ -110,9 +110,14 @@ ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp, color=continent)) +
 # - Change the scale of the axis using the scale functions
 # - Make the points semi transparent using alpha
 #
-ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp)) +
+ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp, color=continent)) +
       geom_point(alpha = 0.5) + 
       scale_x_log10()
+
+# Without the colours
+ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp)) +
+  geom_point(alpha = 0.5) + 
+  scale_x_log10()
 
 # x-axis are now increasing in powers of 10.
 # Note also that alpha has been applied outside an aes setting so
@@ -164,8 +169,8 @@ substr(z,start=1,stop=1)
 substr(z,start=1,stop=2)
 substr(z,start=nchar(z)-1,stop=nchar(z))
 
-# We are going to use this to create an auxilary vector to filter the data (otherwise
-# there will be too many plot windows).
+# We are going to use this to create an auxilary vector to filter the data 
+# (otherwise there will be too many plot windows).
 (starts.with <- substr(gapminder$country, start = 1, stop = 1))
 
 # The operator %in% allows us to make multiple comparisons rather than write out 
@@ -183,7 +188,8 @@ ggplot(data = az.countries, aes(x = year, y = lifeExp, color=continent)) +
 
 # Incidentally we did not to create the data frame - we could have done
 # the filtering directly (but harder to read)
-ggplot(data = gapminder[starts.with %in% c("A", "Z"),], aes(x = year, y = lifeExp, color=continent)) +
+ggplot(data = gapminder[starts.with %in% c("A", "Z"),], 
+       aes(x = year, y = lifeExp, color=continent)) +
        geom_line() + 
        facet_wrap( ~ country)
 
@@ -203,7 +209,7 @@ ggplot(data = az.countries, aes(x = year, y = lifeExp, color=continent)) +
 #
 #  * the x-axis is too cluttered and needs to be labelled
 #  * the y axis should read “Life expectancy”, rather than the 
-#    column name in the data frame.
+#    column name, "lifeExp", in the data frame.
 #
 # Use the theme layer to:
 #    controls the axis text, 
@@ -220,7 +226,7 @@ ggplot(data = az.countries, aes(x = year, y = lifeExp, color=continent)) +
       ggtitle("Figure 1") +                         # title
       scale_colour_discrete(name="Continent") +     # legend title
       theme(axis.text.x=element_blank(), axis.ticks.x=element_blank())
-
+      #theme(axis.text.x = element_text(angle=90, hjust=1))
 
 # Rstudio ggplot2 cheat sheet:
 #
