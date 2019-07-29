@@ -63,7 +63,7 @@ ggplot(data = gapminder, aes(x=year, y=lifeExp, by=country, colour=continent)) +
 # Using both lines and points
 ggplot(data = gapminder, aes(x=year, y=lifeExp, by=country, colour=continent)) +
        geom_line() + 
-      geom_point()  # Points drawn on top of lines
+       geom_point()  # Points drawn on top of lines
 
 # Show this by taking the colour out of the global to a local option
 ggplot(data = gapminder, aes(x=year, y=lifeExp, by=country)) +
@@ -71,11 +71,11 @@ ggplot(data = gapminder, aes(x=year, y=lifeExp, by=country)) +
        geom_point()
 
 # Using aesthetic as a mapping to a variable in the data, e.g. colour
-# or geom_line(aes(colour=continent)), ggplot will give a different color 
+# or geom_line(aes(colour=continent)), ggplot will give a different colour 
 # to each continent. If you wanted to do a change to all lines you would
 # use geom_line(colour="blue")
 ggplot(data = gapminder, aes(x=year, y=lifeExp, by=country)) +
-  geom_line(color="blue") + 
+  geom_line(colour="blue") + 
   geom_point()
 
 # or just for the points
