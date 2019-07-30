@@ -28,3 +28,7 @@
 
 # Do not add sample answers to the repo
 answers.md
+
+# npm contents
+package-lock.json
+package.json
