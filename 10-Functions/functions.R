@@ -58,17 +58,14 @@ fahr_to_kelvin(212)
 
 # Challenge 10.1 -------------------------------------------------------------
 
-
-
-
-# 1.1 Write a function called kelvin_to_celsius that takes a 
-#     temperature in Kelvin and returns that temperature in Celsius.
+# 10.1.1 Write a function called kelvin_to_celsius that takes a 
+#        temperature in Kelvin and returns that temperature in Celsius.
 #
 # Hint: To convert from Kelvin to Celsius you subtract 273.15
 
 
-# 1.2 Combining functions
-#     Let's define 2 new functions:
+# 10.1.2 Combining functions
+#        Let's define 2 new functions:
 
 fahr_to_kelvin <- function(temp) {
   kelvin <- ((temp - 32) * (5 / 9)) + 273.15
@@ -83,7 +80,7 @@ kelvin_to_celsius <- function(temp) {
 # Use these two functions to create a new fahr_to_celsius function.
 
 
-# Something ---------------------------------------------------------------
+# More on functions  ----------------------------------------------------------
 
 # Define a function that calculates the Gross Domestic Product of a nation 
 # from the data available in our dataset:
@@ -145,13 +142,12 @@ calcGDP(gapminder, year=2007, country="Australia")
 # of the function, stay inside the body of the function.
 
 
-
 # Challenge 10.2 -------------------------------------------------------------
 
-# 2.1 Test the GDP function by calculating the GDP for New Zealand 
-#     in 1987. How does this differ from New Zealand’s GDP in 1952?
+# 10.2.1 Test the GDP function by calculating the GDP for New Zealand 
+#        in 1987. How does this differ from New Zealand’s GDP in 1952?
 
-# 2.2 The paste function can be used to combine text together, e.g:
+# 10.2.2 The paste function can be used to combine text together, e.g:
 
 best_practice <- c("Write", "programs", "for", "people", "not", "computers")
 paste(best_practice, collapse=" ")
@@ -175,5 +171,3 @@ paste(best_practice, collapse=" ")
 # 5. Make any necessary bug fixes
 # 6. Rinse and repeat.
 #
-
-
