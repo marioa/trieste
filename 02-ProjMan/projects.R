@@ -66,9 +66,9 @@ load.project()
 # Navigate to ~/my_project2 and click on "Create Project".
 
 
-# Challenge 1 -------------------------------------------------------------
+# Challenge 3.1 -------------------------------------------------------------
 
-# 1.1 Create a new git enabled project
+# 3.1.1 Create a new git enabled project
 #
 # Create a new empty project my_project2. Make sure that this is git enabled.
 
@@ -84,7 +84,7 @@ load.project()
 # Switch to the git window. Add and commit this file with the
 # .gitignore and my_project2.Rproj file.
 
-# 1.2 Create GitHub repository and push the contents
+# 3.1.2 Create GitHub repository and push the contents
 #
 # Go to your GitHub account and create a new repository for my_project2.
 # When you create your project you should get instructions on how to push
@@ -94,7 +94,7 @@ load.project()
 # there (this should push up your project content to GitHub). You should now
 # see your content on GitHub.
 
-# 1.3 Modify your Readme.md
+# 3.1.3 Modify your Readme.md
 #
 # Modify your Readme.md file (add/remove content as you like).
 # Save the file, commit the file (go to the Git panel select the file
@@ -102,7 +102,7 @@ load.project()
 # in a sensible commit message. Once this is done click on the Push button
 # and that should push the contents to GitHub - do you see those changes?
 
-# 1.4 Remotely modify your Readme.md
+# 3.1.4 Remotely modify your Readme.md
 #
 # On GitHub click on the Readme.md file. Select Edit (the pencil), modify the content
 # and save (add a sensible commit message there as well).
@@ -110,7 +110,7 @@ load.project()
 # In Rstudio click on the Pull button. Do you see the changes you made being
 # ported back to your local Readme.md version?
 
-# 1.5 Ignorning files
+# 3.1.5 Ignorning files
 #
 # 1. Create a directory within your project called graphs (in the files
 #    view click on the "New Folder" item).

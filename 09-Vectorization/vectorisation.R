@@ -21,17 +21,17 @@ x+y
 #
 #       7  9 11 13
 
-# Challenge 1 -------------------------------------------------------------
+# Challenge 9.1 -------------------------------------------------------------
 
-# 1.1 Create a new column in gapminder called pop_millions that takes the
-#     pop population and expresses it in units of a million (you can also
-#     use gapmnder$NewColumnName to create a new column).
+# 9.1.1 Create a new column in gapminder called pop_millions that takes the
+#       pop population and expresses it in units of a million (you can also
+#       use gapmnder$NewColumnName to create a new column).
 
-# 1.2 On a single graph, plot population, in millions, against year, 
-#     for all countries. Don’t worry about identifying which country is which.
+# 9.1.2 On a single graph, plot population, in millions, against year, 
+#       for all countries. Don’t worry about identifying which country is which.
 
-# 1.3 Repeat the exercise, graphing only for "China", "India", "Indonesia". 
-#     Again, don’t worry about which is which.
+# 9.1.3 Repeat the exercise, graphing only for "China", "India", "Indonesia". 
+#       Again, don’t worry about which is which.
 
 
 # More vectorised functions -----------------------------------------------
@@ -55,10 +55,10 @@ log(x)
 m * -1
 
 
-# Challenge 2 -------------------------------------------------------------
+# Challenge 9.2 -------------------------------------------------------------
 
 
-# 2.1 For the following matrix
+# 9.2.1 For the following matrix
 
 (m <- matrix(1:12, nrow=3, ncol=4))
 
@@ -72,7 +72,7 @@ m * c(1, 0, -1, 2)
 # How many did you get right? Are there any outputs that you do not
 # understand?
 
-# 2.2 We’re interested in looking at the sum of the following sequence of fractions:
+# 9.2.2 We’re interested in looking at the sum of the following sequence of fractions:
 #
 # x = 1/(1^2) + 1/(2^2) + 1/(3^2) + ... + 1/(n^2)
 #

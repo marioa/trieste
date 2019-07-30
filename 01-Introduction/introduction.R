@@ -206,7 +206,7 @@ installed.packages()
 # library(packagename)
 
 
-# Challenge 1 -------------------------------------------------------------
+# Challenge 1.1 -------------------------------------------------------------
 
 # 1.1 Which of the following are valid R-names?
 min_height 

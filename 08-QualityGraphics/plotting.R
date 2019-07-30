@@ -33,22 +33,22 @@ ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp)) +
 g + geom_point()
 
 
-# Challenge 1 -------------------------------------------------------------
+# Challenge 8.1 -------------------------------------------------------------
 
-# 1.1 Modify the example so that the figure shows how life expectancy has 
-#     changed over time:
+# 8.1.1 Modify the example so that the figure shows how life expectancy has 
+#       changed over time:
 
 ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp)) + geom_point()
 
 # Hint: the gapminder dataset has a column called “year”, which should 
 #       appear on the x-axis.
 
-# 1.2 In the previous examples and challenge we’ve used the aes function to 
-#     tell the scatterplot geom about the x and y locations of each point. 
-#     Another aesthetic property we can modify is the point colour. Modify 
-#     the code from the previous challenge to color the points by the 
-#     “continent” column. What trends do you see in the data? 
-#     Are they what you expected?
+# 8.1.2 In the previous examples and challenge we’ve used the aes function to 
+#       tell the scatterplot geom about the x and y locations of each point. 
+#       Another aesthetic property we can modify is the point colour. Modify 
+#       the code from the previous challenge to color the points by the 
+#       “continent” column. What trends do you see in the data? 
+#       Are they what you expected?
 
 # NB ggplot2 will accept either British or American spelling, e.g. colour vs color.
 
@@ -83,14 +83,14 @@ ggplot(data = gapminder, aes(x=year, y=lifeExp, by=country)) +
   geom_line(aes(colour=continent)) + 
   geom_point(colour="blue")
 
-# Challenge 2 -------------------------------------------------------------
+# Challenge 8.2 -------------------------------------------------------------
 
-# 2.1 Switch the order of the point and line layers from the previous example. 
-#     What happened? i.e. points before lines
+# 8.2.1 Switch the order of the point and line layers from the previous example. 
+#       What happened? i.e. points before lines
 
-# 2.2 Look at the ggplot documentation to see how to:
-#     1. Add a plot title (ggtitle)
-#     2. Add an x and y axis lable (xlab,ylab)
+# 8.2.2 Look at the ggplot documentation to see how to:
+#       1. Add a plot title (ggtitle)
+#       2. Add an x and y axis lable (xlab,ylab)
 
 # Transformations and statistics ------------------------------------------
 # 
@@ -144,19 +144,19 @@ ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp)) +
 # Previously in the lesson we’ve used the aes function to define a mapping 
 # between data variables and their visual representation.
 
-# Challenge 3 -------------------------------------------------------------
+# Challenge 8.3 -------------------------------------------------------------
 
-# 3.1 Modify the color and size of the points on the point layer in the 
-#   previous example. Change the colour of the line.
-#   Hint: do not use the aes function.
+# 8.3.1 Modify the color and size of the points on the point layer in the 
+#      previous example. Change the colour of the line.
+#     Hint: do not use the aes function.
 ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp)) +
       geom_point() + 
       scale_x_log10() + 
      geom_smooth(method="lm", size=1.5)
 
-# 3.1 Modify your solution to the previous exercise so that the points are now 
-#     a different shape and are colored by continent with new trendlines. 
-#     Hint: The color argument can be used inside the aesthetic.
+# 8.3.1 Modify your solution to the previous exercise so that the points are now 
+#       a different shape and are colored by continent with new trendlines. 
+#       Hint: The color argument can be used inside the aesthetic.
 
 # Multi-panel figures -----------------------------------------------------
 
@@ -234,15 +234,15 @@ ggplot(data = az.countries, aes(x = year, y = lifeExp, color=continent)) +
 #
 
 
-# Challenge 4 -------------------------------------------------------------
+# Challenge 8.4 -------------------------------------------------------------
 
-# 4.1 Create a density plot of GDP per capita, filled by continent.
-#     Once you have a plot add an alpha value. What difference do you
-#     observe if you add an alpha value inside or outside the aes
-#     parameters?
+# 8.4.1 Create a density plot of GDP per capita, filled by continent.
+#       Once you have a plot add an alpha value. What difference do you
+#       observe if you add an alpha value inside or outside the aes
+#       parameters?
 
   
-# 4.2 Advanced: Transform the x axis to better visualise the data spread.
+# 8.4.2 Advanced: Transform the x axis to better visualise the data spread.
 
 
-# 4.3 Advanced: Add a facet layer to panel the density plots by year.
+# 8.4.3 Advanced: Add a facet layer to panel the density plots by year.

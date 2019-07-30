@@ -56,7 +56,7 @@ fahr_to_kelvin(32)
 fahr_to_kelvin(212)
 
 
-# Challenge 1 -------------------------------------------------------------
+# Challenge 10.1 -------------------------------------------------------------
 
 
 
@@ -146,7 +146,7 @@ calcGDP(gapminder, year=2007, country="Australia")
 
 
 
-# Challenge 2 -------------------------------------------------------------
+# Challenge 10.2 -------------------------------------------------------------
 
 # 2.1 Test the GDP function by calculating the GDP for New Zealand 
 #     in 1987. How does this differ from New Zealand’s GDP in 1952?

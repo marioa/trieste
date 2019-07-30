@@ -111,12 +111,12 @@ cats
 cats <- rbind(cats,list("Cheshire",0,TRUE,152))
 cats
 
-# Challenge 1 -------------------------------------------------------------
+# Challenge 5.1 -------------------------------------------------------------
 
-# 1.1
+# 5.1.1
 # Remove the duplicated lines we added to the data frame
 
-# 1.2
+# 5.1.2
 # You can create a data frame using:
 df <- data.frame(id = c('a', 'b', 'c'),
                  x = 1:3,
@@ -133,7 +133,7 @@ df <- data.frame(id = c('a', 'b', 'c'),
 # Use cbind to add an extra column specifying whether they prefer
 # "tea", "coffee","juice" or "water"
 
-# 1.3
+# 5.1.3
 # Create a cats2 data frame that re-arranges the order of the 
 # columns of cats to have "weight", "coat", "likes_string", "age".
 # data frame. Rename the columns of cats2 to use the capital
@@ -207,9 +207,9 @@ colnames(gapminder)
 # or (same for data frames but not matrices and other data types)
 names(gapminder)
 
-# Challenge 2 -------------------------------------------------------------
+# Challenge 5.2 -------------------------------------------------------------
 
-# 2.1
+# 5.2.1
 # 
 # Go to file -> new file -> R script, and write an R script to load in the 
 # gapminder dataset. Put it in the scripts/ directory and add it to version 
@@ -218,7 +218,7 @@ names(gapminder)
 # Run the script using the source function, using the file path as its argument 
 # (or by pressing the “source” button in RStudio).
 
-# 2.2
+# 5.2.2
 #
 # Read the output of str(gapminder) again; this time, use what you’ve learned about 
 # factors, lists and vectors, as well as the output of functions like colnames and 

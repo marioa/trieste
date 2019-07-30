@@ -53,9 +53,9 @@ x <- x[-4]
 x
 
 
-# Challenge 1 -------------------------------------------------------------
+# Challenge 6.1 -------------------------------------------------------------
 
-# 1.1
+# 6.1.1
 #
 # Given the following code:
 x <- c(5.4, 6.2, 7.1, 4.8, 7.5)
@@ -92,9 +92,9 @@ which(names(x) == "a")
 x[-which(names(x) %in% c("a", "c"))]
 
 
-# Challenge 2 -------------------------------------------------------------
+# Challenge 6.2 -------------------------------------------------------------
 
-# 2.1 Given the following code:
+# 6.2.1 Given the following code:
 x <- c(5.4, 6.2, 7.1, 4.8, 7.5)
 names(x) <- c('a', 'b', 'c', 'd', 'e')
 print(x)
@@ -106,7 +106,7 @@ x[-which(names(x) == "g")]
 # Tip: test out each part of the command on it’s own - this 
 # is a useful debugging strategy.
 
-# 2.1 Which of the following are true:
+# 6.2.1 Which of the following are true:
 # 
 # A) if there are no TRUE values passed to which, an empty vector is returned
 # B) if there are no TRUE values passed to which, an error message is shown
@@ -228,9 +228,9 @@ any(c(FALSE,FALSE,FALSE,TRUE,FALSE))
 any(x > 0)
 any(x < 8)
 
-# Challenge 3 -------------------------------------------------------------
+# Challenge 6.3 -------------------------------------------------------------
 
-# 3.1 Write a subsetting command to return the values in x that are greater 
+# 6.3.1 Write a subsetting command to return the values in x that are greater 
 #     than 4 and less than 7 for the following code:
 x <- c(5.4, 6.2, 7.1, 4.8, 7.5)
 names(x) <- c('a', 'b', 'c', 'd', 'e')
@@ -318,9 +318,9 @@ m2[5]
 m2 <- matrix(data=1:9,ncol=3,byrow = TRUE)
 m2
 
-# Challenge 4 -------------------------------------------------------------
+# Challenge 6.4 -------------------------------------------------------------
 
-# 4.1 Given the following code:
+# 6.4.1 Given the following code:
 m <- matrix(1:18, nrow=3, ncol=6)
 print(m)
 
@@ -330,7 +330,7 @@ m[2:5]      # B.
 m[4:5,2]    # C.
 m[2,c(4,5)] # D.
 
-# 4.2 For the following matrix
+# 6.4.2 For the following matrix
 m <- matrix(data=1:16,nrow=4)
 m
 # you can use 
@@ -343,10 +343,10 @@ LETTERS
 # columns with large letters. Use the row and column names
 # to dereference the entry that has the value 16.
 
-# 4.3 For the previous array only print out values that
+# 6.4.3 For the previous array only print out values that
 #     lie between 6 and 10.
 
-# 4.4 Set the values outside 6 to 10 range to 0 and print these
+# 6.4.4 Set the values outside 6 to 10 range to 0 and print these
 #     - best to work on a copy of the data.
 m2 <- m
 
@@ -377,9 +377,9 @@ xlist[["data"]]
 # Can short hand this
 xlist$data
 
-# Challenge 5 -------------------------------------------------------------
+# Challenge 6.5 -------------------------------------------------------------
 
-# 5.1 Given the following list:
+# 6.5.1 Given the following list:
 
 xlist <- list(a = "Software Carpentry", b = 1:10, data = head(iris))
 
@@ -387,7 +387,7 @@ xlist <- list(a = "Software Carpentry", b = 1:10, data = head(iris))
 # number 2 from xlist. Hint: the number 2 is contained within the “b” item 
 # in the list.
 
-# 5.2 Given a linear model:
+# 6.5.2 Given a linear model:
 
 mod <- aov(pop ~ lifeExp, data=gapminder)
 
@@ -415,9 +415,9 @@ gapminder[1:3,]
 
 gapminder[3,]  # Rows are data frames, columns are vectors
 
-# Challenge 6 -------------------------------------------------------------
+# Challenge 6.6 -------------------------------------------------------------
 
-# 6.1 Fix each of the following common data frame subsetting errors:
+# 6.6.1 Fix each of the following common data frame subsetting errors:
 
 # Extract observations collected for the year 1957
 gapminder[gapminder$year = 1957,]
@@ -434,13 +434,13 @@ gapminder[1, 4, 5]
 # Advanced: extract rows that contain information for the years 2002 and 2007
 gapminder[gapminder$year == 2002 | 2007,]
 
-# 6.2 Why does gapminder[1:20] return an error? 
+# 6.6.2 Why does gapminder[1:20] return an error? 
 #    How does it differ from gapminder[1:20, ]?
 
 # Create a new data.frame called gapminder_small that only contains 
 # rows 1 through 9 and 19 through 23. You can do this in one or two steps.
 
-# 6.3 Lookup in the help for the subsetting function. We can use this to
+# 6.6.3 Lookup in the help for the subsetting function. We can use this to
 #     subset a vector or a data frame, so to get the data only Botswana 
 #     and for the year 1972 you might use:
 gapminder[gapminder$year == 1972 & gapminder$country == "Botswana","lifeExp"]

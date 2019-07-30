@@ -38,10 +38,10 @@ if (x >= 10) {
 }
 x
 
-# Challenge 1 -------------------------------------------------------------
+# Challenge 7.1 -------------------------------------------------------------
 
-# 1.1 Change the code below to print the value of x
-# Hint: remember the paste function?
+# 7.1.1 Change the code below to print the value of x
+#       Hint: remember the paste function?
 if (x >= 10) {
   print("x is greater than or equal to 10")
 } else if (x > 5) {
@@ -52,9 +52,9 @@ if (x >= 10) {
 # In reality you would use the sprintf function, use help to
 # see if you can work out how to use it. 
 
-# 1.2 Use an if() statement to print a suitable message reporting whether 
-#     there are any records from 2002 in the gapminder dataset. Now do the 
-#     same for 2012.
+# 7.1.2 Use an if() statement to print a suitable message reporting whether 
+#       there are any records from 2002 in the gapminder dataset. Now do the 
+#       same for 2012.
 
 
 # Repeating operations ----------------------------------------------------
@@ -114,11 +114,11 @@ while(z > 0.1){
 }
 z
 
-# Challenge 2 -------------------------------------------------------------
+# Challenge 7.2 -------------------------------------------------------------
 
-# 2.1 Compare the objects output_vector and output_vector2. 
-#     Are they the same? If not, why not? How would you change the last block 
-#     of code to make output_vector2 the same as output_vector?
+# 7.2.1 Compare the objects output_vector and output_vector2. 
+#       Are they the same? If not, why not? How would you change the last block 
+#       of code to make output_vector2 the same as output_vector?
 output_vector
 output_vector2
 
@@ -134,9 +134,9 @@ for(i in 1:5){
 output_vector2 <- as.vector(output_matrix)
 output_vector2
 
-# 2.2 Write a script that loops through the gapminder data by continent and 
-#     prints out whether the mean life expectancy is smaller or larger than 50 
-#     years.
+# 7.2.2 Write a script that loops through the gapminder data by continent and 
+#       prints out whether the mean life expectancy is smaller or larger than 50 
+#       years.
 #
 #  * File->New File ->Rscript
 #  * This will create a new script file for you.
@@ -156,7 +156,7 @@ output_vector2
 #          Print out the result
 #
 
-# 2.3 Modify the script from Challenge 2.2 to loop over each country. 
-#     This time print out whether the life expectancy is smaller than 50, 
-#     between 50 and 70, or greater than 70.
+# 7.2.3 Modify the script from Challenge 2.2 to loop over each country. 
+#       This time print out whether the life expectancy is smaller than 50, 
+#       between 50 and 70, or greater than 70.
 
