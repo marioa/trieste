@@ -20,7 +20,12 @@ calcGDP <- function(dat, year=NULL, country=NULL) {
   # Calculate the total gdp.
   gdp <- dat$pop * dat$gdpPercap
   
+  # add the new coulmn - note multiple calls to this function will 
+  # add the column multiple times if you assign to the same data frame. 
+  # Better (same column will be overwritten):
+  # dat$gdp <- dat$pop * dat$gdpPercap
   new <- cbind(dat, gdp=gdp)
+  
   return(new)
 }
 
@@ -106,7 +111,7 @@ tapply(withGDP$gdp,withGDP$continent,mean)
 # type and represent null output by a "_".
 #
 #                       array     data frame   list    nothing
-#                     +----------------------------------------
+#                     +======================================
 # array               |  aaply     adply        alply   a_ply
 # data frame          |  daply     ddply        dlply   d_ply
 # list                |  laply     ldply        llply   l_ply
@@ -177,15 +182,15 @@ d_ply(
 )
 
 
-# Challenge 1 -------------------------------------------------------------
+# Challenge 11 -------------------------------------------------------------
 
-# 1.1 Calculate the average life expectancy per continent. 
-#     Which has the longest? Which had the shortest?
+# 11.1.1 Calculate the average life expectancy per continent. 
+#        Which has the longest? Which had the shortest?
 
-# 1.2 Calculate the average life expectancy per continent and year. 
-#     Which had the longest and shortest in 2007? Which had the greatest 
-#     change in between 1952 and 2007?
+# 11.1.2 Calculate the average life expectancy per continent and year. 
+#        Which had the longest and shortest in 2007? Which had the greatest 
+#        change in between 1952 and 2007?
 
-# 1.3 Calculate the difference in mean life expectancy between the years 
-#     1952 and 2007 from the output of challenge 2 using one of the plyr 
-#     functions.
+# 11.1.3 Calculate the difference in mean life expectancy between the years 
+#        1952 and 2007 from the output of challenge 2 using one of the plyr 
+#       functions.
