@@ -33,7 +33,7 @@
 
 * 1.3 Calculate the Body Mass Index (BMI for a person)
 
-```
+```R
 height <- 1.72               # height in metres
 weight <- 82                 # weight in kg
 bmi    <-  weight/height^2   # bmi is the weight divided by the square of the height.
@@ -100,7 +100,7 @@ If you have managed to do all these steps you should now be in a position to  us
 
 * 3.1.1 what does the `c` function do?
  What do the following give you?
-```
+```R
 c(1, 2, 3)
 c('d', 'e', 'f')
 c(1, 2, 'f')
@@ -108,7 +108,7 @@ c(1, 2, 'f')
 These are called vectors, more about these later.
 
 * 3.1.2 what does the `paste` function do?
-```
+```R
 x <- c("fred","john")              # Create a vector 
 paste(x,"one","two","three")
 ```
@@ -116,21 +116,20 @@ paste(x,"one","two","three")
  i.e. `paste(x,"one","two","three", sep="-")` <br/>
 What is the difference between `paste` and `paste0`?
 
-*  3.1.3: how would you read a comma separated values (csv)
-      type file that is tab (\t) delimited instead?<br\>
- **Hint**: use `??csv` to see what is available
+*  3.1.3: how would you read a comma separated values (csv) type file that is tab (`\t`) delimited instead?<br/>
+       **Hint**: use `??csv` to see what is available
 
 ## 10. Functions
 
 * 10.2.1 Test the GDP function by calculating the GDP for New Zealand in 1987. How does this differ from New Zealand’s GDP in 1952?
 
 * 10.2.2 The paste function can be used to combine text together, e.g:
-```
+```R
 best_practice <- c("Write", "programs", "for", "people", "not", "computers")
 paste(best_practice, collapse=" ")
 ```
  Write a function called `fence` that takes two vectors as arguments,  called text and wrapper, and prints out the text wrapped with the wrapper:
-````
+````R
   fence(text=best_practice, wrapper="***")
 ````
 Note: the paste function has an argument called `sep`, which specifies the separator between text. The default is a space: “ “. The default for `paste0` is no space “”.
@@ -141,7 +140,7 @@ Note: the paste function has an argument called `sep`, which specifies the separ
 
 * 1.1 Calculate the average life expectancy per continent. 
       Which has the longest? Which had the shortest?
-```
+```R
 ddply(.data=gapminder,
       .variables="continent",
       .fun=function(x){c(mean=mean(x$lifeExp))}
@@ -151,14 +150,14 @@ ddply(.data=gapminder,
 * 1.2 Calculate the average life expectancy per continent and year. 
   Which had the longest and shortest in 2007? Which had the greatest change in between 1952 and 2007?
 
-```
+```R
 gap_year_cont<- ddply(.data=gapminder,
                       .variables = c("continent","year"),
                       .fun=function(x){c(mean=mean(x$lifeExp))})
 ```
 * 1.3 Calculate the difference in mean life expectancy between the years 1952 and 2007 from the output of challenge 2 using one of the `plyr` functions.
 
-```
+```R
 ddply(.data=gap_year_cont,
 .variables = "continent",
 .fun=function(x){c(lifexpDiff=x$mean[x$year==2007]-x$mean[x$year==1952])})
@@ -171,7 +170,7 @@ ddply(.data=gap_year_cont,
             `country` and `year`, but not for other Continents. How many rows does 
             your dataframe have and why?
 
-```
+```R
 gapminder                   %>%
 filter(continent=="Africa") %>%
 select(year,country,lifeExp) -> lcy
@@ -184,7 +183,7 @@ nrow(lcy)         #  624
              Which has the longest average life expectancy and 
             which has the shortest average life expectancy?
 
-```
+```R
 gapminder                            %>%
 group_by(country)                    %>%
 summarize(AverageLife=mean(lifeExp)) %>%
@@ -193,7 +192,7 @@ filter(AverageLife==min(AverageLife)|AverageLife == max(AverageLife))
 
 * 13.2.2 Do the same thing but using the `arrange()` and `desc()` functions.
 
-```
+```R
 # For the min
 gapminder                            %>%
 group_by(country)                    %>%
@@ -213,7 +212,7 @@ arrange(desc(AverageLife))
       **Hint**: Use the dplyr functions `arrange()` and `sample_n()`, they have 
       similar syntax to other dplyr functions.
 
-```
+```R
 gapminder                                %>%
    filter(year==2002)                    %>%
    group_by(continent)                   %>%
@@ -230,7 +229,7 @@ gapminder                                %>%
      for each continent. Hint: use the `group_by()` and `summarize()` functions we l
      earned in the `dplyr` lesson
 
-```
+```R
 gap_long %>% group_by(continent,obs_type) %>% summarise(mean=mean(obs_values))
 
 ```
@@ -256,7 +255,7 @@ gap_long %>% group_by(continent,obs_type) %>% summarise(mean=mean(obs_values))
     **Hint**: Connect to the species table and write a query that joins the species and
       survey tables together to exclude all non-rodents. The query should return
       counts of rodents by year.
-```      
+```      R
 (species <- tbl(mammals,"species"))
 (species %>% 
        filter(taxa == "Rodent") %>%
@@ -271,7 +270,7 @@ gap_long %>% group_by(continent,obs_type) %>% summarise(mean=mean(obs_values))
       **Hint**: Write a query that joins the species, plot, and survey tables together.
             The query should return counts of genus by plot type.
 
-```
+```R
 # There is nothing in species that we can join with plots so we must perform
 # a preliminary join between surveys and plots.
 surveys %>% inner_join(plots) %>% select(species_id,plot_type)-> surveys_plots
@@ -306,6 +305,6 @@ inner_join(surveys,plots)              %>%   # Do the inner join
 
 * 16.2.1 Add the remaining species table to the my_db database and run some of your queries from earlier in the lesson to verify that you have faithfully recreated the mammals database.
 
-```
+```R
 copy_to(my_db, myspecies,temporary = FALSE)
 ```
