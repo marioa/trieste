@@ -25,32 +25,6 @@ bmi    <-  weight/height^2   # bmi is the weight divided by the square of the he
 # or
 bmi <- weight/(height*height)
 ```
-## 12. Split-Apply-Combine
-
-* 1.1 Calculate the average life expectancy per continent. 
-      Which has the longest? Which had the shortest?
-```
-ddply(.data=gapminder,
-      .variables="continent",
-      .fun=function(x){c(mean=mean(x$lifeExp))}
-)
-```
-
-* 1.2 Calculate the average life expectancy per continent and year. 
-  Which had the longest and shortest in 2007? Which had the greatest change in between 1952 and 2007?
-
-```
-gap_year_cont<- ddply(.data=gapminder,
-                      .variables = c("continent","year"),
-                      .fun=function(x){c(mean=mean(x$lifeExp))})
-```
-* 1.3 Calculate the difference in mean life expectancy between the years 1952 and 2007 from the output of challenge 2 using one of the `plyr` functions.
-
-```
-ddply(.data=gap_year_cont,
-.variables = "continent",
-.fun=function(x){c(lifexpDiff=x$mean[x$year==2007]-x$mean[x$year==1952])})
-```
 
 ## 2. Project Management
 
@@ -124,13 +98,36 @@ Note: the paste function has an argument called `sep`, which specifies the separ
 *  11.1.1 Calculate the average life expectancy per continent.
         Which has the longest? Which had the shortest?
 
- * 11.1.2 Calculate the average life expectancy per continent and year.
-        Which had the longest and shortest in 2007? Which had the greatest
-        change in between 1952 and 2007?
+ * 11.1.2 Calculate the average life expectancy per continent and year. Which had the longest and shortest in 2007? Which had the greatest change in between 1952 and 2007?
 
- * 11.1.3 Calculate the difference in mean life expectancy between the years
-        1952 and 2007 from the output of challenge 2 using one of the `plyr`
-       functions.
+ * 11.1.3 Calculate the difference in mean life expectancy between the years 1952 and 2007 from the output of challenge 2 using one of the `plyr` functions.
+
+## 12. Split-Apply-Combine
+
+* 1.1 Calculate the average life expectancy per continent. 
+      Which has the longest? Which had the shortest?
+```
+ddply(.data=gapminder,
+      .variables="continent",
+      .fun=function(x){c(mean=mean(x$lifeExp))}
+)
+```
+
+* 1.2 Calculate the average life expectancy per continent and year. 
+  Which had the longest and shortest in 2007? Which had the greatest change in between 1952 and 2007?
+
+```
+gap_year_cont<- ddply(.data=gapminder,
+                      .variables = c("continent","year"),
+                      .fun=function(x){c(mean=mean(x$lifeExp))})
+```
+* 1.3 Calculate the difference in mean life expectancy between the years 1952 and 2007 from the output of challenge 2 using one of the `plyr` functions.
+
+```
+ddply(.data=gap_year_cont,
+.variables = "continent",
+.fun=function(x){c(lifexpDiff=x$mean[x$year==2007]-x$mean[x$year==1952])})
+```
 
 ## 13. dplyr
 
