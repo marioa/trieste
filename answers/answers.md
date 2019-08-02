@@ -35,18 +35,16 @@ ddply(.data=gapminder,
       .fun=function(x){c(mean=mean(x$lifeExp))}
 )
 ```
+
 * 1.2 Calculate the average life expectancy per continent and year. 
-  Which had the longest and shortest in 2007? Which had the greatest 
-  change in between 1952 and 2007?
+  Which had the longest and shortest in 2007? Which had the greatest change in between 1952 and 2007?
 
 ```
 gap_year_cont<- ddply(.data=gapminder,
                       .variables = c("continent","year"),
                       .fun=function(x){c(mean=mean(x$lifeExp))})
 ```
-* 1.3 Calculate the difference in mean life expectancy between the years 
-      1952 and 2007 from the output of challenge 2 using one of the plyr 
-      functions.
+* 1.3 Calculate the difference in mean life expectancy between the years 1952 and 2007 from the output of challenge 2 using one of the `plyr` functions.
 
 ```
 ddply(.data=gap_year_cont,
@@ -56,7 +54,7 @@ ddply(.data=gap_year_cont,
 
 ## 2. Project Management
 
-2.1.3 Modify your Readme.md
+* 2.1.3 Modify your Readme.md
 
  Modify your Readme.md file (add/remove content as you like).
  Save the file, commit the file (go to the Git panel select the file
@@ -64,30 +62,52 @@ ddply(.data=gap_year_cont,
  in a sensible commit message. Once this is done click on the Push button
  and that should push the contents to GitHub - do you see those changes?
 
- 2.1.4 Remotely modify your Readme.md
+* 2.1.4 Remotely modify your Readme.md
 
  On GitHub click on the Readme.md file. Select Edit (the pencil), modify the content
  and save (add a sensible commit message there as well).
 
- In Rstudio click on the Pull button. Do you see the changes you made being
- ported back to your local Readme.md version?
+ In Rstudio click on the Pull button. Do you see the changes you made being ported back to your local Readme.md version?
 
- 2.1.5 Ignoring files
+* 2.1.5 Ignoring files
 
  1. Create a directory within your project called graphs (in the files
     view click on the "New Folder" item).
- 2. Modify the .gitignore file to contain graphs/ so that this 
+ 2. Modify the `.gitignore` file to contain graphs/ so that this 
     disposable output isn’t versioned.
- 3. Commit your .gitignore file.
+ 3. Commit your `.gitignore` file.
  4. Push the content.
 
- If you have managed to do all these steps you should now be in a position to 
- use Rstudio with GitHub (or any other remote git repository).
+ If you have managed to do all these steps you should now be in a position to  use Rstudio with GitHub (or any other remote git repository).
 
+## 3. Getting help
+
+* 3.1.1 what does the `c` function do?
+ What do the following give you?
+```
+c(1, 2, 3)
+c('d', 'e', 'f')
+c(1, 2, 'f')
+```
+These are called vectors, more about these later.
+
+* 3.1.2 what does the paste function do?
+```
+x <- c("fred","john")               Create a vector 
+paste(x,"one","two","three")
+```
+ What do the optional arguments "sep" and "collapse" do?
+ i.e. `paste(x,"one","two","three", sep="-")`
+What is the difference between `paste` and `paste0`?
+
+*  3.1.3: how would you read a comma separated values (csv)
+      type file that is tab (\t) delimited instead?<br\>
+ **Hint**: use `??csv` to see what is available
 
 ## 10. functions
 
 * 10.2.1 Test the GDP function by calculating the GDP for New Zealand in 1987. How does this differ from New Zealand’s GDP in 1952?
+
 * 10.2.2 The paste function can be used to combine text together, e.g:
 ```
 best_practice <- c("Write", "programs", "for", "people", "not", "computers")
