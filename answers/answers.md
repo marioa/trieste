@@ -93,14 +93,7 @@ paste(best_practice, collapse=" ")
 ````
 Note: the paste function has an argument called `sep`, which specifies the separator between text. The default is a space: “ “. The default for `paste0` is no space “”.
 
-## 11. split apply combine
-
-*  11.1.1 Calculate the average life expectancy per continent.
-        Which has the longest? Which had the shortest?
-
- * 11.1.2 Calculate the average life expectancy per continent and year. Which had the longest and shortest in 2007? Which had the greatest change in between 1952 and 2007?
-
- * 11.1.3 Calculate the difference in mean life expectancy between the years 1952 and 2007 from the output of challenge 2 using one of the `plyr` functions.
+## 11. Writing data
 
 ## 12. Split-Apply-Combine
 
