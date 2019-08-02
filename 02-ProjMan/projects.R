@@ -110,7 +110,7 @@ load.project()
 # In Rstudio click on the Pull button. Do you see the changes you made being
 # ported back to your local Readme.md version?
 
-# 3.1.5 Ignorning files
+# 3.1.5 Ignoring files
 #
 # 1. Create a directory within your project called graphs (in the files
 #    view click on the "New Folder" item).
