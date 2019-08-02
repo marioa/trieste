@@ -83,6 +83,8 @@ load.project()
 # Call the file Readme.md. Save it at the root directory.
 # Switch to the git window. Add and commit this file with the
 # .gitignore and my_project2.Rproj file.
+#
+# On RStudio see `Help->Markdown quick reference` to see what can be done.
 
 # 2.1.2 Create GitHub repository and push the contents
 #

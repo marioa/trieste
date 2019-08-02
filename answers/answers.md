@@ -63,7 +63,7 @@ then on Studio:
 
  Call the file `Readme.md`. Save it at the root directory.
  Switch to the git window.  Add and commit this file with the
-` .gitignore` file.
+` .gitignore` file. On RStudio see `Help->Markdown quick reference` to see what can be done.
 
 * 2.1.2 Create GitHub repository and push the contents
 
