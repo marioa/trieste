@@ -45,7 +45,7 @@ bmi <- weight/(height*height)
 
 * 2.1.1 Create a new git enabled project
 
- Create a new empty project my_project2. Make sure that this is git enabled.
+ Create a new empty project `my_project2`. Make sure that this is git enabled.
 
  Add a `Readme.md` file (`File -> New File -> Text file`) with the following  text:
 
@@ -67,7 +67,7 @@ then on Studio:
 
 * 2.1.2 Create GitHub repository and push the contents
 
- Go to your GitHub account and create a new repository for my_project2.
+ Go to your GitHub account and create a new repository for `my_project2`.
  When you create your project you should get instructions on how to push
  an existing project to GitHub. On the Git panel click on the `More` menu
  item and select `Shell...`. This will open up a shell command in the 
@@ -77,15 +77,13 @@ then on Studio:
 
 * 2.1.3 Modify your Readme.md
 
-Modify your `Readme.md` file (add/remove content as you like).
-Save the file, commit the file (go to the Git panel select the file and then click on Commit). A window will come up where you need to put in a sensible commit message. Once this is done click on the Push button and that should push the contents to GitHub - do you see those changes?
+Modify your `Readme.md` file (add/remove content as you like). Save the file, commit the file (go to the Git panel select the file and then click on Commit). A window will come up where you need to put in a sensible commit message. Once this is done click on the Push button and that should push the contents to GitHub - do you see those changes?
 
 * 2.1.4 Remotely modify your Readme.md
 
- On GitHub click on the `Readme.md` file. Select Edit (the pencil), modify the content
- and save (add a sensible commit message there as well).
+ On GitHub click on the `Readme.md` file. Select Edit (the pencil), modify the content and save (add a sensible commit message there as well).
 
- In Rstudio click on the Pull button. Do you see the changes you made being ported back to your local `Readme.md` version?
+In Rstudio click on the Pull button. Do you see the changes you made being ported back to your local `Readme.md` version?
 
 * 2.1.5 Ignoring files
 
@@ -209,8 +207,7 @@ arrange(desc(AverageLife))
 * 13.3.1 Calculate the average life expectancy in 2002 of 2 randomly selected 
       countries for each continent. Then arrange the continent names in 
       reverse order.<br>
-      **Hint**: Use the dplyr functions `arrange()` and `sample_n()`, they have 
-      similar syntax to other dplyr functions.
+      **Hint**: Use the `dplyr` functions `arrange()` and `sample_n()`, they have similar syntax to other `dplyr` functions.
 
 ```R
 gapminder                                %>%
@@ -223,15 +220,13 @@ gapminder                                %>%
 
 ## 14. tidyr
 
-* 14.1.1 Is gapminder a purely long, purely wide, or some intermediate format?
+* 14.1.1 Is `gapminder` a purely long, purely wide, or some intermediate format?
 
 * 14.1.2 Using `gap_long`, calculate the mean life expectancy, population, and `gdpPercap` 
-     for each continent. Hint: use the `group_by()` and `summarize()` functions we l
-     earned in the `dplyr` lesson
+     for each continent. Hint: use the `group_by()` and `summarize()` functions we learned in the `dplyr` lesson
 
 ```R
 gap_long %>% group_by(continent,obs_type) %>% summarise(mean=mean(obs_values))
-
 ```
 
 ## 15. Tidyr
