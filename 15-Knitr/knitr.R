@@ -29,10 +29,10 @@
 # ***bold with italics***
 
 
-# Challenge 1 -------------------------------------------------------------
+# Challenge 15.1 -------------------------------------------------------------
 
-# 1.1 Remove the sections in your own markdown document and try some of the
-#     above markdown objects.
+# 15.1 Remove the sections in your own markdown document and try some of the
+#      above markdown objects.
 
 
 # More markdown -----------------------------------------------------------
@@ -55,9 +55,9 @@
 # load_data is the code chunk name, must be unique within the document
 
 
-# Challenge 2 -------------------------------------------------------------
+# Challenge 15.2 -------------------------------------------------------------
 
-# Add code chunks to your existing document that:
+# 15.2 Add code chunks to your existing document that:
 # 
 # * Load the ggplot2 package
 # * Read the gapminder data
@@ -103,9 +103,9 @@
 # fig.path="Figs/cleaning-" and fig.path="Figs/analysis-".
 
 
-# Challenge 3 -------------------------------------------------------------
+# Challenge 15.3 -------------------------------------------------------------
 
-# 3.1 Use chunk options to control the size of a figure and to hide the code.
+# 15.3 Use chunk options to control the size of a figure and to hide the code.
 
 
 # Inline R code -----------------------------------------------------------
@@ -116,9 +116,9 @@
 # Must not let quoted lines be split across lines.
 
 
-# Challenge 4 -------------------------------------------------------------
+# Challenge 15.4 -------------------------------------------------------------
 
-# 4.1  Try out a bit of in-line R code.
+# 15.4  Try out a bit of in-line R code.
 
 
 # Other output options ----------------------------------------------------
