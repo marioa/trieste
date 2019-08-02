@@ -33,9 +33,9 @@
 #
 
 
-# Challenge 1 -------------------------------------------------------------
+# Challenge 14.1 -------------------------------------------------------------
 
-# 1.1 Is gapminder a purely long, purely wide, or some intermediate format?
+# 14.1.1 Is gapminder a purely long, purely wide, or some intermediate format?
 str(gapminder)
 
 # Getting started ---------------------------------------------------------
@@ -97,12 +97,13 @@ gap_long$year <- as.integer(gap_long$year)
 typeof(gap_long$year)
 
 
-# Challenge 2 -------------------------------------------------------------
+# Challenge 14.2 -------------------------------------------------------------
 
-# 2.2 Using gap_long, calculate the mean life expectancy, population, and gdpPercap 
-#     for each continent. 
+# 14.2.2 Using gap_long, calculate the mean life expectancy, population
+#         and gdpPercap for each continent. 
 #
-#     Hint: use the group_by() and summarize() functions we learned in the dplyr lesson.
+#  Hint: use the group_by() and summarize() functions we learned in the dplyr 
+#  lesson.
 
 
 # From long to intermediate format with spread() --------------------------
