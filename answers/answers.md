@@ -191,7 +191,7 @@ summarize(AverageLife=mean(lifeExp)) %>%
 filter(AverageLife==min(AverageLife)|AverageLife == max(AverageLife))
 ```
 
-* 13.2.2 Do the same thing but using the arrange() and desc() functions.
+* 13.2.2 Do the same thing but using the `arrange()` and `desc()` functions.
 
 ```
 # For the min
@@ -210,7 +210,7 @@ arrange(desc(AverageLife))
 * 13.3.1 Calculate the average life expectancy in 2002 of 2 randomly selected 
       countries for each continent. Then arrange the continent names in 
       reverse order.<br>
-      **Hint**: Use the dplyr functions arrange() and sample_n(), they have 
+      **Hint**: Use the dplyr functions `arrange()` and `sample_n()`, they have 
       similar syntax to other dplyr functions.
 
 ```
