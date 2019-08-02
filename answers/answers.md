@@ -4,6 +4,13 @@
 
 * [Introduction](#1-introduction)
 * [Project management](#2-project-management)
+* [Getting help](#3-getting-help)
+* [Functions](#10-functions)
+* [Writing data](#11-writing-data)
+* [Split-Apply-Combine](12-split-apply-combine)
+* [dplyr](#13-dplyr)
+* [tidyr](#14-tidyr)
+* [R and SQL](#16-r-and-sql)
 
 ## 1. Introduction
 
@@ -85,7 +92,7 @@ What is the difference between `paste` and `paste0`?
       type file that is tab (\t) delimited instead?<br\>
  **Hint**: use `??csv` to see what is available
 
-## 10. functions
+## 10. Functions
 
 * 10.2.1 Test the GDP function by calculating the GDP for New Zealand in 1987. How does this differ from New Zealand’s GDP in 1952?
 
