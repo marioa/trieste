@@ -54,6 +54,37 @@ ddply(.data=gap_year_cont,
 .fun=function(x){c(lifexpDiff=x$mean[x$year==2007]-x$mean[x$year==1952])})
 ```
 
+## 2. Project Management
+
+2.1.3 Modify your Readme.md
+
+ Modify your Readme.md file (add/remove content as you like).
+ Save the file, commit the file (go to the Git panel select the file
+ and then click on Commit). A window will come up where you need to put
+ in a sensible commit message. Once this is done click on the Push button
+ and that should push the contents to GitHub - do you see those changes?
+
+ 2.1.4 Remotely modify your Readme.md
+
+ On GitHub click on the Readme.md file. Select Edit (the pencil), modify the content
+ and save (add a sensible commit message there as well).
+
+ In Rstudio click on the Pull button. Do you see the changes you made being
+ ported back to your local Readme.md version?
+
+ 2.1.5 Ignoring files
+
+ 1. Create a directory within your project called graphs (in the files
+    view click on the "New Folder" item).
+ 2. Modify the .gitignore file to contain graphs/ so that this 
+    disposable output isn’t versioned.
+ 3. Commit your .gitignore file.
+ 4. Push the content.
+
+ If you have managed to do all these steps you should now be in a position to 
+ use Rstudio with GitHub (or any other remote git repository).
+
+
 ## 10. functions
 
 * 10.2.1 Test the GDP function by calculating the GDP for New Zealand in 1987. How does this differ from New Zealand’s GDP in 1952?
