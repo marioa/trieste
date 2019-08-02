@@ -88,7 +88,7 @@ load.project()
 #
 # Go to your GitHub account and create a new repository for my_project2.
 # When you create your project you should get instructions on how to push
-# an existing project to GitHub. On the Git pannel click on the "More" menu
+# an existing project to GitHub. On the Git panel click on the "More" menu
 # item and select "Shell...". This will open up a shell command in the 
 # your new project directory. Type the commands GitHub is suggesting to you
 # there (this should push up your project content to GitHub). You should now
