@@ -1,3 +1,10 @@
+# Sample answers
+
+## Contents
+
+* [Introduction](#1-introduction)
+* [Project management](#2-project-management)
+
 ## 1. Introduction
 
 * 1.1 Which of the following are valid R-names?
