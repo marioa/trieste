@@ -7,7 +7,7 @@
 * [Getting help](#3-getting-help)
 * [Functions](#10-functions)
 * [Writing data](#11-writing-data)
-* [Split-Apply-Combine](12-split-apply-combine)
+* [Split-Apply-Combine](#12-split-apply-combine)
 * [dplyr](#13-dplyr)
 * [tidyr](#14-tidyr)
 * [R and SQL](#16-r-and-sql)
