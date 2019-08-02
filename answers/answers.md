@@ -43,31 +43,58 @@ bmi <- weight/(height*height)
 
 ## 2. Project Management
 
+* 2.1.1 Create a new git enabled project
+
+ Create a new empty project my_project2. Make sure that this is git enabled.
+
+ Add a `Readme.md` file (`File -> New File -> Text file`) with the following  text:
+
+```
+# My test project
+
+This is my test Trieste repository.
+```
+
+then on Studio:
+
+```
+ File -> Save As...
+```
+
+ Call the file `Readme.md`. Save it at the root directory.
+ Switch to the git window.  Add and commit this file with the
+` .gitignore` file.
+
+* 2.1.2 Create GitHub repository and push the contents
+
+ Go to your GitHub account and create a new repository for my_project2.
+ When you create your project you should get instructions on how to push
+ an existing project to GitHub. On the Git panel click on the `More` menu
+ item and select `Shell...`. This will open up a shell command in the 
+ your new project directory. Type the commands GitHub is suggesting to you
+ there (this should push up your project content to GitHub). You should now
+ see your content on GitHub.
+
 * 2.1.3 Modify your Readme.md
 
- Modify your Readme.md file (add/remove content as you like).
- Save the file, commit the file (go to the Git panel select the file
- and then click on Commit). A window will come up where you need to put
- in a sensible commit message. Once this is done click on the Push button
- and that should push the contents to GitHub - do you see those changes?
+Modify your `Readme.md` file (add/remove content as you like).
+Save the file, commit the file (go to the Git panel select the file and then click on Commit). A window will come up where you need to put in a sensible commit message. Once this is done click on the Push button and that should push the contents to GitHub - do you see those changes?
 
 * 2.1.4 Remotely modify your Readme.md
 
- On GitHub click on the Readme.md file. Select Edit (the pencil), modify the content
+ On GitHub click on the `Readme.md` file. Select Edit (the pencil), modify the content
  and save (add a sensible commit message there as well).
 
- In Rstudio click on the Pull button. Do you see the changes you made being ported back to your local Readme.md version?
+ In Rstudio click on the Pull button. Do you see the changes you made being ported back to your local `Readme.md` version?
 
 * 2.1.5 Ignoring files
 
- 1. Create a directory within your project called graphs (in the files
-    view click on the "New Folder" item).
- 2. Modify the `.gitignore` file to contain graphs/ so that this 
-    disposable output isn’t versioned.
+ 1. Create a directory within your project called graphs (in the files view click on the `New Folder` item).
+ 2. Modify the `.gitignore` file to contain graphs/ so that this disposable output isn’t versioned.
  3. Commit your `.gitignore` file.
  4. Push the content.
 
- If you have managed to do all these steps you should now be in a position to  use Rstudio with GitHub (or any other remote git repository).
+If you have managed to do all these steps you should now be in a position to  use Rstudio with GitHub (or any other remote git repository).
 
 ## 3. Getting help
 
@@ -80,13 +107,13 @@ c(1, 2, 'f')
 ```
 These are called vectors, more about these later.
 
-* 3.1.2 what does the paste function do?
+* 3.1.2 what does the `paste` function do?
 ```
-x <- c("fred","john")               Create a vector 
+x <- c("fred","john")              # Create a vector 
 paste(x,"one","two","three")
 ```
  What do the optional arguments "sep" and "collapse" do?
- i.e. `paste(x,"one","two","three", sep="-")`
+ i.e. `paste(x,"one","two","three", sep="-")` <br/>
 What is the difference between `paste` and `paste0`?
 
 *  3.1.3: how would you read a comma separated values (csv)
