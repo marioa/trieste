@@ -224,6 +224,159 @@ What is the difference between `paste` and `paste0`?
 
      ![New plot of animals](imgs/animals2.png)
 
+* 4.4.1 What do the following give you and what types do they return? Use `typeof()`, `class()` and `str()`
+
+  ```R
+  cats[1]
+  cats[[1]]
+  cats$coat
+  cats["coat"]
+  cats[1, 1]
+  cats[, 1]
+  cats[1, ]
+  
+  typeof(cats[1]); class(cats[1]); str(cats[1])
+  [1] "list"
+  [1] "data.frame"
+  'data.frame':	3 obs. of  1 variable:
+   $ coat: Factor w/ 3 levels "black","calico",..: 2 1 3
+  
+  typeof(cats[[1]]); class(cats[[1]]); str(cats[[1]])
+  [1] "integer"
+  [1] "factor"
+   Factor w/ 3 levels "black","calico",..: 2 1 3
+  
+   typeof(cats$coat); class(cats$coat); str(cats$coat)
+  [1] "integer"
+  [1] "factor"
+   Factor w/ 3 levels "black","calico",..: 2 1 3
+  
+  typeof(cats[1,1]); class(cats[1,1]); str(cats[1,1])
+  [1] "integer"
+  [1] "factor"
+   Factor w/ 3 levels "black","calico",..: 2
+  
+  typeof(cats[,1]); class(cats[,1]); str(cats[,1])
+  [1] "integer"
+  [1] "factor"
+   Factor w/ 3 levels "black","calico",..: 2 1 3
+  
+  typeof(cats[1,]); class(cats[1,]); str(cats[1,])
+  [1] "list"
+  [1] "data.frame"
+  'data.frame':	1 obs. of  3 variables:
+   $ coat        : Factor w/ 3 levels "black","calico",..: 2
+   $ weight      : num 2.1
+   $ likes_string: logi TRUE
+  ```
+
+* 4.5.1 What do you think will be the result of `length(matrix_example)`? 
+
+  ```R
+  length(matrix_example)
+  [1] 18
+  ```
+
+* Make another matrix, this time containing the numbers 1:50 with 5 columns and 10 rows. Did the matrix function fill your matrix by column, or by row, as its default behaviour? Can you get it to fill the matrix the other way round?
+
+  ```R
+  (m <- matrix(1:50,ncol=5))
+        [,1] [,2] [,3] [,4] [,5]
+   [1,]    1   11   21   31   41
+   [2,]    2   12   22   32   42
+   [3,]    3   13   23   33   43
+   [4,]    4   14   24   34   44
+   [5,]    5   15   25   35   45
+   [6,]    6   16   26   36   46
+   [7,]    7   17   27   37   47
+   [8,]    8   18   28   38   48
+   [9,]    9   19   29   39   49
+  [10,]   10   20   30   40   50
+  
+  (m <- matrix(1:50,ncol=5,byrow=TRUE))
+        [,1] [,2] [,3] [,4] [,5]
+   [1,]    1    2    3    4    5
+   [2,]    6    7    8    9   10
+   [3,]   11   12   13   14   15
+   [4,]   16   17   18   19   20
+   [5,]   21   22   23   24   25
+   [6,]   26   27   28   29   30
+   [7,]   31   32   33   34   35
+   [8,]   36   37   38   39   40
+   [9,]   41   42   43   44   45
+  [10,]   46   47   48   49   50
+  ```
+
+* 4.5.3 Create a list of length two containing a character vector for each of the sections in this part of the workshop:
+
+  * Data types:
+    * 'double', 'complex', 'integer', 'character', 'logical'
+  * Data structures:
+    * 'data.frame', 'vector', 'factor', 'list', 'matrix'
+
+  Populate each character vector with the names of the data types and data structures we’ve seen so far.
+
+  ```R
+  (mytypes <- list(
+      dataTypes=c('double', 'complex', 'integer', 'character', 'logical'),
+      dataStructs=c('double', 'complex', 'integer', 'character', 'logical')))
+  
+  $dataTypes
+  [1] "double"    "complex"   "integer"   "character" "logical"  
+  
+  $dataStructs
+  [1] "double"    "complex"   "integer"   "character" "logical" 
+  ```
+
+* 5.4 Consider the R output of the matrix below:
+
+  ```
+        [,1] [,2]
+  [1,]    4    1
+  [2,]    9    5
+  [3,]   10    7
+  ```
+
+  What was the correct command used to write this matrix? Examine each command and try to figure out the correct one before running them. Think about what matrices the other commands will produce.
+
+  ```R
+  matrix(c(4, 1, 9, 5, 10, 7), nrow = 3)
+  matrix(c(4, 9, 10, 1, 5, 7), ncol = 2, byrow = TRUE)
+  matrix(c(4, 9, 10, 1, 5, 7), nrow = 2)
+  matrix(c(4, 1, 9, 5, 10, 7), ncol = 2, byrow = TRUE) # This one
+  ```
+
+* 5.5 Consider:
+
+  ```R
+  m1 <- matrix(seq(1,16),ncol=4,nrow=4)
+  m2 <- matrix(seq(16,1,-1),ncol=4,nrow=4)
+  ```
+
+  If you multiply these you get an elementwise multiplication:
+
+  ```R
+  m1*m2
+       [,1] [,2] [,3] [,4]
+  [1,]   16   60   72   52
+  [2,]   30   66   70   42
+  [3,]   42   70   66   30
+  [4,]   52   72   60   16
+  ```
+
+  How would you get a proper get a proper matrix-matrix product? This is a question about using help (you don't have to understand matrix multiplication), remember "??" ?
+
+  ```R
+  m1 %*% m2
+       [,1] [,2] [,3] [,4]
+  [1,]  386  274  162   50
+  [2,]  444  316  188   60
+  [3,]  502  358  214   70
+  [4,]  560  400  240   80
+  ```
+
+  
+
 ## 10. Functions
 
 * 10.2.1 Test the GDP function by calculating the GDP for New Zealand in 1987. How does this differ from New Zealand’s GDP in 1952?
