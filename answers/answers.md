@@ -6,6 +6,11 @@
 * [Project management](#2-project-management)
 * [Getting help](#3-getting-help)
 * [Data structures](#4-data-structures)
+* [Exploring data frame](#5-exploring-data-frames)
+* [Subsetting data](#6-subsetting-data)
+* [Control flow](#7-control-flow)
+* [Quality Graphics](#9-quality-graphics)
+* [Vectorisation](#9-vectorisation)
 * [Functions](#10-functions)
 * [Writing data](#11-writing-data)
 * [Split-Apply-Combine](#12-split-apply-combine)
@@ -375,7 +380,17 @@ What is the difference between `paste` and `paste0`?
   [4,]  560  400  240   80
   ```
 
-  
+
+
+## 5. Exploring data frames
+
+## 6. Subsetting data
+
+## 7. Control flow
+
+## 8. Quality graphics
+
+## 9. Vectorisation
 
 ## 10. Functions
 
