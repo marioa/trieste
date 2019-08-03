@@ -5,6 +5,7 @@
 * [Introduction](#1-introduction)
 * [Project management](#2-project-management)
 * [Getting help](#3-getting-help)
+* [Data structures](#4-data-structures)
 * [Functions](#10-functions)
 * [Writing data](#11-writing-data)
 * [Split-Apply-Combine](#12-split-apply-combine)
@@ -62,28 +63,21 @@ then on Studio:
 ```
 
  Call the file `Readme.md`. Save it at the root directory.
- Switch to the git window.  Add and commit this file with the
-` .gitignore` file. On RStudio see `Help->Markdown quick reference` to see what can be done.
+ Switch to the git window.  Add and commit this file with the `.gitignore` file. On RStudio see `Help->Markdown quick reference` to see what can be done.
 
 * 2.1.2 Create GitHub repository and push the contents
 
- Go to your GitHub account and create a new repository for `my_project2`.
- When you create your project you should get instructions on how to push
- an existing project to GitHub. On the Git panel click on the `More` menu
- item and select `Shell...`. This will open up a shell command in the 
- your new project directory. Type the commands GitHub is suggesting to you
- there (this should push up your project content to GitHub). You should now
- see your content on GitHub.
+ Go to your GitHub account and create a new repository for `my_project2`. When you create your project you should get instructions on how to push an existing project to GitHub. On the Git panel click on the `More` menu item and select `Shell...`. This will open up a shell command in the your new project directory. Type the commands GitHub is suggesting to you there (this should push up your project content to GitHub). You should now see your content on GitHub.
 
-* 2.1.3 Modify your Readme.md
+* 2.1.3 Modify your `Readme.md`
 
 Modify your `Readme.md` file (add/remove content as you like). Save the file, commit the file (go to the Git panel select the file and then click on Commit). A window will come up where you need to put in a sensible commit message. Once this is done click on the Push button and that should push the contents to GitHub - do you see those changes?
 
-* 2.1.4 Remotely modify your Readme.md
+* 2.1.4 Remotely modify your `Readme.md`
 
- On GitHub click on the `Readme.md` file. Select Edit (the pencil), modify the content and save (add a sensible commit message there as well).
+On GitHub click on the `Readme.md` file. Select Edit (the pencil), modify the content and save (add a sensible commit message there as well).
 
-In Rstudio click on the Pull button. Do you see the changes you made being ported back to your local `Readme.md` version?
+In RStudio, click on the Pull button. Do you see the changes you made being ported back to your local `Readme.md` version?
 
 * 2.1.5 Ignoring files
 
@@ -96,8 +90,7 @@ If you have managed to do all these steps you should now be in a position to  us
 
 ## 3. Getting help
 
-* 3.1.1 what does the `c` function do?
- What do the following give you?
+* 3.1.1 what does the `c` function do? What do the following give you?
 ```R
 c(1, 2, 3)
 c('d', 'e', 'f')
@@ -115,7 +108,121 @@ paste(x,"one","two","three")
 What is the difference between `paste` and `paste0`?
 
 *  3.1.3: how would you read a comma separated values (csv) type file that is tab (`\t`) delimited instead?<br/>
-       **Hint**: use `??csv` to see what is available
+    **Hint**: use `??csv` to see what is available.
+
+## 4. Data Structures
+
+* 4.1.1 Coerce `character_coerced_to_numeric` to integers.
+
+  ```R
+  as.integer(character_coerced_to_numeric)
+  ```
+
+* 4.2.1 Do the following:
+
+  1. Make a vector with the numbers 1 to 26.
+
+     ```
+     (myvec <- 1:26)
+     ```
+
+  2. Multiply these by 2.
+
+     ```R
+     (myvec <- myvec *2 )
+     ```
+
+  3. Name the elements (there is a built in vector called `letters` for small case letters `LETTERS` for capitals).
+
+     ```R
+     names(myvec) <- letters
+     myvec
+     # or if yu want to use capitals
+     names(myvec) <- LETTERS
+     myvec
+     ```
+
+* 4.2.2 What do you think the following will give you?
+
+  ```R
+  x <- seq(1,4)
+  x+1
+  [1] 2 3 4 5
+  ```
+
+  So what do you think the following will give you?
+
+  ```R
+  y <- seq(1,2)
+  x+y
+  [1] 2 4 4 6
+  ```
+
+  This happens because, as the `y` vector fits it is recycled so you get:
+
+  ```
+  (x[1]+y[1]]) (x[2]+y[1]]) (x[2]+y[1]]) (x[3]+y[1]]) (x[4]+y[2]])
+  ```
+
+  What about:
+
+  ```R
+  x*y
+  [1] 1 4 3 8
+  ```
+
+  Similarly:
+
+  ```
+  (x[1]*y[1]]) (x[2]*y[1]]) (x[2]*y[1]]) (x[3]*y[1]]) (x[4]*y[2]])
+  ```
+
+* 4.3.1 The default behaviour for `read.csv` is to read strings as factors. Look up the documentation to find ways of not reading strings as factors.
+
+  ```R
+  cats <-read.csv(file="../data/feline-data.csv",stringsAsFactors = FALSE)
+  ```
+
+  Create a new vector that recovers the values from `factor_of_myvals`. Remember if you just use `as.integer` you get the index of the factor and not the values. 
+
+  **Hint**: think of `as.character` but we do not want characters.
+
+  ```R
+  myvals <- c(1,2,3,3,2,1,10,2,5)
+  factor_of_myvals <- factor(myvals)
+  as.integer(as.character(factor_of_myvals))
+  [1]  1  2  3  3  2  1 10  2  5
+  ```
+
+* 4.3.2 factors are good for doing quick plots:
+
+  ```R
+  animals <- factor(c("dog","cat","dog","cow","dog","dog","dog","rabbit"))
+  plot(animals)
+  ```
+
+  ![Resulting plot](imgs/animals.png)
+
+  Look up the documentation for plot and to this diagram do the following:
+
+  1. Add a plot title "Farm yard animals"
+
+  2. Add an x-axis title "Animals"
+
+  3. Add a y-axis title "Numbers"
+
+  4. Change the colour of the bars to "red"
+
+  5. Reverse the ordering of the labels (this are coming from the levels) so you get "rabbit","dog","cow", "cat".
+
+     ```R
+     animals <- factor(c("dog","cat","dog","cow","dog","dog","dog","rabbit"),
+                      levels=c("rabbit","dog","cow", "cat"))
+     plot(animals, main="Farm yard animals",xlab="Animals",
+          ylab="Numbers", col="red")
+     ```
+
+     ![New plot of animals](imgs/animals2.png)
 
 ## 10. Functions
 
