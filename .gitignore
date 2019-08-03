@@ -10,6 +10,9 @@
 # R session data files
 .RData
 
+# Do not add Rproj files
+*.Rproj
+
 # Directory for storing user data.
 .Ruserdata
 
