@@ -1,5 +1,5 @@
 
-# Creating a new project in Rstudio --------------------------------------------------
+# Creating a new project in RStudio --------------------------------------------------
 
 # Create an RStudio project for the current project (will make it easier to 
 # return)
@@ -23,6 +23,7 @@
 #
 # Can now create the suggested layout.
 #
+
 
 
 # Using project templates -------------------------------------------------
@@ -64,6 +65,8 @@ load.project()
 # File -> "New Project..." -> Existing Directory
 #
 # Navigate to ~/my_project2 and click on "Create Project".
+
+
 
 
 # Challenge 2.1 -------------------------------------------------------------
