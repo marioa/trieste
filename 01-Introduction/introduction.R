@@ -3,18 +3,21 @@
 #
 # This is a comment, anything that follows a hash to the end of the line will be ignored.
 #
-# To switch between windows on rStudio
+# To switch between windows in RStudio:
 #
-# Cntr-1 - the source window
+# Cntr-1 - the source window*
 # Cntr-2 - the console
 # Cntr-3 - the help window
-# Cntr-4 - the history window
-# Cntr-5 - the files window
-# Cntr-6 - the plots window
-# Cntr-7 - the packages window
-# Cntr-8 - the environment window
-# Cntr-9 - the Git/SVN window
+# Cntr-4 - the history window*
+# Cntr-5 - the files window*
+# Cntr-6 - the plots window*
+# Cntr-7 - the packages window*
+# Cntr-8 - the environment window*
+# Cntr-9 - the Git/SVN window*
 # Cntr-0 - show build
+#
+# If you click Cntr-Shift you maximise that windows functions with a * above. 
+# Repeat command to minimise again.
 #
 # To execute commands type in the Source window (this window):
 #
@@ -39,10 +42,13 @@ print("Hello World!")
 # Fold All            Alt-O         Cmd-Option-O
 # Unfold All          Shift-Alt-O   Shift-Cmd-Option-O
 #
+# Can also open/close sections by clicking on the small triangles next to the 
+# line numbers.
+#
 # Nice cheat sheet on Rstudio:
 #
 #   https://www.rstudio.com/wp-content/uploads/2016/01/rstudio-IDE-cheatsheet.pdf
-
+#
 
 # Using R as a calculator -------------------------------------------------
 
@@ -137,7 +143,7 @@ x = 100 # Not so common in the R community
 # Vectorization -----------------------------------------------------------
 
 # R operates very well on vectors
-1:5u
+1:5
 
 # What will the following give me?
 2^(1:5)
@@ -235,13 +241,17 @@ bmi    <-     # bmi is the weight divided by the square of the height.
 #     ggplot2, dplyr, ProjectTemplate,dplyr, tidyr, dbplyr, RSQLite
 #
 # You will need these for future lessons
-install.packages(c("ggplot2", "ProjectTemplate","dplyr", "tidyr", "dbplyr", "RSQLite"))
+# install.packages(c("ggplot2", "ProjectTemplate","dplyr", "tidyr", "dbplyr", "RSQLite"))
+# tidyverse includes ggplot2, dplyr, tidyr and others
+
+install.packages(c("tidyverse","ProjectTemplate","dbplyr","RSQLite"))
 
 # You can test that this has worked by running each of the following lines:
 library(PhoneyLibrary) # This will give you the error will see if it has not worked.
-library(ggplot2)
+#library(ggplot2)
+#library(dplyr)
+#library(tidyr)
+library(tidyverse)
 library(ProjectTemplate)
-library(dplyr)
-library(tidyr)
 library(dbplyr)
 library(RSQLite)
