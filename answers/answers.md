@@ -474,6 +474,29 @@ What is the difference between `paste` and `paste0`?
 
 ## 9. Vectorisation
 
+* 9.1.1 Create a new column in gapminder called `pop_millions` that takes the `pop` population and expresses it in units of a million (you can also use `gapminder$NewColumnName` to create a new column).
+
+```R
+gapminder2 <- cbind(gapminder,gapminder$pop/1000000)
+gapminder$pop_millions <- gapminder$pop/1000000
+```
+
+* 9.1.2 On a single graph, plot population, in millions, against year, for all countries. Don’t worry about identifying which country is which.
+
+  ```R
+  ggplot(data=gapminder,aes(x=year,y=pop_millions)) +geom_point()
+  ```
+
+  ![Population by millions vs year](imgs/pop_millionsVsYear.png)
+
+* 9.1.3 Repeat the exercise, graphing only for "China", "India", "Indonesia". Again, don’t worry about which is which.
+
+  ```R
+  ggplot(data=gapminder[gapminder$country %in% c("China", "India", "Indonesia"),],aes(x=year,y=pop_millions)) + geom_point()
+  ```
+
+  ![Population in millions only for China, India and Indonesia.](imgs/PopMillionVsYearSubset.png)
+
 ## 10. Functions
 
 * 10.2.1 Test the GDP function by calculating the GDP for New Zealand in 1987. How does this differ from New Zealand’s GDP in 1952?
