@@ -98,7 +98,7 @@ x[-which(names(x) %in% c("a", "c"))]
 x <- c(5.4, 6.2, 7.1, 4.8, 7.5)
 names(x) <- c('a', 'b', 'c', 'd', 'e')
 print(x)
-# What do you expext the following give you?
+# What do you expect the following give you?
 x[-which(names(x) == "g")]
 
 # Did this match your expectation? 
@@ -330,7 +330,7 @@ m[2:5]      # B.
 m[4:5,2]    # C.
 m[2,c(4,5)] # D.
 
-# 6.4.2 For the following matrix
+# 6.4.2 For the following matrix:
 m <- matrix(data=1:16,nrow=4)
 m
 # you can use 
@@ -391,7 +391,7 @@ xlist <- list(a = "Software Carpentry", b = 1:10, data = head(iris))
 
 mod <- aov(pop ~ lifeExp, data=gapminder)
 
-# Extract the residual degrees of freedom (hint: attributes() will help you),
+# Extract the residual degrees of freedom (hint: attributes() will help you).
 
 
 # Data frames -------------------------------------------------------------
@@ -446,7 +446,7 @@ gapminder[gapminder$year == 2002 | 2007,]
 gapminder[gapminder$year == 1972 & gapminder$country == "Botswana","lifeExp"]
 # Using subset this would become:
 subset(gapminder,gapminder$year == 1972 & gapminder$country == "Botswana")
-# The following are equivalent
+# The following are equivalent:
 gapminder[gapminder$lifeExp < 30,c("country","year","lifeExp")]
 subset(gapminder,lifeExp < 30,select=c("country","year","lifeExp"))
 # Use both methods to:
