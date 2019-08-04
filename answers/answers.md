@@ -384,6 +384,88 @@ What is the difference between `paste` and `paste0`?
 
 ## 5. Exploring data frames
 
+* 5.5.1 Remove the duplicated lines we added to the data frame
+
+  ```
+  cats[c(1:4,9),]
+             coat weight likes_string age
+  1        calico    2.1         TRUE   4
+  2         black    5.0        FALSE   5
+  3         tabby    3.2         TRUE   8
+  4 tortoiseshell    3.3         TRUE   9
+  9      Cheshire    0.0         TRUE 152
+  
+  unique(cats)
+             coat weight likes_string age
+  1        calico    2.1         TRUE   4
+  2         black    5.0        FALSE   5
+  3         tabby    3.2         TRUE   8
+  4 tortoiseshell    3.3         TRUE   9
+  9      Cheshire    0.0         TRUE 152
+  ```
+
+* 5.5.2 You can create a data frame using
+
+  ```R
+  df <- data.frame(id = c('a', 'b', 'c'),
+                   x = 1:3,
+                   y = c(TRUE, TRUE, FALSE),
+                   stringsAsFactors = FALSE)
+  ```
+
+  Create your own data frame that contains your:
+
+  * first name
+  * last name
+  * lucky number
+
+  Use `rbind` to add information for the people next to you. Use `cbind` to add an extra column specifying whether they prefer "tea", "coffee","juice" or "water".
+
+* 5.1.3 Create a `cats2` data frame that re-arranges the order of the columns of `cats` to have "weight", "coat", "likes_string", "age" data frame. Rename the columns of `cats2` to use the capital` LETTERS` starting from N and use every second letter, i.e. N (letter 14),P,R and T.
+
+  ```R
+  (cats2 <- unique(cats[c("weight", "coat", "likes_string", "age")]))
+    weight          coat likes_string age
+  1    2.1        calico         TRUE   4
+  2    5.0         black        FALSE   5
+  3    3.2         tabby         TRUE   8
+  4    3.3 tortoiseshell         TRUE   9
+  9    0.0      Cheshire         TRUE 152
+  
+  names(cats2) <- LETTERS[seq(14,20,2)]
+  cats2
+      N             P     R   T
+  1 2.1        calico  TRUE   4
+  2 5.0         black FALSE   5
+  3 3.2         tabby  TRUE   8
+  4 3.3 tortoiseshell  TRUE   9
+  9 0.0      Cheshire  TRUE 152
+  ```
+
+* 5.2.1 Go to `File -> New file -> R` script, and write an R script to load in the gapminder dataset. Put it in the scripts/ directory and add it to version control.
+
+  Run the script using the `source` function, using the file path as its argument (or by pressing the “source” button in RStudio).
+
+  
+
+* 5.2.2 Read the output of `str(gapminder)` again; this time, use what you’ve learned about factors, lists and vectors, as well as the output of functions like `colnames` and `dim` to explain what everything that `str` prints out for gapminder means. If there are any parts you can’t interpret, discuss with your neighbors!
+
+  ```
+  str(gapminder)
+  'data.frame':	1704 obs. of  6 variables:
+   $ country  : Factor w/ 142 levels "Afghanistan",..: 1 1 1 1 1 1 1 1 1 1 ...
+   $ year     : int  1952 1957 1962 1967 1972 1977 1982 1987 1992 1997 ...
+   $ pop      : num  8425333 9240934 10267083 11537966 13079460 ...
+   $ continent: Factor w/ 5 levels "Africa","Americas",..: 3 3 3 3 3 3 3 3 3 3 ...
+   $ lifeExp  : num  28.8 30.3 32 34 36.1 ...
+   $ gdpPercap: num  779 821 853 836 740 
+   
+   dim(gapminder)
+  [1] 1704    6
+  ```
+
+  
+
 ## 6. Subsetting data
 
 ## 7. Control flow
