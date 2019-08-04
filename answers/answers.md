@@ -47,7 +47,7 @@ bmi <- weight/(height*height)
 
  Create a new empty project `my_project2`. Make sure that this is git enabled.
 
- Add a `Readme.md` file (`File -> New File -> Text file`) with the following  text:
+Add a `Readme.md` file (`File -> New File -> Text file`) with the following  text:
 
 ```
 # My test project
@@ -81,7 +81,7 @@ Modify your `Readme.md` file (add/remove content as you like). Save the file, co
 
 * 2.1.4 Remotely modify your Readme.md
 
- On GitHub click on the `Readme.md` file. Select Edit (the pencil), modify the content and save (add a sensible commit message there as well).
+On GitHub click on the `Readme.md` file. Select Edit (the pencil), modify the content and save (add a sensible commit message there as well).
 
 In Rstudio click on the Pull button. Do you see the changes you made being ported back to your local `Readme.md` version?
 
@@ -163,10 +163,7 @@ ddply(.data=gap_year_cont,
 
 ## 13. dplyr
 
-* 31.1.1 Write a single command (which can span multiple lines and includes pipes)
-             that will produce a dataframe that has the African values for `lifeExp`, 
-            `country` and `year`, but not for other Continents. How many rows does 
-            your dataframe have and why?
+* 31.1.1 Write a single command (which can span multiple lines and includes pipes) that will produce a dataframe that has the African values for `lifeExp`,  `country` and `year`, but not for other Continents. How many rows does your dataframe have and why?
 
 ```R
 gapminder                   %>%
@@ -178,8 +175,7 @@ nrow(lcy)         #  624
 ```
 
 * 13.2.1 Calculate the average life expectancy per country.
-             Which has the longest average life expectancy and 
-            which has the shortest average life expectancy?
+          Which has the longest average life expectancy and which has the shortest average life expectancy?
 
 ```R
 gapminder                            %>%
@@ -206,7 +202,7 @@ arrange(desc(AverageLife))
 
 * 13.3.1 Calculate the average life expectancy in 2002 of 2 randomly selected 
       countries for each continent. Then arrange the continent names in 
-      reverse order.<br>
+      reverse order.<br/>
       **Hint**: Use the `dplyr` functions `arrange()` and `sample_n()`, they have similar syntax to other `dplyr` functions.
 
 ```R
@@ -222,8 +218,7 @@ gapminder                                %>%
 
 * 14.1.1 Is `gapminder` a purely long, purely wide, or some intermediate format?
 
-* 14.1.2 Using `gap_long`, calculate the mean life expectancy, population, and `gdpPercap` 
-     for each continent. Hint: use the `group_by()` and `summarize()` functions we learned in the `dplyr` lesson
+* 14.1.2 Using `gap_long`, calculate the mean life expectancy, population, and `gdpPercap` for each continent. Hint: use the `group_by()` and `summarize()` functions we learned in the `dplyr` lesson
 
 ```R
 gap_long %>% group_by(continent,obs_type) %>% summarise(mean=mean(obs_values))
@@ -245,11 +240,8 @@ gap_long %>% group_by(continent,obs_type) %>% summarise(mean=mean(obs_values))
 
 ## 16. R and SQL
 
-* 16.1.1 Write a query that returns the number of rodents observed in each plot in each
-             year.<br>
-    **Hint**: Connect to the species table and write a query that joins the species and
-      survey tables together to exclude all non-rodents. The query should return
-      counts of rodents by year.
+* 16.1.1 Write a query that returns the number of rodents observed in each plot in each year.<br/>
+         **Hint**: Connect to the species table and write a query that joins the species and survey tables together to exclude all non-rodents. The query should return counts of rodents by year.
 ```      R
 (species <- tbl(mammals,"species"))
 (species %>% 
@@ -260,14 +252,13 @@ gap_long %>% group_by(continent,obs_type) %>% summarise(mean=mean(obs_values))
         collect() -> rodents)
 ```
 
-* 16.1.2 Write a query that returns the total number of rodents in each genus caught
-      in the different plot types.<br>
-      **Hint**: Write a query that joins the species, plot, and survey tables together.
+* 16.1.2 Write a query that returns the total number of rodents in each genus caught in the different plot types.<br/>
+  **Hint**: Write a query that joins the species, plot, and survey tables together.
             The query should return counts of genus by plot type.
 
 ```R
-# There is nothing in species that we can join with plots so we must perform
-# a preliminary join between surveys and plots.
+# There is nothing in species that we can join with plots so we 
+# must perform a preliminary join between surveys and plots.
 surveys %>% inner_join(plots) %>% select(species_id,plot_type)-> surveys_plots
 
 (
