@@ -128,14 +128,14 @@ df <- data.frame(id = c('a', 'b', 'c'),
 #   last name
 #   lucky number
 #
-# Use rbind to add inforation for the people next to you.
+# Use rbind to add information for the people next to you.
 #
 # Use cbind to add an extra column specifying whether they prefer
 # "tea", "coffee","juice" or "water"
 
 # 5.1.3
 # Create a cats2 data frame that re-arranges the order of the 
-# columns of cats to have "weight", "coat", "likes_string", "age".
+# columns of cats to have "weight", "coat", "likes_string", "age"
 # data frame. Rename the columns of cats2 to use the capital
 # LETTERS starting from N and use every second letter, i.e. 
 # N (letter 14),P,R and T.
@@ -211,7 +211,7 @@ names(gapminder)
 
 # 5.2.1
 # 
-# Go to file -> new file -> R script, and write an R script to load in the 
+# Go to File -> New file -> R script, and write an R script to load in the 
 # gapminder dataset. Put it in the scripts/ directory and add it to version 
 # control.
 #
