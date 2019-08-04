@@ -9,7 +9,7 @@
 * [Exploring data frame](#5-exploring-data-frames)
 * [Subsetting data](#6-subsetting-data)
 * [Control flow](#7-control-flow)
-* [Quality Graphics](#9-quality-graphics)
+* [Quality Graphics](#8-quality-graphics)
 * [Vectorisation](#9-vectorisation)
 * [Functions](#10-functions)
 * [Writing data](#11-writing-data)
