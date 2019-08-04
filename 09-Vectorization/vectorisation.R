@@ -58,11 +58,11 @@ m * -1
 # Challenge 9.2 -------------------------------------------------------------
 
 
-# 9.2.1 For the following matrix
+# 9.2.1 For the following matrix:
 
 (m <- matrix(1:12, nrow=3, ncol=4))
 
-# Predict what you will get **before** you execute the command"
+# Predict what you will get **before** you execute the command:
 
 m^-1
 m*c(1,0,-1)
