@@ -25,7 +25,7 @@ x+y
 
 # 9.1.1 Create a new column in gapminder called pop_millions that takes the
 #       pop population and expresses it in units of a million (you can also
-#       use gapmnder$NewColumnName to create a new column).
+#       use gapminder$NewColumnName to create a new column).
 
 # 9.1.2 On a single graph, plot population, in millions, against year, 
 #       for all countries. Don’t worry about identifying which country is which.
