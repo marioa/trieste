@@ -495,7 +495,71 @@ gapminder$pop_millions <- gapminder$pop/1000000
   ggplot(data=gapminder[gapminder$country %in% c("China", "India", "Indonesia"),],aes(x=year,y=pop_millions)) + geom_point()
   ```
 
+  
+
   ![Population in millions only for China, India and Indonesia.](imgs/PopMillionVsYearSubset.png)
+
+*  9.2.1 For the following matrix:
+
+  ```R
+  (m <- matrix(1:12, nrow=3, ncol=4))
+       [,1] [,2] [,3] [,4]
+  [1,]    1    4    7   10
+  [2,]    2    5    8   11
+  [3,]    3    6    9   12
+  ```
+
+  Predict what you will get **before** you execute the command:
+
+  ```R
+  m^-1
+  m*c(1,0,-1)
+  m>c(0,20)
+  m * c(1, 0, -1, 2)
+  
+  m^-1 # Each element, a, becomes 1/1
+            [,1]      [,2]      [,3]       [,4]
+  [1,] 1.0000000 0.2500000 0.1428571 0.10000000
+  [2,] 0.5000000 0.2000000 0.1250000 0.09090909
+  [3,] 0.3333333 0.1666667 0.1111111 0.08333333
+  
+  m*c(1,0,-1) # Piecewise multiplication of vector along the column -
+              # remember that the vector cycles.
+       [,1] [,2] [,3] [,4]
+  [1,]    1    4    7   10
+  [2,]    0    0    0    0
+  [3,]   -3   -6   -9  -12
+  
+  m>c(0,20) # picks the elements that are greater than 0 and 20 respectively
+            # and then it cyles.
+        [,1]  [,2]  [,3]  [,4]
+  [1,]  TRUE FALSE  TRUE FALSE
+  [2,] FALSE  TRUE FALSE  TRUE
+  [3,]  TRUE FALSE  TRUE FALSE
+  
+  m * c(1, 0, -1, 2) # piecewise multiplication of the elements by the vector.
+       [,1] [,2] [,3] [,4]
+  [1,]    1    8   -7    0
+  [2,]    0    5   16  -11
+  [3,]   -3    0    9   24
+  ```
+
+  How many did you get right? Are there any outputs that you do not understand?
+
+* 9.2.2 We’re interested in looking at the sum of the following sequence of fractions:
+
+```
+ x = 1/(1^2) + 1/(2^2) + 1/(3^2) + ... + 1/(n^2)
+```
+
+This would be tedious to type out, and impossible for high values of n. Use vectorisation to compute x when n=100. What is the sum when n=10,000? <br/>**Note**: there is a `sum()` function.
+
+```
+sum((1:10000)^-1)
+[1] 9.787606
+```
+
+
 
 ## 10. Functions
 
