@@ -468,6 +468,342 @@ What is the difference between `paste` and `paste0`?
 
 ## 6. Subsetting data
 
+*  6.1.1 Given the following code:
+
+```R
+x <- c(5.4, 6.2, 7.1, 4.8, 7.5)
+names(x) <- c('a', 'b', 'c', 'd', 'e')
+print(x)
+```
+
+Come up with at least 3 different commands that will produce the following output:
+
+```R
+b   c   d 
+6.2 7.1 4.8
+
+x[c(2,3,4)]
+  b   c   d 
+6.2 7.1 4.8 
+
+x[2:4]
+  b   c   d 
+6.2 7.1 4.8 
+
+x[seq(2,4)]
+  b   c   d 
+6.2 7.1 4.8 
+
+x[c("b","c","d")]
+  b   c   d 
+6.2 7.1 4.8 
+```
+
+After you find 3 different commands, compare notes with your neighbour. Did you have different strategies?
+
+* 6.2.1 Given the following code:
+
+```R
+x <- c(5.4, 6.2, 7.1, 4.8, 7.5)
+names(x) <- c('a', 'b', 'c', 'd', 'e')
+print(x)
+```
+
+What do you expect the following give you?
+
+```R
+x[-which(names(x) == "g")]
+named numeric(0)
+```
+
+Did this match your expectation? Why did we get this result?
+
+```R
+which(names(x) == "g")
+integer(0)
+```
+
+**Tip**: test out each part of the command on it’s own - this is a useful debugging strategy.
+
+* 6.2.1 Which of the following are true:
+
+  * if there are no `TRUE` values passed to `which`, an empty vector is returned. **TRUE**
+
+  ```R
+  which(FALSE)
+  integer(0)
+  ```
+
+  * if there are no TRUE values passed to which, an error message is shown. **FALSE** (see above)
+
+  * `integer()` is an empty vector. **TRUE**
+
+    ```R
+    integer()
+    integer(0)
+    ```
+
+  * making an empty vector negative produces an “everything” vector. **FALSE**
+
+  ```R
+  x <- 1:10
+  x[-integer(0)]
+  integer(0)
+  ```
+
+  * `x[]` gives the same result as `x[integer()]`. **FALSE**
+
+  ```
+  x[]
+   [1]  1  2  3  4  5  6  7  8  9 10
+  
+  x[integer()]
+  integer(0)
+  ```
+
+* 6.3.1 Write a subsetting command to return the values in `x` that are greater than 4 and less than 7 for the following code:
+
+  ```R
+  x <- c(5.4, 6.2, 7.1, 4.8, 7.5)
+  names(x) <- c('a', 'b', 'c', 'd', 'e')
+  print(x)
+  
+    a   b   c   d   e 
+  5.4 6.2 7.1 4.8 7.5 
+  
+  x[4<x & x<7]
+    a   b   d 
+  5.4 6.2 4.8 
+  ```
+
+* 6.4.1 Given the following code:
+
+```R
+m <- matrix(1:18, nrow=3, ncol=6)
+print(m)
+
+     [,1] [,2] [,3] [,4] [,5] [,6]
+[1,]    1    4    7   10   13   16
+[2,]    2    5    8   11   14   17
+[3,]    3    6    9   12   15   18
+```
+
+Which of the following commands will extract the values 11 and 14?
+
+```R
+m[2,4,2,5]  # A.
+m[2:5]      # B.
+m[4:5,2]    # C.
+m[2,c(4,5)] # D. <------
+```
+
+* 6.4.2 For the following matrix:
+
+```R
+m <- matrix(data=1:16,nrow=4)
+m
+
+     [,1] [,2] [,3] [,4]
+[1,]    1    5    9   13
+[2,]    2    6   10   14
+[3,]    3    7   11   15
+[4,]    4    8   12   16
+```
+
+you can use `rownames(m`) and `colnames(m)` to inspect/set the rownams/colnames. Also remember the built-in arrays: `letters` and `LETTERS`. Use these to name the rows to use small letters and the columns with large letters. Use the row and column names to dereference the entry that has the value 16.
+
+```
+rownames(m) <- LETTERS[1:4]
+colnames(m) <- letters[1:4]
+m
+  a b  c  d
+A 1 5  9 13
+B 2 6 10 14
+C 3 7 11 15
+D 4 8 12 16
+
+ m["D","d"]
+[1] 16
+```
+
+* 6.4.3 For the previous array only print out values that lie between 6 and 10.
+
+```R
+m[6<m & m<10]
+[1] 7 8 9
+```
+
+* Set the values outside 6 to 10 range to 0 and print these - best to work on a copy of the data.
+
+```R
+m2 <- m
+m2[m2<6 | m2 > 10] <- 0
+m2
+     [,1] [,2] [,3] [,4]
+[1,]    0    0    8    0
+[2,]    0    0    7    0
+[3,]    0   10    6    0
+[4,]    0    9    0    0
+```
+
+* 6.5.1 Given the following list:
+
+```R
+xlist <- list(a = "Software Carpentry", b = 1:10, data = head(iris))
+```
+
+Using your knowledge of both list and vector subsetting, extract the number 2 from `xlist`. **Hint**: the number 2 is contained within the `b` item in the list.
+
+```R
+xlist
+$a
+[1] "Software Carpentry"
+
+$b
+ [1]  1  2  3  4  5  6  7  8  9 10
+
+$data
+  Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+1          5.1         3.5          1.4         0.2  setosa
+2          4.9         3.0          1.4         0.2  setosa
+3          4.7         3.2          1.3         0.2  setosa
+4          4.6         3.1          1.5         0.2  setosa
+5          5.0         3.6          1.4         0.2  setosa
+6          5.4         3.9          1.7         0.4  setosa
+
+xlist$b[2]
+[1] 2
+```
+
+* 6.5.2 Given a linear model:
+
+```R
+mod <- aov(pop ~ lifeExp, data=gapminder)
+```
+
+ Extract the residual degrees of freedom (**hint**: `attributes()` will help you).
+
+```R
+attributes(mod)
+$names
+ [1] "coefficients"  "residuals"     "effects"       "rank"          "fitted.values" "assign"        "qr"            "df.residual"  
+ [9] "xlevels"       "call"          "terms"         "model"        
+
+$class
+[1] "aov" "lm" 
+
+mod$df.residual
+[1] 1702
+```
+
+* 6.6.1 Fix each of the following common data frame subsetting errors:
+
+  * Extract observations collected for the year 1957
+
+    ```R
+    gapminder[gapminder$year = 1957,]
+    Error: unexpected '=' in "gapminder[gapminder$year ="
+    
+    gapminder[gapminder$year == 1957,]
+    ```
+
+  * Extract all columns except 1 through to 4:
+
+    ```R
+    gapminder[,-1:4]
+    Error in .subset(x, j) : only 0's may be mixed with negative subscripts
+    
+    gapminder[,-(1:4)]
+    ```
+
+  * Extract the rows where the life expectancy is longer the 80 years:
+
+  ```R
+  gapminder[gapminder$lifeExp > 80]
+  Error in `[.data.frame`(gapminder, gapminder$lifeExp > 80) : 
+    undefined columns selected
+    
+  gapminder[gapminder$lifeExp > 80,]
+  ```
+
+  * Extract the first row, and the fourth and fifth columns (`lifeExp` and `gdpPercap`):
+
+  ```R
+  gapminder[1, 4, 5]
+  [1] Asia
+  Levels: Africa Americas Asia Europe Oceania
+  
+  gapminder[,c(1, 4, 5)]
+  ```
+
+  * Advanced: extract rows that contain information for the years 2002 and 2007:
+
+  ```R
+  gapminder[gapminder$year == 2002 | 2007,]
+  
+  gapminder[gapminder$year == 2002 | gapminder$year == 2007,]
+  ```
+
+* 6.6.2 Why does `gapminder[1:20]` return an error?  It only  has 7 columns. How does it differ from g`apminder[1:20, ]`? Comma indicates that you are seeking rows. Create a new `data.frame` called `gapminder_small` that only contains rows 1 through 9 and 19 through 23. You can do this in one or two steps.
+
+```R
+gapminder_small <- gapminder[c(1:9,19:23),]
+```
+
+* 6.6.3 Lookup in the help for the subsetting function. We can use this to subset a vector or a data frame, so to get the data only Botswana and for the year 1972 you might use:
+
+```R
+gapminder[gapminder$year == 1972 & gapminder$country == "Botswana","lifeExp"]
+```
+
+Using subset this would become:
+
+```R
+subset(gapminder,gapminder$year == 1972 & gapminder$country == "Botswana")
+```
+
+The following are equivalent:
+
+```R
+gapminder[gapminder$lifeExp < 30,c("country","year","lifeExp")]
+subset(gapminder,lifeExp < 30,select=c("country","year","lifeExp"))
+```
+
+Use both methods to:
+
+```R
+# 1. Return rows of only the countries that are in Africa.
+gapminder[gapminder$continent=="Africa",]
+
+# 2. Return only the country column.
+gapminder[gapminder$continent=="Africa","country"]
+
+# 3. Use the unique() to make a unique list.
+unique(gapminder[gapminder$continent=="Africa","country"])
+
+# 4. How many unique African countries are listed in this data set? (52)
+length(unique(gapminder[gapminder$continent=="Africa","country"]))
+[1] 52
+
+# 5. Do the same for Europe (30)
+length(unique(gapminder[gapminder$continent=="Europe","country"]))
+[1] 30
+
+# 6. Americas (25)
+length(unique(gapminder[gapminder$continent=="Americas","country"]))
+[1] 25
+
+# 7. Asia (33)
+length(unique(gapminder[gapminder$continent=="Asia","country"]))
+[1] 33
+
+# 8. Oceania (2)
+length(unique(gapminder[gapminder$continent=="Oceania","country"]))
+[1] 2
+```
+
+
+
 ## 7. Control flow
 
 ## 8. Quality graphics
@@ -554,7 +890,7 @@ gapminder$pop_millions <- gapminder$pop/1000000
 
 This would be tedious to type out, and impossible for high values of n. Use vectorisation to compute x when n=100. What is the sum when n=10,000? <br/>**Note**: there is a `sum()` function.
 
-```
+```R
 sum((1:10000)^-1)
 [1] 9.787606
 ```
