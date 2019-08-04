@@ -5,6 +5,12 @@
 * [Introduction](#1-introduction)
 * [Project management](#2-project-management)
 * [Getting help](#3-getting-help)
+* [Data structures](#4-data-structures)
+* [Exploring data frame](#5-exploring-data-frames)
+* [Subsetting data](#6-subsetting-data)
+* [Control flow](#7-control-flow)
+* [Quality Graphics](#9-quality-graphics)
+* [Vectorisation](#9-vectorisation)
 * [Functions](#10-functions)
 * [Writing data](#11-writing-data)
 * [Split-Apply-Combine](#12-split-apply-combine)
@@ -62,28 +68,21 @@ then on Studio:
 ```
 
  Call the file `Readme.md`. Save it at the root directory.
- Switch to the git window.  Add and commit this file with the
-` .gitignore` file. On RStudio see `Help->Markdown quick reference` to see what can be done.
+ Switch to the git window.  Add and commit this file with the `.gitignore` file. On RStudio see `Help->Markdown quick reference` to see what can be done.
 
 * 2.1.2 Create GitHub repository and push the contents
 
- Go to your GitHub account and create a new repository for `my_project2`.
- When you create your project you should get instructions on how to push
- an existing project to GitHub. On the Git panel click on the `More` menu
- item and select `Shell...`. This will open up a shell command in the 
- your new project directory. Type the commands GitHub is suggesting to you
- there (this should push up your project content to GitHub). You should now
- see your content on GitHub.
+ Go to your GitHub account and create a new repository for `my_project2`. When you create your project you should get instructions on how to push an existing project to GitHub. On the Git panel click on the `More` menu item and select `Shell...`. This will open up a shell command in the your new project directory. Type the commands GitHub is suggesting to you there (this should push up your project content to GitHub). You should now see your content on GitHub.
 
-* 2.1.3 Modify your Readme.md
+* 2.1.3 Modify your `Readme.md`
 
 Modify your `Readme.md` file (add/remove content as you like). Save the file, commit the file (go to the Git panel select the file and then click on Commit). A window will come up where you need to put in a sensible commit message. Once this is done click on the Push button and that should push the contents to GitHub - do you see those changes?
 
-* 2.1.4 Remotely modify your Readme.md
+* 2.1.4 Remotely modify your `Readme.md`
 
 On GitHub click on the `Readme.md` file. Select Edit (the pencil), modify the content and save (add a sensible commit message there as well).
 
-In Rstudio click on the Pull button. Do you see the changes you made being ported back to your local `Readme.md` version?
+In RStudio, click on the Pull button. Do you see the changes you made being ported back to your local `Readme.md` version?
 
 * 2.1.5 Ignoring files
 
@@ -96,8 +95,7 @@ If you have managed to do all these steps you should now be in a position to  us
 
 ## 3. Getting help
 
-* 3.1.1 what does the `c` function do?
- What do the following give you?
+* 3.1.1 what does the `c` function do? What do the following give you?
 ```R
 c(1, 2, 3)
 c('d', 'e', 'f')
@@ -115,7 +113,284 @@ paste(x,"one","two","three")
 What is the difference between `paste` and `paste0`?
 
 *  3.1.3: how would you read a comma separated values (csv) type file that is tab (`\t`) delimited instead?<br/>
-       **Hint**: use `??csv` to see what is available
+    **Hint**: use `??csv` to see what is available.
+
+## 4. Data Structures
+
+* 4.1.1 Coerce `character_coerced_to_numeric` to integers.
+
+  ```R
+  as.integer(character_coerced_to_numeric)
+  ```
+
+* 4.2.1 Do the following:
+
+  1. Make a vector with the numbers 1 to 26.
+
+     ```
+     (myvec <- 1:26)
+     ```
+
+  2. Multiply these by 2.
+
+     ```R
+     (myvec <- myvec *2 )
+     ```
+
+  3. Name the elements (there is a built in vector called `letters` for small case letters `LETTERS` for capitals).
+
+     ```R
+     names(myvec) <- letters
+     myvec
+     # or if yu want to use capitals
+     names(myvec) <- LETTERS
+     myvec
+     ```
+
+* 4.2.2 What do you think the following will give you?
+
+  ```R
+  x <- seq(1,4)
+  x+1
+  [1] 2 3 4 5
+  ```
+
+  So what do you think the following will give you?
+
+  ```R
+  y <- seq(1,2)
+  x+y
+  [1] 2 4 4 6
+  ```
+
+  This happens because, as the `y` vector fits it is recycled so you get:
+
+  ```
+  (x[1]+y[1]]) (x[2]+y[1]]) (x[2]+y[1]]) (x[3]+y[1]]) (x[4]+y[2]])
+  ```
+
+  What about:
+
+  ```R
+  x*y
+  [1] 1 4 3 8
+  ```
+
+  Similarly:
+
+  ```
+  (x[1]*y[1]]) (x[2]*y[1]]) (x[2]*y[1]]) (x[3]*y[1]]) (x[4]*y[2]])
+  ```
+
+* 4.3.1 The default behaviour for `read.csv` is to read strings as factors. Look up the documentation to find ways of not reading strings as factors.
+
+  ```R
+  cats <-read.csv(file="../data/feline-data.csv",stringsAsFactors = FALSE)
+  ```
+
+  Create a new vector that recovers the values from `factor_of_myvals`. Remember if you just use `as.integer` you get the index of the factor and not the values. 
+
+  **Hint**: think of `as.character` but we do not want characters.
+
+  ```R
+  myvals <- c(1,2,3,3,2,1,10,2,5)
+  factor_of_myvals <- factor(myvals)
+  as.integer(as.character(factor_of_myvals))
+  [1]  1  2  3  3  2  1 10  2  5
+  ```
+
+* 4.3.2 factors are good for doing quick plots:
+
+  ```R
+  animals <- factor(c("dog","cat","dog","cow","dog","dog","dog","rabbit"))
+  plot(animals)
+  ```
+
+  ![Resulting plot](imgs/animals.png)
+
+  Look up the documentation for plot and to this diagram do the following:
+
+  1. Add a plot title "Farm yard animals"
+
+  2. Add an x-axis title "Animals"
+
+  3. Add a y-axis title "Numbers"
+
+  4. Change the colour of the bars to "red"
+
+  5. Reverse the ordering of the labels (this are coming from the levels) so you get "rabbit","dog","cow", "cat".
+
+     ```R
+     animals <- factor(c("dog","cat","dog","cow","dog","dog","dog","rabbit"),
+                      levels=c("rabbit","dog","cow", "cat"))
+     plot(animals, main="Farm yard animals",xlab="Animals",
+          ylab="Numbers", col="red")
+     ```
+
+     ![New plot of animals](imgs/animals2.png)
+
+* 4.4.1 What do the following give you and what types do they return? Use `typeof()`, `class()` and `str()`
+
+  ```R
+  cats[1]
+  cats[[1]]
+  cats$coat
+  cats["coat"]
+  cats[1, 1]
+  cats[, 1]
+  cats[1, ]
+  
+  typeof(cats[1]); class(cats[1]); str(cats[1])
+  [1] "list"
+  [1] "data.frame"
+  'data.frame':	3 obs. of  1 variable:
+   $ coat: Factor w/ 3 levels "black","calico",..: 2 1 3
+  
+  typeof(cats[[1]]); class(cats[[1]]); str(cats[[1]])
+  [1] "integer"
+  [1] "factor"
+   Factor w/ 3 levels "black","calico",..: 2 1 3
+  
+   typeof(cats$coat); class(cats$coat); str(cats$coat)
+  [1] "integer"
+  [1] "factor"
+   Factor w/ 3 levels "black","calico",..: 2 1 3
+  
+  typeof(cats[1,1]); class(cats[1,1]); str(cats[1,1])
+  [1] "integer"
+  [1] "factor"
+   Factor w/ 3 levels "black","calico",..: 2
+  
+  typeof(cats[,1]); class(cats[,1]); str(cats[,1])
+  [1] "integer"
+  [1] "factor"
+   Factor w/ 3 levels "black","calico",..: 2 1 3
+  
+  typeof(cats[1,]); class(cats[1,]); str(cats[1,])
+  [1] "list"
+  [1] "data.frame"
+  'data.frame':	1 obs. of  3 variables:
+   $ coat        : Factor w/ 3 levels "black","calico",..: 2
+   $ weight      : num 2.1
+   $ likes_string: logi TRUE
+  ```
+
+* 4.5.1 What do you think will be the result of `length(matrix_example)`? 
+
+  ```R
+  length(matrix_example)
+  [1] 18
+  ```
+
+* Make another matrix, this time containing the numbers 1:50 with 5 columns and 10 rows. Did the matrix function fill your matrix by column, or by row, as its default behaviour? Can you get it to fill the matrix the other way round?
+
+  ```R
+  (m <- matrix(1:50,ncol=5))
+        [,1] [,2] [,3] [,4] [,5]
+   [1,]    1   11   21   31   41
+   [2,]    2   12   22   32   42
+   [3,]    3   13   23   33   43
+   [4,]    4   14   24   34   44
+   [5,]    5   15   25   35   45
+   [6,]    6   16   26   36   46
+   [7,]    7   17   27   37   47
+   [8,]    8   18   28   38   48
+   [9,]    9   19   29   39   49
+  [10,]   10   20   30   40   50
+  
+  (m <- matrix(1:50,ncol=5,byrow=TRUE))
+        [,1] [,2] [,3] [,4] [,5]
+   [1,]    1    2    3    4    5
+   [2,]    6    7    8    9   10
+   [3,]   11   12   13   14   15
+   [4,]   16   17   18   19   20
+   [5,]   21   22   23   24   25
+   [6,]   26   27   28   29   30
+   [7,]   31   32   33   34   35
+   [8,]   36   37   38   39   40
+   [9,]   41   42   43   44   45
+  [10,]   46   47   48   49   50
+  ```
+
+* 4.5.3 Create a list of length two containing a character vector for each of the sections in this part of the workshop:
+
+  * Data types:
+    * 'double', 'complex', 'integer', 'character', 'logical'
+  * Data structures:
+    * 'data.frame', 'vector', 'factor', 'list', 'matrix'
+
+  Populate each character vector with the names of the data types and data structures we’ve seen so far.
+
+  ```R
+  (mytypes <- list(
+      dataTypes=c('double', 'complex', 'integer', 'character', 'logical'),
+      dataStructs=c('double', 'complex', 'integer', 'character', 'logical')))
+  
+  $dataTypes
+  [1] "double"    "complex"   "integer"   "character" "logical"  
+  
+  $dataStructs
+  [1] "double"    "complex"   "integer"   "character" "logical" 
+  ```
+
+* 5.4 Consider the R output of the matrix below:
+
+  ```
+        [,1] [,2]
+  [1,]    4    1
+  [2,]    9    5
+  [3,]   10    7
+  ```
+
+  What was the correct command used to write this matrix? Examine each command and try to figure out the correct one before running them. Think about what matrices the other commands will produce.
+
+  ```R
+  matrix(c(4, 1, 9, 5, 10, 7), nrow = 3)
+  matrix(c(4, 9, 10, 1, 5, 7), ncol = 2, byrow = TRUE)
+  matrix(c(4, 9, 10, 1, 5, 7), nrow = 2)
+  matrix(c(4, 1, 9, 5, 10, 7), ncol = 2, byrow = TRUE) # This one
+  ```
+
+* 5.5 Consider:
+
+  ```R
+  m1 <- matrix(seq(1,16),ncol=4,nrow=4)
+  m2 <- matrix(seq(16,1,-1),ncol=4,nrow=4)
+  ```
+
+  If you multiply these you get an elementwise multiplication:
+
+  ```R
+  m1*m2
+       [,1] [,2] [,3] [,4]
+  [1,]   16   60   72   52
+  [2,]   30   66   70   42
+  [3,]   42   70   66   30
+  [4,]   52   72   60   16
+  ```
+
+  How would you get a proper get a proper matrix-matrix product? This is a question about using help (you don't have to understand matrix multiplication), remember "??" ?
+
+  ```R
+  m1 %*% m2
+       [,1] [,2] [,3] [,4]
+  [1,]  386  274  162   50
+  [2,]  444  316  188   60
+  [3,]  502  358  214   70
+  [4,]  560  400  240   80
+  ```
+
+
+
+## 5. Exploring data frames
+
+## 6. Subsetting data
+
+## 7. Control flow
+
+## 8. Quality graphics
+
+## 9. Vectorisation
 
 ## 10. Functions
 

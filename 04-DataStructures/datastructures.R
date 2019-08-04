@@ -64,8 +64,9 @@ typeof(TRUE)
 typeof("banana")
 
 # A line has been modified and a new line has been added to 
-# the the feline csv file
-file.show(file.path("../data/feline-data_v2.csv")) # NOT WORKING! Use shell.
+# the the feline csv file.
+# Set the working directory for this to work (paths are relative)
+file.show("../data/feline-data_v2.csv") # If it does not work use shell.
 
 # Lets read this file
 cats <- read.csv(file="../data/feline-data_v2.csv")
@@ -142,7 +143,7 @@ typeof(character_coerced_to_numeric)
 
 # Challenge 4.1 -------------------------------------------------------------
 
-# 4.1.1 coerce character_coerced_to_numeric to integers.
+# 4.1.1 Coerce character_coerced_to_numeric to integers.
 
 # Type coercion -----------------------------------------------------------
 
@@ -211,14 +212,14 @@ names(my_example)
 #
 # 1. Make a vector with the numbers 1 to 26.
 # 2. Multiply these by 2.
-# 3. Name them (there is a built in vector called letters for small 
+# 3. Name the elements (there is a built in vector called letters for small 
 #    case letters LETTERS for capitals).
 
 # 4.2.2 What do you think the following will give you?
-x<- seq(1,4)
+x <- seq(1,4)
 x+1
 # So what do you think the following will give you?
-y<-seq(1,2)
+y <- seq(1,2)
 x+y
 # What about:
 x*y
@@ -274,10 +275,10 @@ default_factor
 
 # Challenge 4.3 -------------------------------------------------------------
 
-# 4.3.1 The default for read.csv is to read strings as factors. Look up the 
+# 4.3.1 The default behaviour for read.csv is to read strings as factors. Look up the 
 #       documentation to find ways of not reading strings as factors.
 
-# Create a new vector that recovers the values from factor_of_myvals
+# Create a new vector that recovers the values from factor_of_myvals.
 # Remember if you just use as.integer you get the index of the factor
 # and not the values. Hint: think of as.character but we do not want 
 # characters.
@@ -340,8 +341,8 @@ str(cats[1,])      # Look at the internals
 
 # Challenge 4.4 -------------------------------------------------------------
 
-# 4.4.1 What do the following give you andn what types do they return? Use 
-#       typeof(), class() and struct()
+# 4.4.1 What do the following give you and what types do they return? Use 
+#       typeof(), class() and str()
 cats[1]
 cats[[1]]
 cats$coat
@@ -388,7 +389,7 @@ length(matrix_example)
 # 4.5.2 Make another matrix, this time containing the numbers 1:50, 
 #       with 5 columns and 10 rows. Did the matrix function fill your 
 #       matrix by column, or by row, as its default behaviour?
-#       Can you get it to fill the matrix the otherway round?
+#       Can you get it to fill the matrix the other way round?
 
 # 4.5.3 Create a list of length two containing a character vector for each of 
 #     the sections in this part of the workshop:
@@ -402,6 +403,7 @@ length(matrix_example)
 # structures we’ve seen so far.
 # 
 
+# Challenge 5.4 -------------------------------------------------------------
 # 5.4 Consider the R output of the matrix below:
 #   
 #   [,1] [,2]
@@ -417,6 +419,7 @@ matrix(c(4, 9, 10, 1, 5, 7), ncol = 2, byrow = TRUE)
 matrix(c(4, 9, 10, 1, 5, 7), nrow = 2)
 matrix(c(4, 1, 9, 5, 10, 7), ncol = 2, byrow = TRUE)
 
+# Challenge 5.5 -------------------------------------------------------------
 # 5.5 Consider:
 m1 <- matrix(seq(1,16),ncol=4,nrow=4)
 m2 <- matrix(seq(16,1,-1),ncol=4,nrow=4)
