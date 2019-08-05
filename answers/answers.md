@@ -943,7 +943,7 @@ ddply(.data=gap_year_cont,
 
 ## 13. dplyr
 
-* 31.1.1 Write a single command (which can span multiple lines and includes pipes) that will produce a dataframe that has the African values for `lifeExp`,  `country` and `year`, but not for other Continents. How many rows does your dataframe have and why?
+* 13.1.1 Write a single command (which can span multiple lines and includes pipes) that will produce a dataframe that has the African values for `lifeExp`,  `country` and `year`, but not for other Continents. How many rows does your dataframe have and why?
 
 ```R
 gapminder                   %>%
@@ -1004,7 +1004,7 @@ gapminder                                %>%
 gap_long %>% group_by(continent,obs_type) %>% summarise(mean=mean(obs_values))
 ```
 
-## 15. Tidyr
+## 15. Knitr
 
 * 15.1 Remove the sections in your own markdown document and try some of the above markdown objects.
 
