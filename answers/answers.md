@@ -1006,13 +1006,26 @@ gap_long %>% group_by(continent,obs_type) %>% summarise(mean=mean(obs_values))
 
 ## 15. Knitr
 
-* 15.1 Remove the sections in your own markdown document and try some of the above markdown objects.
+* 15.1 Remove the sections in your own markdown document and try some of the markdown objects described in the notes or in RStudio `Help -> Markdown Quick Reference`.
 
 * 15.2 Add code chunks to your existing document that:
-    * Load the `ggplot2` package
-    * Read the `gapminder` data
-    * Create a plot
+    * Loads the `ggplot2` package
+    * Reads the `gapminder` data
+    * Creates a plot
 
+    ```R
+    ​```{r read_and_plot_data}
+       library(ggplot2)
+       dat <- read.csv("../data/gapminder-FiveYearData.csv")
+       ggplot(data=dat,aes(x=year,y=pop,shape=continent)) +   
+              geom_point()
+    ​```
+    ```
+    
+    ![Output of population by year.](imgs/ggplot_out.png)
+    
+    
+    
 * 15.3 Use chunk options to control the size of a figure and to hide the code.
 
 * 15.4  Try out a bit of in-line R code.
