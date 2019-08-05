@@ -32,7 +32,8 @@
 # Challenge 15.1 -------------------------------------------------------------
 
 # 15.1 Remove the sections in your own markdown document and try some of the
-#      markdown objects described above.
+#      markdown objects described above or in RStudio 
+# `Help -> Markdown Quick Reference`.
 
 
 # More markdown -----------------------------------------------------------
@@ -60,8 +61,8 @@
 # 15.2 Add code chunks to your existing document that:
 # 
 # * Load the ggplot2 package
-# * Read the gapminder data
-# * Create a plot
+# * Reads the gapminder data
+# * Creates a plot
 
 
 # How things get compiled -------------------------------------------------
