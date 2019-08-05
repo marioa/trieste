@@ -32,7 +32,7 @@
 # Challenge 15.1 -------------------------------------------------------------
 
 # 15.1 Remove the sections in your own markdown document and try some of the
-#      above markdown objects.
+#      markdown objects described above.
 
 
 # More markdown -----------------------------------------------------------
