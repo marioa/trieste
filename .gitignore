@@ -36,3 +36,5 @@ package.json
 # Do not put mac stuff into the repo
 .DS_Store
 
+# Ignore output produced by npm.
+node_modules/
