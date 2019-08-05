@@ -914,6 +914,23 @@ Note: the paste function has an argument called `sep`, which specifies the separ
 
 ## 11. Writing data
 
+* 11.1.1 Rewrite your `pdf` command to print a second page in the pdf, showing a facet plot (hint: use `facet_grid`) of the same data with one panel per continent.
+
+* 11.1.2 Produce output to jpeg, use `jpeg()`. Note you will not do multipaged jpegs.
+
+* 11.1.3 Produce output to png, use `png()`. Note you will not do multipaged jpegs.
+
+* 11.1.4 Add the flag to your pdf() command `onefile=FALSE` *only* if you are using the `pdf()` output command and change the output filename to `Life_Exp_vs_time%03d.ext`  where `ext` is  `pdf`, `png` or `jpeg` depending on the output that you are using. What do you observe now?
+
+* 11.2.1 Modify the write.table command so that:
+
+    1. It does not print the rownames.
+    2. It does not quote the character or factor columns.
+
+  * 11.2.2 Write a data-cleaning script file that subsets the gapminder data to include only data points collected since 1990.
+
+     Use this script to write out the new subset to a file in the `../cleaned-data/` directory.
+
 ## 12. Split-Apply-Combine
 
 * 1.1 Calculate the average life expectancy per continent. 
