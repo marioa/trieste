@@ -17,3 +17,7 @@ Useful resources:
 * [R Inferno](http://www.burns-stat.com/pages/Tutor/R_inferno.pdf) tips and advice on R.
 
 * [R packages](http://r-pkgs.had.co.nz/) understanding what goes into building an R package.
+
+* [Geocomputation with R](https://geocompr.robinlovelace.net/) a book on geographic data analysis, visualization and modeling.
+
+* [The ggplot flip book](https://evamaerey.github.io/ggplot_flipbook/ggplot_flipbook_xaringan.html) a walk through ggplot functionality in a flipbook format. It shows a really nice gradual build up of plots.
