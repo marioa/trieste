@@ -16,3 +16,19 @@ Useful resources:
 * [R Inferno](http://www.burns-stat.com/pages/Tutor/R_inferno.pdf) tips and advice on R.
 
 * [R packages](http://r-pkgs.had.co.nz/) understanding what goes into building an R package.
+
+* [Geocomputation with R](https://geocompr.robinlovelace.net/) a book on geographic data analysis, visualization and modeling.
+
+* [The ggplot flip book](https://evamaerey.github.io/ggplot_flipbook/ggplot_flipbook_xaringan.html) a walk through ggplot functionality in a flipbook format. It shows a really nice gradual build up of plots.
+
+* [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/)
+
+* [Text Mining with R](https://www.tidytextmining.com/)
+
+* [R Graphics Cookbook, 2nd edition](https://r-graphics.org/)
+
+* [bookdown: Authoring Books and Technical Documents with R Markdown](https://bookdown.org/yihui/bookdown/)
+
+* [Efficient R programming](https://bookdown.org/csgillespie/efficientR/)
+
+More books are available on-line at [bookdown](https://bookdown.org/) site.
