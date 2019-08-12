@@ -1,3 +1,5 @@
+
+
 # Sample answers
 
 ## Contents
@@ -807,6 +809,45 @@ length(unique(gapminder[gapminder$continent=="Oceania","country"]))
 ## 7. Control flow
 
 ## 8. Quality graphics
+
+* Modify the example so that the figure shows how life expectancy has changed over time:
+
+  ```R
+  ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp)) + geom_point()
+  ```
+
+  ![Life expectancy against the GDP per capita.](imgs/gdpPercap.png)
+
+  ```R
+  ggplot(data = gapminder, aes(x = year, y = lifeExp)) + geom_point()
+  ```
+
+  **Hint**: the gapminder dataset has a column called “year”, which should appear on the x-axis.
+
+  
+
+  ![Life expectancy by year.](imgs/LifeExpVsYear.png)
+
+* 8.1.2 In the previous examples and challenge we’ve used the `aes` function to tell the scatterplot geom about the x and y locations of each point. Another aesthetic property we can modify is the point colour. Modify the code from the previous challenge to color the points by the “continent” column. What trends do you see in the data? Are they what you expected?
+
+* 8.2.1 Switch the order of the point and line layers from the previous example. What happened? i.e. points before lines:
+
+  ```R
+  ggplot(data = gapminder, aes(x=year, y=lifeExp, by=country)) +
+    geom_point(colour="blue") +
+    geom_line(aes(colour=continent))
+  ```
+
+![](/Users/mario/GitRepos/trieste/answers/imgs/LifeExpVsYearLines.png)
+
+```R
+ggplot(data = gapminder, aes(x=year, y=lifeExp, by=country)) +
+  geom_line(aes(colour=continent)) +
+  geom_point(colour="blue")
+
+```
+
+![](/Users/mario/GitRepos/trieste/answers/imgs/LifeExpVsYearLines2.png)
 
 ## 9. Vectorisation
 
