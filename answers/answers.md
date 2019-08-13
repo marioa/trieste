@@ -849,6 +849,47 @@ ggplot(data = gapminder, aes(x=year, y=lifeExp, by=country)) +
 
 ![](/Users/mario/GitRepos/trieste/answers/imgs/LifeExpVsYearLines2.png)
 
+* 8.2.2 Look at the ggplot documentation to see how to:
+
+  * Add a plot title (`ggtitle`)
+  * Add an x and y axis lable (`xlab`,`ylab`)
+
+  ```R
+  ggplot(data = gapminder, aes(x=year, y=lifeExp, by=country)) +
+    geom_point(colour="blue") +
+    geom_line(aes(colour=continent)) +
+    ggtitle("Life Expectancy") + xlab("Year") +
+    ylab("Life Expectancy")
+  ```
+
+![Life expectancy vs year with title and axis labels.](/Users/mario/GitRepos/trieste/answers/imgs/LifeExpVsYearLine.png)
+
+* 8.3.1 Modify the color and size of the points on the point layer in the previous example. Change the colour of the line.
+  **Hint**: do not use the aes function.
+
+  ```R
+  ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp)) +
+        geom_point(size=2) + 
+        scale_x_log10() + 
+        geom_smooth(method="lm", size=1.5,colour="red")
+  ```
+
+![Linear model through GDP per capita against life expectancy.](/Users/mario/GitRepos/trieste/answers/imgs/ex8-3-1.png)
+
+* 8.3.2 Modify your solution to the previous exercise so that the points are now a different shape and are colored by continent with new trendlines. 
+  **Hint**: The color argument can be used inside the aesthetic.
+
+```R
+ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp)) +
+  geom_point(aes(colour=continent,shape=continent)) + 
+  scale_x_log10() + 
+  geom_smooth(method="lm", size=1.5,colour="red")
+```
+
+![GDP per capita vs life expectancy.](/Users/mario/GitRepos/trieste/answers/imgs/ex8-3-2.png)
+
+
+
 ## 9. Vectorisation
 
 * 9.1.1 Create a new column in gapminder called `pop_millions` that takes the `pop` population and expresses it in units of a million (you can also use `gapminder$NewColumnName` to create a new column).
