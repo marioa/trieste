@@ -888,7 +888,17 @@ ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp)) +
 
 ![GDP per capita vs life expectancy.](/Users/mario/GitRepos/trieste/answers/imgs/ex8-3-2.png)
 
+* 8.4.1 Create a density plot of GDP per capita, filled by continent. Once you have a plot add an alpha value. What difference do you observe if you add an alpha value inside or outside the `aes` parameters?
 
+```R
+ggplot(data = gapminder, aes(x = gdpPercap, fill=continent)) +
+       geom_density(alpha=0.5) + scale_x_log10()
+```
+
+![Density graph of GDP per capita by continent.](/Users/mario/GitRepos/trieste/answers/imgs/8-4-1.png)
+
+* 8.4.2 Advanced: Transform the x axis to better visualise the data spread.
+* 8.4.3 Advanced: Add a facet layer to panel the density plots by year.
 
 ## 9. Vectorisation
 
