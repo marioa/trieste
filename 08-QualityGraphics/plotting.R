@@ -70,6 +70,10 @@ ggplot(data = gapminder, aes(x=year, y=lifeExp, by=country)) +
        geom_line(aes(colour=continent)) + 
        geom_point()
 
+ggplot(data = gapminder[gapminder$continent=="Africa",], aes(x=year, y=lifeExp, by=country)) +
+  geom_line(aes(colour=country)) + 
+  geom_point()
+
 # Using aesthetic as a mapping to a variable in the data, e.g. colour
 # or geom_line(aes(colour=continent)), ggplot will give a different colour 
 # to each continent. If you wanted to do a change to all lines you would
@@ -86,11 +90,19 @@ ggplot(data = gapminder, aes(x=year, y=lifeExp, by=country)) +
 # Challenge 8.2 -------------------------------------------------------------
 
 # 8.2.1 Switch the order of the point and line layers from the previous example. 
-#       What happened? i.e. points before lines
+#       What happened? i.e. points before lines:
+
+ggplot(data = gapminder, aes(x=year, y=lifeExp, by=country)) +
+  geom_point(colour="blue") +
+  geom_line(aes(colour=continent))
 
 # 8.2.2 Look at the ggplot documentation to see how to:
 #       1. Add a plot title (ggtitle)
 #       2. Add an x and y axis lable (xlab,ylab)
+
+ggplot(data = gapminder, aes(x=year, y=lifeExp, by=country)) +
+  geom_point(colour="blue") +
+  geom_line(aes(colour=continent))
 
 # Transformations and statistics ------------------------------------------
 # 
@@ -147,16 +159,21 @@ ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp)) +
 # Challenge 8.3 -------------------------------------------------------------
 
 # 8.3.1 Modify the color and size of the points on the point layer in the 
-#      previous example. Change the colour of the line.
-#     Hint: do not use the aes function.
+#       previous example. Change the colour of the line.
+#       Hint: do not use the aes function.
 ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp)) +
       geom_point() + 
       scale_x_log10() + 
-     geom_smooth(method="lm", size=1.5)
+      geom_smooth(method="lm", size=1.5)
 
-# 8.3.1 Modify your solution to the previous exercise so that the points are now 
+# 8.3.2 Modify your solution to the previous exercise so that the points are now 
 #       a different shape and are colored by continent with new trendlines. 
 #       Hint: The color argument can be used inside the aesthetic.
+
+ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp)) +
+  geom_point() +
+  scale_x_log10() + 
+  geom_smooth(method="lm", size=1.5)
 
 # Multi-panel figures -----------------------------------------------------
 
@@ -225,8 +242,8 @@ ggplot(data = az.countries, aes(x = year, y = lifeExp, color=continent)) +
       ylab("Life expectancy") +                     # y-axis label
       ggtitle("Figure 1") +                         # title
       scale_colour_discrete(name="Continent") +     # legend title
-      theme(axis.text.x=element_blank(), axis.ticks.x=element_blank())
-      #theme(axis.text.x = element_text(angle=90, hjust=1))
+      #theme(axis.text.x=element_blank(), axis.ticks.x=element_blank())
+      theme(axis.text.x = element_text(angle=90, hjust=1))
 
 # Rstudio ggplot2 cheat sheet:
 #
@@ -240,7 +257,9 @@ ggplot(data = az.countries, aes(x = year, y = lifeExp, color=continent)) +
 #       Once you have a plot add an alpha value. What difference do you
 #       observe if you add an alpha value inside or outside the aes
 #       parameters?
-
+ggplot(data = gapminder, aes(x = gdpPercap, fill=continent)) +
+       geom_density(alpha=0.5) + scale_x_log10()
+  
   
 # 8.4.2 Advanced: Transform the x axis to better visualise the data spread.
 
