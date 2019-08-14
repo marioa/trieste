@@ -808,6 +808,45 @@ length(unique(gapminder[gapminder$continent=="Oceania","country"]))
 
 ## 7. Control flow
 
+* 7.1.1 Change the code below to print the value of x
+  **Hint**: remember the `paste` function?
+
+  ```R
+  if (x >= 10) {
+    print("x is greater than or equal to 10")
+  } else if (x > 5) {
+    print("x is greater than 5")
+  } else {
+    print("x is less than 5")
+  }
+  ```
+
+  ```
+  if (x >= 10) {
+    print(paste0("x is greater than or equal to 10, where x is ",x,"."))
+  } else if (x > 5) {
+    print(paste0("x is greater than 5, where x is ",x))
+  } else {
+    print(paste0("x is less than 5, where x is ",x,"."))
+  }
+  ```
+
+  
+
+  In reality you would use the `sprintf` function, use help to see if you can work out how to use it.
+
+  ```R
+  if (x >= 10) {
+    sprintf("x is greater than or equal to 10, where x is %f.",x)
+  } else if (x > 5) {
+    sprintf("x is greater than 5, where x is %f.",x)
+  } else {
+    sprintf("x is less than 5, where x is %f.",x)
+  }
+  ```
+
+* 7.1.2 Use an `if()` statement to print a suitable message reporting whether there are any records from 2002 in the gapminder dataset. Now do the same for 2012.
+
 ## 8. Quality graphics
 
 * Modify the example so that the figure shows how life expectancy has changed over time:
