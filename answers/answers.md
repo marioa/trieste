@@ -847,6 +847,36 @@ length(unique(gapminder[gapminder$continent=="Oceania","country"]))
 
 * 7.1.2 Use an `if()` statement to print a suitable message reporting whether there are any records from 2002 in the gapminder dataset. Now do the same for 2012.
 
+* 7.2.1 Compare the objects `output_vector` and `output_vector2`.  Are they the same? If not, why not? How would you change the last block of code to make `output_vector2` the same as `output_vector`?
+
+```R
+output_vector
+ [1] "1 a" "1 b" "1 c" "1 d" "1 e" "2 a" "2 b" "2 c" "2 d" "2 e" "3 a" "3 b" "3 c" "3 d" "3 e"
+[16] "4 a" "4 b" "4 c" "4 d" "4 e" "5 a" "5 b" "5 c" "5 d" "5 e"
+
+output_vector2
+ [1] "1 a" "2 a" "3 a" "4 a" "5 a" "1 b" "2 b" "3 b" "4 b" "5 b" "1 c" "2 c" "3 c" "4 c" "5 c"
+[16] "1 d" "2 d" "3 d" "4 d" "5 d" "1 e" "2 e" "3 e" "4 e" "5 e"
+
+output_matrix <- matrix(nrow=5, ncol=5)
+j_vector <- c('a', 'b', 'c', 'd', 'e')
+for(i in 1:5){
+  for(j in 1:5){
+    temp_j_value <- j_vector[j]
+    temp_output <- paste(i, temp_j_value)
+    output_matrix[i, j] <- temp_output
+  }
+}
+output_vector2 <- as.vector(output_matrix)
+output_vector2
+ [1] "1 a" "2 a" "3 a" "4 a" "5 a" "1 b" "2 b" "3 b" "4 b" "5 b" "1 c" "2 c" "3 c" "4 c" "5 c"
+[16] "1 d" "2 d" "3 d" "4 d" "5 d" "1 e" "2 e" "3 e" "4 e" "5 e"
+
+
+```
+
+
+
 ## 8. Quality graphics
 
 * Modify the example so that the figure shows how life expectancy has changed over time:
