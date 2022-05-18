@@ -84,6 +84,39 @@ output_vector
 # Best not to let things grow this way. It rapidly becomes very
 # inefficient. A better approach would be:
 
+output_vector <- vector(length=25)
+k <- 1
+for (i in 1:5) {
+  for (j in c('a', 'b', 'c', 'd', 'e')) {
+    output_vector[k] <- paste(i, j)
+    k <- k+1
+  }
+} 
+
+# Can show that this is the case but have to make the size bigger to 
+# show the improvement in performance.
+system.time({
+output_vector <- c()
+for (i in 1:500) {
+  for (j in c('a', 'b', 'c', 'd', 'e')) {
+    temp_output <- paste(i, j)
+    output_vector <- c(output_vector, temp_output) # avoid
+  }
+}
+})
+
+system.time({
+output_vector <- vector(length=2500)
+k <- 1
+for (i in 1:500) {
+  for (j in c('a', 'b', 'c', 'd', 'e')) {
+    output_vector[k] <- paste(i, j)
+    k <- k+1
+  }
+} 
+})
+
+# Another better example.
 output_matrix <- matrix(nrow=5, ncol=5)
 j_vector <- c('a', 'b', 'c', 'd', 'e')
 
