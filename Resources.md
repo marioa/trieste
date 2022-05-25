@@ -19,6 +19,8 @@ Useful resources:
 
 * [Geocomputation with R](https://geocompr.robinlovelace.net/) a book on geographic data analysis, visualization and modeling.
 
+* [ggplot2: elegant graphics for data analysis](https://ggplot2-book.org/) this is the on-line version of work-in-progress 3rd edition of “ggplot2: elegant graphics for data analysis” published by Springer. 
+
 * [The ggplot flip book](https://evamaerey.github.io/ggplot_flipbook/ggplot_flipbook_xaringan.html) a walk through ggplot functionality in a flipbook format. It shows a really nice gradual build up of plots.
 
 * [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/)
